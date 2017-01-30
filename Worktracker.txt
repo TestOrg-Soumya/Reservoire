@@ -1,0 +1,715 @@
+26-Apr-2016
+*************
+sitemapHTML >>>>>>>>>
+/marketplacestorefront/web/webroot/WEB-INF/views/responsive/pages/layout/sitemapHTMLLayout.jsp
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/cms-content.impex
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/cms-responsive-content.impex
+/marketplacecore/resources/marketplacecore/import/cockpits/cmscockpit/structure-view/structure_sitemapPage.vm
+/marketplacestorefront/web/src/com/tisl/mpl/storefront/controllers/pages/HTMLSitemapController.java
+/marketplacestorefront/web/src/com/tisl/mpl/storefront/constants/RequestMappingUrlConstants.java
+
+27-Apr-2016
+****************
+OG tag >>>>>>>>>>>>>>
+/config/local.properties
+/marketplacestorefront/web/src/com/tisl/mpl/storefront/controllers/pages/HomePageController.java
+/marketplacestorefront/web/webroot/WEB-INF/tags/responsive/template/master.tag
+/marketplacestorefront/web/src/com/tisl/mpl/storefront/constants/MessageConstants.java
+/marketplacestorefront/web/src/com/tisl/mpl/storefront/filters/StorefrontFilter.java
+
+28-Apr-2016
+*************************
+OG tag >>>>>>>>>>
+/config/local.properties
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/cms-responsive-content.impex
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/sampledata/contentCatalogs/mplContentCatalog/images/logo/TataCliq_FB.jpg
+/marketplacestorefront/web/src/com/tisl/mpl/storefront/filters/StorefrontFilter.java
+/marketplacestorefront/web/webroot/WEB-INF/tags/responsive/template/master.tag
+/marketplacestorefront/web/src/com/tisl/mpl/storefront/constants/MessageConstants.java
+/marketplacestorefront/web/src/com/tisl/mpl/storefront/constants/ModelAttributetConstants.java
+
+sitemap HTML >>>>>>>>>>>>>>>
+29-Apr-2016
+**************
+
+/marketplacestorefront/web/src/com/tisl/mpl/storefront/filters/StorefrontFilter.java
+/marketplacestorefront/web/src/com/tisl/mpl/storefront/constants/MessageConstants.java
+/marketplacestorefront/web/src/com/tisl/mpl/storefront/constants/ModelAttributetConstants.java
+
+3-May-2016
+*************
+New Static Content 23 >>>>>> Reverted back
+/marketplacestorefront/web/webroot/WEB-INF/views/responsive/pages/account/accountMarketPreference.jsp
+
+New Static Content 15,16 >>>>>>
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/sampledata/contentCatalogs/mplContentCatalog/cms-responsive-content.impex
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/sampledata/contentCatalogs/mplContentCatalog/cms-responsive-content_en.impex
+
+New Static Content 19 >>>>>>
+/marketplacestorefront/web/webroot/WEB-INF/messages/base_en.properties
+
+New Static Content 20 >>>>>>
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/sampledata/contentCatalogs/mplContentCatalog/cms-content.impex
+
+New Static Content 24 >>>>>>
+/marketplacestorefront/web/webroot/WEB-INF/views/responsive/pages/account/accountProfileEditPage.jsp
+
+AppLandingpage >> UI involvement required
+/marketplacestorefront/web/webroot/WEB-INF/views/responsive/pages/layout/appLandingPage.jsp
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/cms-content.impex
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/cms-responsive-content.impex
+
+4-May-2016
+**************
+New Static Content 23 >>>>>> Both brand and category are handled
+/marketplacestorefront/web/webroot/WEB-INF/views/responsive/pages/account/accountMarketPreference.jsp
+
+New Static Content 27 >>>>>> 
+/marketplacecheckoutaddon/acceleratoraddon/web/webroot/WEB-INF/messages/base_en.properties
+
+New Static Content 25 >>>>>> 
+/config/local.properties
+
+6-May-2016
+*************
+Review comments>>>
+
+9-May-2016
+**************
+Shifting sitemap controller
+
+10-May-2016
+*************
+Removing dependency from filter java class for SEO property
+
+12-May-2016
+**************
+Removing dependency from filter java class for SEO property
+
+/marketplacestorefront/web/src/com/tisl/mpl/storefront/filters/StorefrontFilter.java
+/marketplacestorefront/web/webroot/WEB-INF/tags/responsive/template/master.tag
+
+13-May-2016
+************
+TISCR-436 >>>>>
+/marketplacestorefront/web/webroot/WEB-INF/tags/responsive/user/register.tag >>> 62 : Tata Treats
+/marketplacecheckoutaddon/acceleratoraddon/web/webroot/WEB-INF/tags/responsive/checkout/multi/register.tag >>> 59 : Tata Treats
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/cms-content.impex >>> reverted
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/sampledata/contentCatalogs/mplContentCatalog/cms-content.impex  >>> reverted
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/sampledata/contentCatalogs/mplContentCatalog/cms-content_en.impex  >>> reverted
+/marketplacestorefront/web/webroot/_ui/responsive/theme-blue/css/style.css >>> 37690 : 130
+
+
+TISPRD-1861
+
+16-May-2016
+*************
+TISCR-374 >>>> Text change | password reward
+/marketplacestorefront/web/webroot/_ui/responsive/common/js/mpl/acc.accountaddress.js
+/marketplacestorefront/web/webroot/WEB-INF/messages/base_en.properties
+
+Passwords must be at least 8 characters long and contain a combination of upper/lower case letters, numbers and symbols
+
+email template analysis
+=======================
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/email-content.impex
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/email-content_en.impex
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/sampledata/contentCatalogs/mplContentCatalog/email-content_en.impex
+
+
+17-May-2016
+************
+
+email template change analysis
+
+Forgot password >>>
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-forgottenPasswordBody.vm
+/marketplacefacades/src/com/tisl/mpl/facades/process/email/context/ForgottenPasswordEmailContext.java
+
+PDP Email >>>
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-PDPSubject.vm
+
+18-May-2016
+************
+PDP Email >>>
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-PDPBody.vm
+
+Registration >>
+marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-customerRegistrationSubject.vm
+
+
+## Remove the privacy policy part
+## Remove logo from bubble and change text
+/marketplacestorefront/web/webroot/WEB-INF/tags/responsive/user/register.tag
+/marketplacecheckoutaddon/acceleratoraddon/web/webroot/WEB-INF/tags/responsive/checkout/multi/register.tag
+/marketplacestorefront/web/webroot/_ui/responsive/theme-blue/css/style.css
+
+## Remove 16 character check
+/marketplacestorefront/web/src/com/tisl/mpl/storefront/web/forms/validator/MplPasswordValidator.java
+/marketplacestorefront/web/src/com/tisl/mpl/storefront/web/forms/validator/RegisterPageValidator.java
+
+
+## Invite Friends
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-friendsInviteSubject.vm
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-friendsInviteBody.vm
+
+## Refund order
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-orderRefundSubject.vm
+
+20-May-2016
+************
+4:11:55 PM: https://drive.google.com/a/dewsolutions.in/folderview?id=0B-LJglG2TTr6LXoxTE5CTS1yWVE&usp=sharing  (https://drive.google.com/a/dewsolutions.in/folderview?id=0B-LJglG2TTr6LXoxTE5CTS1yWVE&usp=sharing%C2%A0)  
+4:18:04 PM: "Search Brand" rather than "Your search begins here [#deferred #low]
+base_en.properties
+
+App Landing Page
+*****************
+/marketplacestorefront/web/webroot/WEB-INF/views/responsive/pages/layout/appLandingPage.jsp
+
+/marketplacestorefront/web/webroot/_ui/responsive/common/images/mob-slider1.1.png
+/marketplacestorefront/web/webroot/_ui/responsive/common/images/mob-slider2.1.png
+/marketplacestorefront/web/webroot/_ui/responsive/common/images/mob-slider3.1.png
+/marketplacestorefront/web/webroot/_ui/responsive/common/images/banner-2.1.png
+/marketplacestorefront/web/webroot/_ui/responsive/common/images/banner-app-2.1.png
+/marketplacestorefront/web/webroot/_ui/responsive/common/images/app-feature1.png
+/marketplacestorefront/web/webroot/_ui/responsive/common/images/app-brands1.png
+/marketplacestorefront/web/webroot/_ui/responsive/common/images/app_last1.png
+
+/marketplacestorefront/web/webroot/_ui/responsive/theme-blue/images/banner-app.png
+/marketplacestorefront/web/webroot/_ui/responsive/theme-blue/images/banner-app1.png
+/marketplacestorefront/web/webroot/_ui/responsive/theme-blue/images/app-offer.png
+/marketplacestorefront/web/webroot/_ui/responsive/theme-blue/images/app-offer1.png
+/marketplacestorefront/web/webroot/_ui/responsive/theme-blue/images/landing_last.png
+/marketplacestorefront/web/webroot/_ui/responsive/theme-blue/images/landing_last1.png
+
+
+
+23-May-2016
+************
+## order Refund -->
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-orderRefundBody.vm
+
+## Shipping Confirmation -->
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-shippingConfirmationSubject.vm
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-shippingConfirmationBody.vm
+
+## Delivery confirmation -->
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-orderDeliveryEmailSubject.vm
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-orderDeliveryEmailBody.vm
+
+## Order placed subjected to terms due to medium risk/High risk - REJECTED -->
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-OrderRejectHighRiskBody.vm
+
+## Phygital change -->
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-customerRegistrationBody.vm
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-forgottenPasswordBody.vm
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-friendsInviteBody.vm
+
+
+25-May-2016
+************
+## Phygital change -->
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-PDPBody.vm
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-shippingConfirmationBody.vm
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-orderDeliveryEmailBody.vm
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-OrderRejectHighRiskBody.vm
+
+26-May-2016
+*************
+## Order placed subjected to terms due to medium risk/high risk
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-orderconfirmationRiskBody.vm
+
+## Order placed subjected to terms due to medium risk/high risk CONFIRMED
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-orderconfirmationRiskSubject.vm
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-orderconfirmationRiskBody.vm
+
+## Registration through call centre
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-customerRegistrationInCsSubject.vm
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-customerRegistrationInCsBody.vm
+
+## Send Invoice
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-sendInvoiceBody.vm
+
+
+30-May-2016
+************
+## Inclusions of Phigital link
+
+/config/local.properties
+/marketplacefacades/src/com/tisl/mpl/facades/process/email/context/CustomerEmailContext.java
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-customerRegistrationBody.vm
+/marketplacefacades/src/com/tisl/mpl/facades/process/email/context/CustomerUpdateEmailContext.java
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-customerProfileUpdateBody.vm
+/marketplacefacades/src/com/tisl/mpl/facades/process/email/context/ForgottenPasswordEmailContext.java
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-forgottenPasswordBody.vm
+/marketplacefacades/src/com/tisl/mpl/facades/process/email/context/ShippingConfirmationEmailContext.java
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-shippingConfirmationBody.vm
+/marketplacefacades/src/com/tisl/mpl/facades/process/email/context/OrderDeliveryEmailContext.java
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-orderDeliveryEmailBody.vm
+/marketplacefacades/src/com/tisl/mpl/facades/process/email/context/OrderHoldOnRiskEmailContext.java
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-orderConfHighMediumRiskBody.vm
+/marketplacefacades/src/com/tisl/mpl/facades/process/email/context/OrderConfirmationRiskEmailContext.java
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-orderconfirmationRiskBody.vm
+/marketplacefacades/src/com/tisl/mpl/facades/process/email/context/OrderRejectRiskEmailContext.java
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-OrderRejectHighRiskBody.vm
+/marketplacefacades/src/com/tisl/mpl/facades/process/email/context/PDPEmailContext.java
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-PDPBody.vm
+/marketplacefacades/src/com/tisl/mpl/facades/process/email/context/SendInvoiceEmailContext.java
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-sendInvoiceBody.vm
+/marketplacefacades/src/com/tisl/mpl/facades/process/email/context/CustomerRegistrationInCsEmailContext.java
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-customerRegistrationInCsBody.vm
+/marketplacefacades/src/com/tisl/mpl/facades/process/email/context/OrderRefundEmailContext.java
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-orderRefundBody.vm
+/marketplacefacades/src/com/tisl/mpl/facades/process/email/context/FriendsInviteEmailContext.java
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-friendsInviteBody.vm
+
+
+31-May-2016
+***********
+marketplace.sms.order.website.url
+TISPRD-2316
+
+Links | Placeholders
+/config/local.properties 
+## Customer Registration
+## QueMag link | StayQued Link
+/marketplacefacades/src/com/tisl/mpl/facades/process/email/context/CustomerEmailContext.java
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-customerRegistrationBody.vm
+
+## My Accounts update
+##Account details link
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-customerProfileUpdateBody.vm
+
+## Review page link - Delivery confirmation
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-orderDeliveryEmailBody.vm
+
+## StayQued - friends invitation
+## store locator link - friends invitation
+
+##StayQued - registration through call centre
+## wishlist link - registration through call centre
+
+01-Jun-2016
+************
+Total & shipping provided for shipping confirmation
+
+02-Jun-2016
+************
+TISPRD-2324
+/marketplacestorefront/web/webroot/WEB-INF/views/responsive/pages/layout/appLandingPage.jsp
+
+Nickname over firstname and firstname over email id implemented - 
+/marketplacefacades/src/com/tisl/mpl/facades/process/email/context/PDPEmailContext.java
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-PDPBody.vm
+
+03-Jun-2016
+*************
+## Link to website provided
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-orderRefundBody.vm
+
+## Text Change
+/marketplaceinitialdata/resources/marketplaceinitialdata/import/coredata/contentCatalogs/mplContentCatalog/emails/email-friendsInviteBody.vm
+
+TISPRD-2553
+
+06-Jun-2016
+***********
+
+
+08-Jun-2016
+***********
+http://jira.tataunistore.com/browse/TISPRD-2561
+http://jira.tataunistore.com/browse/TISPRD-2454
+
+13-June-2016
+************
+For change of password in registration email
+/marketplacecommerceservices/resources/marketplacecommerceservices-spring.xml
+
+16-Jun-2016
+***********
+MplCustomStyleProfile
+MyRecommendationsConfigurationModel
+/marketplacewebservices/web/src/com/tisl/mpl/v2/controller/UsersController.java
+public MplAllFavouritePreferenceWsDTO getFavCategoriesBrands
+public UserResultWsDto addFavCategoriesBrand
+
+20-JUN-2016
+************
+/marketplacecore/resources/marketplacecore-items.xml
+/marketplacewebservices/web/src/com/tisl/mpl/v2/controller/UsersController.java
+/marketplacefacades/src/com/tisl/mpl/facade/myfavbrandcategory/MplMyFavBrandCategoryFacade.java
+/marketplacefacades/src/com/tisl/mpl/facade/myfavbrandcategory/impl/DefaultMplMyFavBrandCategoryFacade.java
+/marketplacecommerceservices/src/com/tisl/mpl/marketplacecommerceservices/service/MplMyFavBrandCategoryService.java
+/marketplacecommerceservices/src/com/tisl/mpl/marketplacecommerceservices/service/impl/DefaultMplMyFavBrandCategoryService.java
+
+21-JUN-2016
+************
+Cont. of 20-Jun-2016
+/marketplacefacades/src/com/tisl/mpl/facade/myfavbrandcategory/MplMyFavBrandCategoryFacade.java
+/marketplacefacades/src/com/tisl/mpl/facade/myfavbrandcategory/impl/DefaultMplMyFavBrandCategoryFacade.java
+/marketplacecommerceservices/src/com/tisl/mpl/marketplacecommerceservices/service/MplMyFavBrandCategoryService.java
+/marketplacecommerceservices/src/com/tisl/mpl/marketplacecommerceservices/service/impl/DefaultMplMyFavBrandCategoryService.java
+/marketplacecommerceservices/src/com/tisl/mpl/marketplacecommerceservices/daos/MyStyleProfileDao.java
+/marketplacecommerceservices/src/com/tisl/mpl/marketplacecommerceservices/daos/impl/DefaultMyStyleProfileDaoImpl.java
+
+22-JUN-2016
+************
+Cont. of 21-Jun-2016
+Add Brand
+/marketplacecommerceservices/src/com/tisl/mpl/marketplacecommerceservices/service/impl/DefaultMplMyFavBrandCategoryService.java
+/marketplacecommerceservices/src/com/tisl/mpl/marketplacecommerceservices/daos/MyStyleProfileDao.java
+/marketplacecommerceservices/src/com/tisl/mpl/marketplacecommerceservices/daos/impl/DefaultMyStyleProfileDaoImpl.java
+
+23-JUN-2016
+************
+Fetch Category
+/marketplacewebservices/web/src/com/tisl/mpl/v2/controller/UsersController.java
+/marketplacefacades/src/com/tisl/mpl/facade/myfavbrandcategory/MplMyFavBrandCategoryFacade.java
+/marketplacefacades/src/com/tisl/mpl/facade/myfavbrandcategory/impl/DefaultMplMyFavBrandCategoryFacade.java
+/marketplacecommerceservices/src/com/tisl/mpl/marketplacecommerceservices/service/MplMyFavBrandCategoryService.java
+/marketplacecommerceservices/src/com/tisl/mpl/marketplacecommerceservices/service/impl/DefaultMplMyFavBrandCategoryService.java
+
+
+Error Code handling
+/marketplacecommerceservices/resources/errorcodemessage.properties
+/marketplacecommerceservices/src/com/tisl/mpl/constants/MarketplacecommerceservicesConstants.java
+
+24-JUN-2016
+************
+Merging of category/brnads at time of fetching
+/marketplacecommerceservices/src/com/tisl/mpl/marketplacecommerceservices/service/impl/DefaultMplMyFavBrandCategoryService.java
+
+TISPRM-11
+Reducing password policy --- removing special character constraint
+/marketplacestorefront/web/src/com/tisl/mpl/storefront/businessvalidator/CommonAsciiValidator.java
+/marketplacestorefront/web/webroot/_ui/responsive/common/js/mpl/acc.accountaddress.js
+/marketplacestorefront/web/webroot/WEB-INF/messages/base_en.properties
+
+
+27-JUN-2016
+************
+multistepcheckoutlogincontroller
+Your password should be minimum 8 characters
+TISPRM-11
+/marketplacestorefront/web/webroot/_ui/responsive/common/js/mpl/marketplacecheckoutaddon.js
+/marketplacestorefront/web/webroot/_ui/responsive/common/js/mpl/acc.accountaddress.js
+/marketplacestorefront/web/src/com/tisl/mpl/storefront/web/forms/validator/RegisterPageValidator.java
+/marketplacestorefront/web/src/com/tisl/mpl/storefront/web/forms/validator/MplPasswordValidator.java
+/marketplacestorefront/web/src/com/tisl/mpl/storefront/web/forms/validator/MplForgotPwdFormValidator.java
+/marketplacestorefront/web/webroot/WEB-INF/messages/base_en.properties
+
+28-JUN-2016
+************
+TISPRM-44
+Facet should remail open by default
+/marketplacestorefront/web/webroot/WEB-INF/tags/responsive/nav/facetNavRefinementFacet.tag
+
+29-JUN-2016
+************
+If there are No reviews written for the product , Currently
+we show NO reviews Instead we have to show some
+Other text like Be the first one to review
+
+rating.noreviews
+
+We should have all filters open by default.If the user collapses
+any filter / open after collapsing the selection has to
+ remembered and when teh next time page refreshes
+The collapsed filter has to be collapsed  --- Target 5th july
+
+/marketplacestorefront/web/webroot/_ui/responsive/common/js/mpl/feedback.js
+
+30-JUN-2016
+************
+Collapsed facet should remain collapsed even after refresh
+/marketplacestorefront/web/webroot/_ui/responsive/common/js/mpl/feedback.js
+
+This will go in 12 June
+
+4-Jul-2016
+***********
+"Review This" in place of "No reviews" - TISPRM-130
+
+SEO meta content and title change - TISPRM-136
+
+Homepage:::::
+/marketplacestorefront/web/src/com/tisl/mpl/storefront/controllers/pages/HomePageController.java
+Product:::::
+/marketplacestorefront/web/src/com/tisl/mpl/storefront/constants/ModelAttributetConstants.java
+/marketplacestorefront/web/src/com/tisl/mpl/storefront/controllers/pages/ProductPageController.java
+
+
+5-Jul-2016
+***********
+TISPRM-91
+TISPRM-58
+
+1080468_TISPRM-136
+
+
+https://www.tatacliq.com/search/?searchCategory=all&text=shirts
+https://www.tatacliq.com/search/?offer=&searchCategory=all&q=shirts%3Arelevance%3AallPromotions%3A20%25+off+on+Exculsive+International+products&text=shirts&pageFacetData=&isFacet=true
+https://www.tatacliq.com/search/?offer=&searchCategory=all&q=shirts%3Arelevance%3AallPromotions%3A20%25+off+on+Exculsive+International+products%3AallPromotions%3A25%25+off+on+Exclusive+International+products&text=shirts&pageFacetData=&isFacet=true
+
+
+Spinner while removing added filters
+/marketplacestorefront/web/webroot/_ui/responsive/common/js/mpl/acc.refinements.js
+
+11-Jul-2016
+************
+AJAX implementation on facet search
+***********************************
+/marketplacestorefront/web/webroot/_ui/responsive/common/js/mpl/acc.refinements.js
+
+12-Jul-2016
+************
+/marketplacestorefront/web/src/com/tisl/mpl/storefront/controllers/pages/CategoryPageController.java
+
+
+https://dzone.com/articles/client-applications-ajax-solr
+searchresultsgridcomponent.tag
+productListerGridItem.tag
+
+
+13-Jul-2016
+************
+/marketplacestorefront/web/webroot/WEB-INF/views/responsive/pages/category/productGridPage.jsp
+/marketplacestorefront/web/webroot/_ui/responsive/common/js/mpl/acc.refinements.js
+
+14-Jul-2016
+************
+currently not using the hidden field change of productGridPage.jsp
+
+/marketplacestorefront/web/webroot/WEB-INF/views/responsive/fragments/product/searchResultPanel.jsp
+/marketplacestorefront/web/src/com/tisl/mpl/storefront/controllers/pages/CategoryPageController.java
+/marketplacestorefront/web/webroot/_ui/responsive/common/js/mpl/acc.refinements.js
+/marketplacestorefront/web/src/com/tisl/mpl/storefront/controllers/ControllerConstants.java
+
+Change in colour facet
+**********************
+/marketplacestorefront/web/webroot/_ui/responsive/theme-blue/css/style.css
+/marketplacestorefront/web/webroot/_ui/responsive/common/js/mpl/acc.refinements.js
+/marketplacestorefront/web/webroot/WEB-INF/tags/responsive/nav/facetNavRefinementFacet.tag
+
+15-Jul-2016
+************
+
+/search/?offer=&searchCategory=all&q=shirt%3Arelevance%3Acolour%3ABlue_0000FF&text=shirt&pageFacetData=&isFacet=true
+pages/category/productGridPage
+
+/search/?offer=&searchCategory=all&q=shirt%3Arelevance%3Acolour%3ABlue_0000FF&text=shirt&pageFacetData=&isFacet=true
+
+18-Jul-2016
+************
+/marketplacestorefront/web/webroot/_ui/responsive/common/js/mpl/acc.search.js
+
+
+20-Jul-2016
+************
+For SERP
+/marketplacestorefront/web/src/com/tisl/mpl/storefront/controllers/pages/SearchPageController.java
+/marketplacestorefront/web/webroot/WEB-INF/views/responsive/pages/search/searchGridPage.jsp
+/marketplacestorefront/web/webroot/WEB-INF/views/responsive/pages/search/facetResultPanel.jsp
+/marketplacestorefront/web/src/com/tisl/mpl/storefront/controllers/ControllerConstants.java
+/marketplacestorefront/web/webroot/_ui/responsive/common/js/mpl/acc.refinements.js
+
+Code optimization
+Calling through tag
+/marketplacestorefront/web/webroot/WEB-INF/tags/responsive/nav/searchFacetFilterData.tag
+/marketplacestorefront/web/src/com/tisl/mpl/storefront/controllers/pages/SearchPageController.java
+/marketplacestorefront/web/webroot/WEB-INF/views/responsive/pages/search/searchGridPage.jsp
+/marketplacestorefront/web/webroot/WEB-INF/views/responsive/pages/search/facetResultPanel.jsp
+
+
+21-Jul-2016
+************
+Mobile view ajax call fix
+/marketplacestorefront/web/webroot/WEB-INF/tags/responsive/nav/pagination.tag
+/marketplacestorefront/web/webroot/_ui/responsive/common/js/mpl/feedback.js
+
+Sort by
+/marketplacestorefront/web/webroot/_ui/responsive/common/js/mpl/feedback.js
+/marketplacestorefront/web/webroot/_ui/responsive/common/js/mpl/acc.paginationsort.js
+/marketplacestorefront/web/webroot/WEB-INF/tags/responsive/nav/pagination.tag
+/marketplacestorefront/web/src/com/tisl/mpl/storefront/controllers/pages/CategoryPageController.java
+
+
+21-Jul-2016
+************
+Sort by
+/marketplacestorefront/web/webroot/WEB-INF/views/responsive/pages/category/productGridPage.jsp
+/marketplacestorefront/web/webroot/_ui/responsive/common/js/mpl/acc.refinements.js
+/marketplacestorefront/web/webroot/WEB-INF/tags/responsive/nav/pagination.tag
+
+View by
+/marketplacestorefront/web/webroot/_ui/responsive/common/js/mpl/acc.paginationsize.js
+/marketplacestorefront/web/webroot/_ui/responsive/common/js/mpl/acc.refinements.js
+/marketplacestorefront/web/webroot/WEB-INF/tags/responsive/nav/pagination.tag
+
+filter- session storage
+/marketplacestorefront/web/webroot/_ui/responsive/common/js/mpl/acc.refinements.js
+
+28-Jul-2016
+************
+For product grids in category landing page
+/marketplacestorefront/web/webroot/WEB-INF/views/responsive/pages/layout/apparelCategoryLandingPage.jsp
+/marketplacestorefront/web/webroot/WEB-INF/views/responsive/pages/layout/footwearCategoryLandingPage.jsp
+/marketplacestorefront/web/webroot/WEB-INF/views/responsive/pages/layout/electronicsCategoryLandingPage.jsp
+
+
+8-Aug-2016
+************
+Apply Filters button for all the filters
+
+15-18-Aug-2016
+***************
+AJAX implementation on custom price filter
+
+19-Aug-2016
+************
+TPR-644:
+header.tag
+<span class="toggle desktop helpmeshopbanner latestOffersBanner"><p>${headerConciergeTitle}</p></span>
+
+TPR-655:
+acc.product.js
+class="go-to-bag mini-cart-checkout-button"
+
+			
+19-Aug-2016
+************
+
+$("body").animate({scrollTop:0})
+$("body,html").animate({scrollTop:0},500)
+
+Review comments
+
+Put inline comment for the implemented logic.
+Please put java doc for the method.
+Mention the CR number as part of comment.
+Commented out codes should be removed
+searchQuery = ":relevance"; -  define as constant
+Use constants instead of hard coding the values
+
+
+CategoryPageController.java
+SearchPageController.java
+acc.refinemens.js
+ControllerConstants.java
+facetNavRefinementFacet.tag
+searchResultPanel.jsp
+productGridPage.jsp
+feedback.js
+facetResultPanel.jsp
+searchGridPage.jsp
+searchFacetFilterData.tag
+pagination.tag
+acc.paginationsort.js
+acc.paginationsize.js
+apparelCategoryLandingPage.jsp
+electronicsCategoryLandingPage.jsp
+footwearCategoryLandingPage.jsp
+acc.product.js
+SellerPageController.java
+sellerResultPage.jsp
+
+
+25-Aug-2016
+************
+TPR-666
+
+utag.link(
+{link_obj: this, link_text: ‘concierge_view_details’ , event_type : 'concierge_view_details' }
+);
+
+MP100000000005744
+	
+26-Aug-2016
+************
+TPR-689
+
+TPR-429
+link with other seller
+https://www.tatacliq.com/apple-iphone-5s-16gb-space-grey/p-mp000000000005568
+http://localhost:9001/p-MPF220006005/viewSellers?selectedSize=true
+
+Add to bag button - done
+30-Aug-2016
+************
+DeliveryMethodCheckoutStepController.java
+MarketplacecheckoutaddonConstants.java
+PaymentMethodCheckoutStepController.java
+
+31-Aug-2016
+************
+Removed from cart
+Modularized code in checkout controllers
+
+TPR-657 : already done
+TPR-647 : $("#findStoresNearMe").removeClass("findStoreNearMeDisable");
+		done
+
+1-Sep-2016
+************
+TPR-658 :	
+===============
+link_text: 'apply_coupon_success'
+event_type : 'apply_coupon'
+couponCode : '12345'
+===============
+done
+
+TPR-645:Initial implementation done
+
+
+2-Sep-2016
+************
+TPR-650 : Initial implementation done
+
+3-Sep-2016
+************
+TPR-645: 
+Implemented for department hierarchy too
+
+TPR-645: Unit test cases
+TPR-647: Unit test cases
+TPR-658: Unit test cases
+
+21-Sep-2016
+***************
+TPR-429 Review comments applied
+TPR-650: Inspire me section fix
+
+
+23-Sep-2016
+***************
+
+/marketplacecommerceservices/resources/marketplacecommerceservices-spring.xml
+
+05-Oct-2016
+************
+Web service urls for luxury
+Homepage - http://localhost:9001/marketplacewebservices/v2/mpl/cms/luxuryhomepage
+BLP - http://localhost:9001/marketplacewebservices/v2/mpl/cms/luxuryBLP
+
+LW-274
+LW-270
+LW-269
+LW-280
+LW-275
+LW-276
+
+06-Oct-2016
+************
+LW-286
+
+12-10-2016
+************
+LW-230
+MP000000000283976 - luxury product in IA
+MP000000000021693 - luxury product in IA
+13-10-2016
+***********
+LW-230 : unit case
+logic modification
