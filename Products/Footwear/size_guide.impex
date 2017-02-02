@@ -1,0 +1,15 @@
+$productCatalog=mplProductCatalog
+$productCatalogName=Marketplace Product Catalog
+$classificationCatalog=pcmClassification
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$classCatalogVersion=catalogversion(catalog(id[default='$classificationCatalog']),version[default='1.0'])[unique=true,default='$classificationCatalog:1.0']
+$classSystemVersion=systemVersion(catalog(id[default='$classificationCatalog']),version[default='1.0'])[unique=true]
+$categories=target(code, $catalogVersion)[unique=true]
+$classAttributeAssignment=classificationAttributeAssignment(classificationAttribute(code),classificationClass(code))
+
+INSERT_UPDATE SizeGuide;sizeGuideId[unique=true]; dimension[unique=true]; unit;size[unique=true];value;categoryCode;brand;fitType;imageUrl;productSource(code,$catalogVersion)[unique=true];$catalogVersion;euroSize;usSize
+;Nike_Sports;21.3;INCH;5;7.7;Nike;Nike;Narrow;http://static.jabong.com/sizechart/plus-size-shirt.jpg;987654321;;5.5;15.5
+;Nike_Sports;22.3;INCH;6;8.8;Nike;Nike;Narrow;http://static.jabong.com/sizechart/plus-size-shirt.jpg;987654321;;6.5;16.5
+;Nike_Sports;23.3;INCH;7;9.9;Nike;Nike;Narrow;http://static.jabong.com/sizechart/plus-size-shirt.jpg;987654321;;7.5;17.5
+;Nike_Sports;24.3;INCH;10;10.9;Nike;Nike;Narrow;http://static.jabong.com/sizechart/plus-size-shirt.jpg;987654321;;8.5;18.5
+;Nike_Sports;25.3;INCH;11;11.5;Nike;Nike;Narrow;http://static.jabong.com/sizechart/plus-size-shirt.jpg;987654321;;9.5;19.5

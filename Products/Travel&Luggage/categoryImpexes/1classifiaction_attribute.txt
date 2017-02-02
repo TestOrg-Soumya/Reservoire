@@ -1,0 +1,61 @@
+# ImpEx for Importing Category Classifications
+
+# Macros / Replacement Parameter definitions
+$productCatalog=mplProductCatalog
+$productCatalogName=Marketplace Product Catalog
+$classificationCatalog=pcmClassification
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$classCatalogVersion=catalogversion(catalog(id[default='$classificationCatalog']),version[default='1.0'])[unique=true,default='$classificationCatalog:1.0']
+$classSystemVersion=systemVersion(catalog(id[default='$classificationCatalog']),version[default='1.0'])[unique=true]
+$class=classificationClass(ClassificationClass.code,$classCatalogVersion)[unique=true]
+$supercategories=source(code, $classCatalogVersion)[unique=true]
+$categories=target(code, $catalogVersion)[unique=true]
+$attribute=classificationAttribute(code,$classSystemVersion)[unique=true]
+$unit=unit(code,$classSystemVersion)
+
+
+
+INSERT_UPDATE  classificationAttribute;code[unique=true];name[lang=en];systemVersion(catalog(id),version);;;;;
+
+
+;stylecodetrlg;Style Code;pcmClassification:1;;;;;
+;modelnotrlg;Model No;pcmClassification:1;;;;;
+;collectionnametrlg;Collection Name;pcmClassification:1;;;;;
+;occasiontrlg;Occasion;pcmClassification:1;;;;;
+;colorfamilytrlg;Color Family;pcmClassification:1;;;;;
+;colorbrandtrlg;Color Brand;pcmClassification:1;;;;;
+;gendertrlg;Gender;pcmClassification:1;;;;;
+;sizetrlg;Size;pcmClassification:1;;;;;
+;uppermaterialtrlg;Upper Material;pcmClassification:1;;;;;
+;innermaterialtrlg;Inner Material;pcmClassification:1;;;;;
+;leathertypetrlg;Leather Type;pcmClassification:1;;;;;
+;careinstructiontrlg;Care Instruction;pcmClassification:1;;;;;
+;feature1trlg;Feature 1;pcmClassification:1;;;;;
+;feature2trlg;Feature 2;pcmClassification:1;;;;;
+;feature3trlg;Feature 3;pcmClassification:1;;;;;
+;patterntrlg;Pattern;pcmClassification:1;;;;;
+;heighttrlg;Height;pcmClassification:1;;;;;
+;widthtrlg;Width;pcmClassification:1;;;;;
+;depthtrlg;Depth;pcmClassification:1;;;;;
+;capacitytrlg;Capacity;pcmClassification:1;;;;;
+;weighttrlg;Weight;pcmClassification:1;;;;;
+;laptopbagtypetrlg;Laptop Bag Type;pcmClassification:1;;;;;
+;luggagesettrlg;Luggage Set;pcmClassification:1;;;;;
+;luggagetypetrlg;Luggage Type;pcmClassification:1;;;;;
+;briefcasetypetrlg;Briefcase Type;pcmClassification:1;;;;;
+;luggagesetcontentstrlg;Luggage Set Contents;pcmClassification:1;;;;;
+;messengerbagtypetrlg;Messenger Bag Type;pcmClassification:1;;;;;
+;duffelbagtypetrlg;Duffel Bag Type;pcmClassification:1;;;;;
+;backpacktypetrlg;Backpack Type;pcmClassification:1;;;;;
+;strollywheeltypetrlg;Strolly Wheel Type;pcmClassification:1;;;;;
+;straptypetrlg;Strap Type;pcmClassification:1;;;;;
+;paddingtypetrlg;Padding Type;pcmClassification:1;;;;;
+;closuretypetrlg;Closure Type;pcmClassification:1;;;;;
+;noofslotstrlg;No of Slots;pcmClassification:1;;;;;
+;noofcomponentstrlg;No of Compartments;pcmClassification:1;;;;;
+;noofpacketstrlg;No of pockets;pcmClassification:1;;;;;
+;compatiblelaptopsizetrlg;Compatible Laptop Size;pcmClassification:1;;;;;
+;locktypetrlg;Lock Type;pcmClassification:1;;;;;
+;waterresistanttrlg;Water Resistant;pcmClassification:1;;;;;
+;handletypetrlg;Handle Type;pcmClassification:1;;;;;
+;warrantydetailstrlg;Warranty Details;pcmClassification:1;;;;;

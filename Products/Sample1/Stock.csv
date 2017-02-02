@@ -1,0 +1,25 @@
+
+$productCatalog=mplProductCatalog 
+$productCatalogName=Marketplace Product Catalog 
+$vendor=TATA 
+$warehouse=mpl_warehouse
+INSERT_UPDATE StockLevel;available;warehouse(code)[unique=true];inStockStatus(code);maxPreOrder;maxStockLevelHistoryCount;overSelling;preOrder;productCode[unique=false];reserved;sellerArticleSKU[unique=true]
+
+;110;mpl_warehouse;forceInStock;0;0;0;0;100196s6prorglddmv;0;100196s6prorglddmv
+
+;110;mpl_warehouse;forceInStock;0;0;0;0;100196flm7sblkdmv;0;100196flm7sblkdmv
+
+;110;mpl_warehouse;forceInStock;0;0;0;0;100196mmxunite4glddmv;0;100196mmxunite4glddmv
+
+;110;mpl_warehouse;forceInStock;0;0;0;0;100196a37greydmv;0;100196a37greydmv
+
+;110;mpl_warehouse;forceInStock;0;0;0;0;100058199734;0;100058199734
+
+;110;mpl_warehouse;forceInStock;0;0;0;0;100108X382GBBlue;0;100108X382GBBlue
+
+;110;mpl_warehouse;forceInStock;0;0;0;0;100108A7700WH;0;100108A7700WH
+
+;110;mpl_warehouse;forceInStock;0;0;0;0;100052itxcloud4gstarblk;0;100052itxcloud4gstarblk
+
+;110;mpl_warehouse;forceInStock;0;0;0;0;100064ZC550KL1B113IN;0;100064ZC550KL1B113IN
+

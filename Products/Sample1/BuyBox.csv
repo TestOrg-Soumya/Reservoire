@@ -1,0 +1,13 @@
+$productCatalog=mplProductCatalog 
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$catalogVersionOnline=catalogversion(catalog(id[default=$productCatalog]),version[default='Online'])[unique=true,default=$productCatalog:Online]
+INSERT_UPDATE BuyBox;product(code,$catalogVersion);price;sellerArticleSKU[unique=true];mrp;specialPrice;available;weightage;sellerId;sellerName;sellerType;sellerStartDate[dateformat=yyyyMMddHHmmss];sellerEndDate[dateformat=yyyyMMddHHmmss]
+;MP000000000595961;150;100196s6prorglddmv;200;0;110;4;100196;DMV E COMMERCE;Platinum;20160425153506;20200425153506
+;MP000000000637079;150;100196flm7sblkdmv;200;0;110;4;100196;DMV E COMMERCE;Platinum;20160425153506;20200425153506
+;MP000000000637081;150;100196mmxunite4glddmv;200;0;110;4;100196;DMV E COMMERCE;Platinum;20160425153506;20200425153506
+;MP000000000598885;150;100196a37greydmv;200;0;110;4;100196;DMV E COMMERCE;Platinum;20160425153506;20200425153506
+;MP000000000608507;150;100058199734;200;0;110;4;100058;Croma;Platinum;20160425153506;20200425153506
+;MP000000000608852;150;100108X382GBBlue;200;0;110;4;100108;LavaEstore;Platinum;20160425153506;20200425153506
+;MP000000000637070;150;100108A7700WH;200;0;110;4;100108;LavaEstore;Platinum;20160425153506;20200425153506
+;MP000000000625757;150;100052itxcloud4gstarblk;200;0;110;4;100052;STAUNCH E-TAIL SERVICES LLP;Platinum;20160425153506;20200425153506
+;MP000000000625768;150;100064ZC550KL1B113IN;200;0;110;4;100064;Drive India Enterprise SolutionsLTD;Platinum;20160425153506;20200425153506

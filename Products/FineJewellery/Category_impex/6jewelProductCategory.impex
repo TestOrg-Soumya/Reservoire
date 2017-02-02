@@ -1,0 +1,384 @@
+$productCatalog=mplProductCatalog
+$classificationCatalog=pcmClassification
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$languages=ja,en,de,zh
+$uidGroup=admingroup,marketplaceGroup,ETAILREAD
+# Product catalog
+INSERT_UPDATE Catalog;id[unique=true]
+;$productCatalog
+#Primary hierarchy Electronics - SOURCE Catalog;;;;;;;;;
+$supercategories=supercategories( code, catalogVersion(catalog(id[default='mplProductCatalog']),version[default='Staged']));;;;;;;;;
+$catalogVersion=catalogVersion(catalog(id[default='mplProductCatalog']),version[default='Staged'])[unique=true,default='mplProductCatalog:Staged'];;;;;;;;;
+;;;;;;;;;
+
+INSERT_UPDATE Category;code[unique=true];name[lang=en];$supercategories;$catalogVersion;allowedPrincipals(uid)
+;MPH1;Primary;;mplProductCatalog:Staged;$uidGroup
+;MPH19;Fine Jewellery;MPH1;mplProductCatalog:Staged;$uidGroup 
+;MPH1910;"Coins,Bars,Stones";MPH19;mplProductCatalog:Staged;$uidGroup
+;MPH1911;Diamond Jewellery;MPH19;mplProductCatalog:Staged;$uidGroup
+;MPH1912;Gold Jewellery;MPH19;mplProductCatalog:Staged;$uidGroup
+;MPH1913;Platinum Jewellery;MPH19;mplProductCatalog:Staged;$uidGroup
+;MPH1914;Semi-Precious Jewellery;MPH19;mplProductCatalog:Staged;$uidGroup
+;MPH1915;Silver Jewellery;MPH19;mplProductCatalog:Staged;$uidGroup
+
+
+;MPH1910100;Bars;MPH1910;mplProductCatalog:Staged;$uidGroup
+;MPH1910101;Coins;MPH1910;mplProductCatalog:Staged;$uidGroup
+;MPH1910102;Stones;MPH1910;mplProductCatalog:Staged;$uidGroup
+;MPH1911100;Gold;MPH1911;mplProductCatalog:Staged;$uidGroup
+;MPH1911101;Silver;MPH1911;mplProductCatalog:Staged;$uidGroup
+;MPH1911102;Solitaire;MPH1911;mplProductCatalog:Staged;$uidGroup
+;MPH1912100;Plain;MPH1912;mplProductCatalog:Staged;$uidGroup
+;MPH1912101;Stone Studded;MPH1912;mplProductCatalog:Staged;$uidGroup
+;MPH1913100;Diamond Studded;MPH1913;mplProductCatalog:Staged;$uidGroup
+;MPH1913101;Plain;MPH1913;mplProductCatalog:Staged;$uidGroup
+;MPH1913102;Stone Studded;MPH1913;mplProductCatalog:Staged;$uidGroup
+;MPH1914;Semi-Precious Jewellery;MPH19;mplProductCatalog:Staged;$uidGroup
+;MPH1914100;Birthstone;MPH1914;mplProductCatalog:Staged;$uidGroup
+;MPH1914101;Others;MPH1914;mplProductCatalog:Staged;$uidGroup
+;MPH1915100;Plain;MPH1915;mplProductCatalog:Staged;$uidGroup
+;MPH1915101;Stone Studded;MPH1915;mplProductCatalog:Staged;$uidGroup
+
+
+
+
+
+;MPH1910100100;Antique;MPH1910100;mplProductCatalog:Staged;$uidGroup
+;MPH1910100101;Gold;MPH1910100;mplProductCatalog:Staged;$uidGroup
+;MPH1910100102;Other1;MPH1910100;mplProductCatalog:Staged;$uidGroup
+;MPH1910100103;Other2;MPH1910100;mplProductCatalog:Staged;$uidGroup
+;MPH1910100104;Other3;MPH1910100;mplProductCatalog:Staged;$uidGroup
+;MPH1910100105;Other4;MPH1910100;mplProductCatalog:Staged;$uidGroup
+;MPH1910100106;Other5;MPH1910100;mplProductCatalog:Staged;$uidGroup
+;MPH1910100107;Platinum;MPH1910100;mplProductCatalog:Staged;$uidGroup
+;MPH1910100108;Silver;MPH1910100;mplProductCatalog:Staged;$uidGroup
+;MPH1910101100;Antique;MPH1910101;mplProductCatalog:Staged;$uidGroup
+;MPH1910101101;Gold;MPH1910101;mplProductCatalog:Staged;$uidGroup
+;MPH1910101102;Other1;MPH1910101;mplProductCatalog:Staged;$uidGroup
+;MPH1910101103;Other2;MPH1910101;mplProductCatalog:Staged;$uidGroup
+;MPH1910101104;Other3;MPH1910101;mplProductCatalog:Staged;$uidGroup
+;MPH1910101105;Other4;MPH1910101;mplProductCatalog:Staged;$uidGroup
+;MPH1910101106;Other5;MPH1910101;mplProductCatalog:Staged;$uidGroup
+;MPH1910101107;Platinum;MPH1910101;mplProductCatalog:Staged;$uidGroup
+;MPH1910101108;Silver;MPH1910101;mplProductCatalog:Staged;$uidGroup
+;MPH1910102100;Diamond;MPH1910102;mplProductCatalog:Staged;$uidGroup
+;MPH1910102101;Other Stones;MPH1910102;mplProductCatalog:Staged;$uidGroup
+;MPH1910102102;Solitaire;MPH1910102;mplProductCatalog:Staged;$uidGroup
+;MPH1910102103;Other2;MPH1910102;mplProductCatalog:Staged;$uidGroup
+;MPH1910102104;Other3;MPH1910102;mplProductCatalog:Staged;$uidGroup
+;MPH1910102105;Other4;MPH1910102;mplProductCatalog:Staged;$uidGroup
+;MPH1910102106;ther5;MPH1910102;mplProductCatalog:Staged;$uidGroup
+#####
+;MPH1911100100;Anklets;MPH1911100;mplProductCatalog:Staged;$uidGroup
+;MPH1911100101;Armlet;MPH1911100;mplProductCatalog:Staged;$uidGroup
+;MPH1911100102;Bangle;MPH1911100;mplProductCatalog:Staged;$uidGroup
+;MPH1911100103;Bracelets;MPH1911100;mplProductCatalog:Staged;$uidGroup
+;MPH1911100104;Chains;MPH1911100;mplProductCatalog:Staged;$uidGroup
+;MPH1911100105;Earrings;MPH1911100;mplProductCatalog:Staged;$uidGroup
+;MPH1911100106;Headpiece;MPH1911100;mplProductCatalog:Staged;$uidGroup
+;MPH1911100107;Kada;MPH1911100;mplProductCatalog:Staged;$uidGroup
+;MPH1911100108;Mangalsutras ;MPH1911100;mplProductCatalog:Staged;$uidGroup
+;MPH1911100109;Necklaces;MPH1911100;mplProductCatalog:Staged;$uidGroup
+;MPH1911100110;Nosering & Nosepin;MPH1911100;mplProductCatalog:Staged;$uidGroup
+;MPH1911100111;Others 1;MPH1911100;mplProductCatalog:Staged;$uidGroup
+;MPH1911100112;Others 2;MPH1911100;mplProductCatalog:Staged;$uidGroup
+;MPH1911100113;Others 3;MPH1911100;mplProductCatalog:Staged;$uidGroup
+;MPH1911100114;Others 4;MPH1911100;mplProductCatalog:Staged;$uidGroup
+;MPH1911100115;Others 5;MPH1911100;mplProductCatalog:Staged;$uidGroup
+;MPH1911100116;Pendants;MPH1911100;mplProductCatalog:Staged;$uidGroup
+;MPH1911100117;Rings;MPH1911100;mplProductCatalog:Staged;$uidGroup
+;MPH1911100118;Sets;MPH1911100;mplProductCatalog:Staged;$uidGroup
+;MPH1911100119;Toe-rings;MPH1911100;mplProductCatalog:Staged;$uidGroup
+;MPH1911100120;Waistband;MPH1911100;mplProductCatalog:Staged;$uidGroup
+############
+;MPH1911101100;Anklets;MPH1911101;mplProductCatalog:Staged;$uidGroup
+;MPH1911101101;Armlet;MPH1911101;mplProductCatalog:Staged;$uidGroup
+;MPH1911101102;Bangle;MPH1911101;mplProductCatalog:Staged;$uidGroup
+;MPH1911101103;Bracelets;MPH1911101;mplProductCatalog:Staged;$uidGroup
+;MPH1911101104;Chains;MPH1911101;mplProductCatalog:Staged;$uidGroup
+;MPH1911101105;Earrings;MPH1911101;mplProductCatalog:Staged;$uidGroup
+;MPH1911101106;Headpiece;MPH1911101;mplProductCatalog:Staged;$uidGroup
+;MPH1911101107;Kada;MPH1911101;mplProductCatalog:Staged;$uidGroup
+;MPH1911101108;Mangalsutras;MPH1911101;mplProductCatalog:Staged;$uidGroup
+;MPH1911101109;Necklaces;MPH1911101;mplProductCatalog:Staged;$uidGroup
+;MPH1911101110;Nosering & Nosepin;MPH1911101;mplProductCatalog:Staged;$uidGroup
+;MPH1911101111;Others 1;MPH1911101;mplProductCatalog:Staged;$uidGroup
+;MPH1911101112;Others 2;MPH1911101;mplProductCatalog:Staged;$uidGroup
+;MPH1911101113;Others 3;MPH1911101;mplProductCatalog:Staged;$uidGroup
+;MPH1911101114;Others 4;MPH1911101;mplProductCatalog:Staged;$uidGroup
+;MPH1911101115;Others 5;MPH1911101;mplProductCatalog:Staged;$uidGroup
+;MPH1911101116;Pendants;MPH1911101;mplProductCatalog:Staged;$uidGroup
+;MPH1911101117;Rings;MPH1911101;mplProductCatalog:Staged;$uidGroup
+;MPH1911101118;Sets;MPH1911101;mplProductCatalog:Staged;$uidGroup
+;MPH1911101119;Toe-rings;MPH1911101;mplProductCatalog:Staged;$uidGroup
+;MPH1911101120;Waistband;MPH1911101;mplProductCatalog:Staged;$uidGroup
+#####
+;MPH1911102100;Anklets;MPH1911102;mplProductCatalog:Staged;$uidGroup
+;MPH1911102101;Armlet;MPH1911102;mplProductCatalog:Staged;$uidGroup
+;MPH1911102102;Bangle;MPH1911102;mplProductCatalog:Staged;$uidGroup
+;MPH1911102103;Bracelets;MPH1911102;mplProductCatalog:Staged;$uidGroup
+;MPH1911102104;Chains;MPH1911102;mplProductCatalog:Staged;$uidGroup
+;MPH1911102105;Earrings;MPH1911102;mplProductCatalog:Staged;$uidGroup
+;MPH1911102106;Headpiece;MPH1911102;mplProductCatalog:Staged;$uidGroup
+;MPH1911102107;Kada;MPH1911102;mplProductCatalog:Staged;$uidGroup
+;MPH1911102108;Mangalsutras;MPH1911102;mplProductCatalog:Staged;$uidGroup
+;MPH1911102109;Necklaces;MPH1911102;mplProductCatalog:Staged;$uidGroup
+;MPH1911102110;Nosering & Nosepin;MPH1911102;mplProductCatalog:Staged;$uidGroup
+;MPH1911102111;Others 1;MPH1911102;mplProductCatalog:Staged;$uidGroup
+;MPH1911102112;Others 2;MPH1911102;mplProductCatalog:Staged;$uidGroup
+;MPH1911102113;Others 3;MPH1911102;mplProductCatalog:Staged;$uidGroup
+;MPH1911102114;Others 4;MPH1911102;mplProductCatalog:Staged;$uidGroup
+;MPH1911102115;Others 5;MPH1911102;mplProductCatalog:Staged;$uidGroup
+;MPH1911102116;Pendants;MPH1911102;mplProductCatalog:Staged;$uidGroup
+;MPH1911102117;Rings;MPH1911102;mplProductCatalog:Staged;$uidGroup
+;MPH1911102118;Sets;MPH1911102;mplProductCatalog:Staged;$uidGroup
+;MPH1911102119;Toe-rings;MPH1911102;mplProductCatalog:Staged;$uidGroup
+;MPH1911102120;Waistband;MPH1911102;mplProductCatalog:Staged;$uidGroup
+##########
+;MPH1912100100;Anklets;MPH1912100;mplProductCatalog:Staged;$uidGroup
+;MPH1912100101;Armlet;MPH1912100;mplProductCatalog:Staged;$uidGroup
+;MPH1912100102;Bangle;MPH1912100;mplProductCatalog:Staged;$uidGroup
+;MPH1912100103;Bracelets;MPH1912100;mplProductCatalog:Staged;$uidGroup
+;MPH1912100104;Chains;MPH1912100;mplProductCatalog:Staged;$uidGroup
+;MPH1912100105;Earrings;MPH1912100;mplProductCatalog:Staged;$uidGroup
+;MPH1912100106;Headpiece;MPH1912100;mplProductCatalog:Staged;$uidGroup
+;MPH1912100107;Kada;MPH1912100;mplProductCatalog:Staged;$uidGroup
+;MPH1912100108;Mangalsutras ;MPH1912100;mplProductCatalog:Staged;$uidGroup
+;MPH1912100109;Necklaces;MPH1912100;mplProductCatalog:Staged;$uidGroup
+;MPH1912100110;Nosering & Nosepin;MPH1912100;mplProductCatalog:Staged;$uidGroup
+;MPH1912100111;Other Gifts;MPH1912100;mplProductCatalog:Staged;$uidGroup
+;MPH1912100112;Others 1;MPH1912100;mplProductCatalog:Staged;$uidGroup
+;MPH1912100113;Others 2;MPH1912100;mplProductCatalog:Staged;$uidGroup
+;MPH1912100114;Others 3;MPH1912100;mplProductCatalog:Staged;$uidGroup
+;MPH1912100115;Others 4;MPH1912100;mplProductCatalog:Staged;$uidGroup
+;MPH1912100116;Others 5;MPH1912100;mplProductCatalog:Staged;$uidGroup
+;MPH1912100117;Pendants;MPH1912100;mplProductCatalog:Staged;$uidGroup
+;MPH1912100118;Rings;MPH1912100;mplProductCatalog:Staged;$uidGroup
+;MPH1912100119;Sets;MPH1912100;mplProductCatalog:Staged;$uidGroup
+;MPH1912100120;Toe-rings;MPH1912100;mplProductCatalog:Staged;$uidGroup
+;MPH1912100121;Waistband;MPH1912100;mplProductCatalog:Staged;$uidGroup
+
+;MPH1912101100;Anklets;MPH1912101;mplProductCatalog:Staged;$uidGroup
+;MPH1912101101;Armlet;MPH1912101;mplProductCatalog:Staged;$uidGroup
+;MPH1912101102;Bangle;MPH1912101;mplProductCatalog:Staged;$uidGroup
+;MPH1912101103;Bracelets;MPH1912101;mplProductCatalog:Staged;$uidGroup
+;MPH1912101104;Chains;MPH1912101;mplProductCatalog:Staged;$uidGroup
+;MPH1912101105;Earrings;MPH1912101;mplProductCatalog:Staged;$uidGroup
+;MPH1912101106;Headpiece;MPH1912101;mplProductCatalog:Staged;$uidGroup
+;MPH1912101107;Kada;MPH1912101;mplProductCatalog:Staged;$uidGroup
+;MPH1912101108;Mangalsutras ;MPH1912101;mplProductCatalog:Staged;$uidGroup
+;MPH1912101109;Necklaces;MPH1912101;mplProductCatalog:Staged;$uidGroup
+;MPH1912101110;Nosering & Nosepin;MPH1912101;mplProductCatalog:Staged;$uidGroup
+;MPH1912101111;Other Gifts;MPH1912101;mplProductCatalog:Staged;$uidGroup
+;MPH1912101112;Others 1;MPH1912101;mplProductCatalog:Staged;$uidGroup
+;MPH1912101113;Others 2;MPH1912101;mplProductCatalog:Staged;$uidGroup
+;MPH1912101114;Others 3;MPH1912101;mplProductCatalog:Staged;$uidGroup
+;MPH1912101115;Others 4;MPH1912101;mplProductCatalog:Staged;$uidGroup
+;MPH1912101116;Others 5;MPH1912101;mplProductCatalog:Staged;$uidGroup
+;MPH1912101117;Pendants;MPH1912101;mplProductCatalog:Staged;$uidGroup
+;MPH1912101118;Rings;MPH1912101;mplProductCatalog:Staged;$uidGroup
+;MPH1912101119;Sets;MPH1912101;mplProductCatalog:Staged;$uidGroup
+;MPH1912101120;Toe-rings;MPH1912101;mplProductCatalog:Staged;$uidGroup
+;MPH1912101121;Waistband;MPH1912101;mplProductCatalog:Staged;$uidGroup
+########
+
+;MPH1913100100;Anklets;MPH1913100;mplProductCatalog:Staged;$uidGroup
+;MPH1913100101;Armlet;MPH1913100;mplProductCatalog:Staged;$uidGroup
+;MPH1913100102;Bangle;MPH1913100;mplProductCatalog:Staged;$uidGroup
+;MPH1913100103;Bracelets;MPH1913100;mplProductCatalog:Staged;$uidGroup
+;MPH1913100104;Chains;MPH1913100;mplProductCatalog:Staged;$uidGroup
+;MPH1913100105;Earrings;MPH1913100;mplProductCatalog:Staged;$uidGroup
+;MPH1913100106;Headpiece;MPH1913100;mplProductCatalog:Staged;$uidGroup
+;MPH1913100107;Kada;MPH1913100;mplProductCatalog:Staged;$uidGroup
+;MPH1913100108;Mangalsutras;MPH1913100;mplProductCatalog:Staged;$uidGroup
+;MPH1913100109;Necklaces;MPH1913100;mplProductCatalog:Staged;$uidGroup
+;MPH1913100110;Nosering & Nosepin;MPH1913100;mplProductCatalog:Staged;$uidGroup
+;MPH1913100111;Others 1;MPH1913100;mplProductCatalog:Staged;$uidGroup
+;MPH1913100112;Others 2;MPH1913100;mplProductCatalog:Staged;$uidGroup
+;MPH1913100113;Others 3;MPH1913100;mplProductCatalog:Staged;$uidGroup
+;MPH1913100114;Others 4;MPH1913100;mplProductCatalog:Staged;$uidGroup
+;MPH1913100115;Others 5;MPH1913100;mplProductCatalog:Staged;$uidGroup
+;MPH1913100116;Pendants;MPH1913100;mplProductCatalog:Staged;$uidGroup
+;MPH1913100117;Rings;MPH1913100;mplProductCatalog:Staged;$uidGroup
+;MPH1913100118;Sets;MPH1913100;mplProductCatalog:Staged;$uidGroup
+;MPH1913100119;Toe-rings;MPH1913100;mplProductCatalog:Staged;$uidGroup
+;MPH1913100120;Waistband;MPH1913100;mplProductCatalog:Staged;$uidGroup
+##########
+;MPH1913101100;Anklets;MPH1913101;mplProductCatalog:Staged;$uidGroup
+;MPH1913101101;Armlet;MPH1913101;mplProductCatalog:Staged;$uidGroup
+;MPH1913101102;Bangle;MPH1913101;mplProductCatalog:Staged;$uidGroup
+;MPH1913101103;Bracelets;MPH1913101;mplProductCatalog:Staged;$uidGroup
+;MPH1913101104;Chains;MPH1913101;mplProductCatalog:Staged;$uidGroup
+;MPH1913101105;Earrings;MPH1913101;mplProductCatalog:Staged;$uidGroup
+;MPH1913101106;Headpiece;MPH1913101;mplProductCatalog:Staged;$uidGroup
+;MPH1913101107;Kada;MPH1913101;mplProductCatalog:Staged;$uidGroup
+;MPH1913101108;Mangalsutras;MPH1913101;mplProductCatalog:Staged;$uidGroup
+;MPH1913101109;Necklaces;MPH1913101;mplProductCatalog:Staged;$uidGroup
+;MPH1913101110;Nosering & Nosepin;MPH1913101;mplProductCatalog:Staged;$uidGroup
+;MPH1913101111;Others 1;MPH1913101;mplProductCatalog:Staged;$uidGroup
+;MPH1913101112;Others 2;MPH1913101;mplProductCatalog:Staged;$uidGroup
+;MPH1913101113;Others 3;MPH1913101;mplProductCatalog:Staged;$uidGroup
+;MPH1913101114;Others 4;MPH1913101;mplProductCatalog:Staged;$uidGroup
+;MPH1913101115;Others 5;MPH1913101;mplProductCatalog:Staged;$uidGroup
+;MPH1913101116;Pendants;MPH1913101;mplProductCatalog:Staged;$uidGroup
+;MPH1913101117;Rings;MPH1913101;mplProductCatalog:Staged;$uidGroup
+;MPH1913101118;Sets;MPH1913101;mplProductCatalog:Staged;$uidGroup
+;MPH1913101119;Toe-rings;MPH1913101;mplProductCatalog:Staged;$uidGroup
+;MPH1913101120;Waistband;MPH1913101;mplProductCatalog:Staged;$uidGroup
+#####
+;MPH1913102100;Anklets;MPH1913102;mplProductCatalog:Staged;$uidGroup
+;MPH1913102101;Armlet;MPH1913102;mplProductCatalog:Staged;$uidGroup
+;MPH1913102102;Bangle;MPH1913102;mplProductCatalog:Staged;$uidGroup
+;MPH1913102103;Bracelets;MPH1913102;mplProductCatalog:Staged;$uidGroup
+;MPH1913102104;Chains;MPH1913102;mplProductCatalog:Staged;$uidGroup
+;MPH1913102105;Earrings;MPH1913102;mplProductCatalog:Staged;$uidGroup
+;MPH1913102106;Headpiece;MPH1913102;mplProductCatalog:Staged;$uidGroup
+;MPH1913102107;Kada;MPH1913102;mplProductCatalog:Staged;$uidGroup
+;MPH1913102108;Mangalsutras;MPH1913102;mplProductCatalog:Staged;$uidGroup
+;MPH1913102109;Necklaces;MPH1913102;mplProductCatalog:Staged;$uidGroup
+;MPH1913102110;Nosering & Nosepin;MPH1913102;mplProductCatalog:Staged;$uidGroup
+;MPH1913102111;Others 1;MPH1913102;mplProductCatalog:Staged;$uidGroup
+;MPH1913102112;Others 2;MPH1913102;mplProductCatalog:Staged;$uidGroup
+;MPH1913102113;Others 3;MPH1913102;mplProductCatalog:Staged;$uidGroup
+;MPH1913102114;Others 4;MPH1913102;mplProductCatalog:Staged;$uidGroup
+;MPH1913102115;Others 5;MPH1913102;mplProductCatalog:Staged;$uidGroup
+;MPH1913102116;Pendants;MPH1913102;mplProductCatalog:Staged;$uidGroup
+;MPH1913102117;Rings;MPH1913102;mplProductCatalog:Staged;$uidGroup
+;MPH1913102118;Sets;MPH1913102;mplProductCatalog:Staged;$uidGroup
+;MPH1913102119;Toe-rings;MPH1913102;mplProductCatalog:Staged;$uidGroup
+;MPH1913102120;Waistband;MPH1913102;mplProductCatalog:Staged;$uidGroup
+######
+;MPH1914101100;Anklets;MPH1914100;mplProductCatalog:Staged;$uidGroup
+;MPH1914101101;Armlet;MPH1914100;mplProductCatalog:Staged;$uidGroup
+;MPH1914101102;Bangle;MPH1914100;mplProductCatalog:Staged;$uidGroup
+;MPH1914101103;Bracelets;MPH1914100;mplProductCatalog:Staged;$uidGroup
+;MPH1914101104;Chains;MPH1914100;mplProductCatalog:Staged;$uidGroup
+;MPH1914101105;Earrings;MPH1914100;mplProductCatalog:Staged;$uidGroup
+;MPH1914101106;Headpiece;MPH1914100;mplProductCatalog:Staged;$uidGroup
+;MPH1914101107;Kada;MPH1914100;mplProductCatalog:Staged;$uidGroup
+;MPH1914101108;Mangalsutras ;MPH1914100;mplProductCatalog:Staged;$uidGroup
+;MPH1914101109;Necklaces;MPH1914100;mplProductCatalog:Staged;$uidGroup
+;MPH1914101110;Nosering & Nosepin;MPH1914100;mplProductCatalog:Staged;$uidGroup
+;MPH1914101111;Others 1;MPH1914100;mplProductCatalog:Staged;$uidGroup
+;MPH1914101112;Others 2;MPH1914100;mplProductCatalog:Staged;$uidGroup
+;MPH1914101113;Others 3;MPH1914100;mplProductCatalog:Staged;$uidGroup
+;MPH1914101114;Others 4;MPH1914100;mplProductCatalog:Staged;$uidGroup
+;MPH1914101115;Others 5;MPH1914100;mplProductCatalog:Staged;$uidGroup
+;MPH1914101116;Pendants;MPH1914100;mplProductCatalog:Staged;$uidGroup
+;MPH1914101117;Rings;MPH1914100;mplProductCatalog:Staged;$uidGroup
+;MPH1914101118;Sets;MPH1914100;mplProductCatalog:Staged;$uidGroup
+;MPH1914101119;Toe-rings;MPH1914100;mplProductCatalog:Staged;$uidGroup
+;MPH1914101120;Waistband;MPH1912101;mplProductCatalog:Staged;$uidGroup
+
+
+;MPH1914100100;Anklets;MPH1914101;mplProductCatalog:Staged;$uidGroup
+;MPH1914100101;Armlet;MPH1914101;mplProductCatalog:Staged;$uidGroup
+;MPH1914100102;Bangle;MPH1914101;mplProductCatalog:Staged;$uidGroup
+;MPH1914100103;Bracelets;MPH1914101;mplProductCatalog:Staged;$uidGroup
+;MPH1914100104;Chains;MPH1914101;mplProductCatalog:Staged;$uidGroup
+;MPH1914100105;Earrings;MPH1914101;mplProductCatalog:Staged;$uidGroup
+;MPH1914100106;Headpiece;MPH1914101;mplProductCatalog:Staged;$uidGroup
+;MPH1914100107;Kada;MPH1914101;mplProductCatalog:Staged;$uidGroup
+;MPH1914100108;Mangalsutras ;MPH1914101;mplProductCatalog:Staged;$uidGroup
+;MPH1914100109;Necklaces;MPH1914101;mplProductCatalog:Staged;$uidGroup
+;MPH1914100110;Nosering & Nosepin;MPH1914101;mplProductCatalog:Staged;$uidGroup
+;MPH1914100111;Others 1;MPH1914101;mplProductCatalog:Staged;$uidGroup
+;MPH1914100112;Others 2;MPH1914101;mplProductCatalog:Staged;$uidGroup
+;MPH1914100113;Others 3;MPH1914101;mplProductCatalog:Staged;$uidGroup
+;MPH1914100114;Others 4;MPH1914101;mplProductCatalog:Staged;$uidGroup
+;MPH1914100115;Others 5;MPH1914101;mplProductCatalog:Staged;$uidGroup
+;MPH1914100116;Pendants;MPH1914101;mplProductCatalog:Staged;$uidGroup
+;MPH1914100117;Rings;MPH1914101;mplProductCatalog:Staged;$uidGroup
+;MPH1914100118;Sets;MPH1914101;mplProductCatalog:Staged;$uidGroup
+;MPH1914100119;Toe-rings;MPH1914101;mplProductCatalog:Staged;$uidGroup
+;MPH1912101120;Waistband;MPH1914101;mplProductCatalog:Staged;$uidGroup
+######
+;MPH1915100100;Anklets;MPH1915100;mplProductCatalog:Staged;$uidGroup
+;MPH1915100101;Armlet;MPH1915100;mplProductCatalog:Staged;$uidGroup
+;MPH1915100102;Bangle;MPH1915100;mplProductCatalog:Staged;$uidGroup
+;MPH1915100103;Bracelets;MPH1915100;mplProductCatalog:Staged;$uidGroup
+;MPH1915100104;Chains;MPH1915100;mplProductCatalog:Staged;$uidGroup
+;MPH1915100105;Earrings;MPH1915100;mplProductCatalog:Staged;$uidGroup
+;MPH1915100106;Headpiece;MPH1915100;mplProductCatalog:Staged;$uidGroup
+;MPH1915100107;Kada;MPH1915100;mplProductCatalog:Staged;$uidGroup
+;MPH1915100108;Mangalsutras;MPH1915100;mplProductCatalog:Staged;$uidGroup
+;MPH1915100109;Necklaces;MPH1915100;mplProductCatalog:Staged;$uidGroup
+;MPH1915100110;Nosering & Nosepin;MPH1915100;mplProductCatalog:Staged;$uidGroup
+;MPH1915100111;Others 1;MPH1915100;mplProductCatalog:Staged;$uidGroup
+;MPH1915100112;Others 2;MPH1915100;mplProductCatalog:Staged;$uidGroup
+;MPH1915100113;Others 3;MPH1915100;mplProductCatalog:Staged;$uidGroup
+;MPH1915100114;Others 4;MPH1915100;mplProductCatalog:Staged;$uidGroup
+;MPH1915100115;Others 5;MPH1915100;mplProductCatalog:Staged;$uidGroup
+;MPH1915100116;Pendants;MPH1915100;mplProductCatalog:Staged;$uidGroup
+;MPH1915100117;Rings;MPH1915100;mplProductCatalog:Staged;$uidGroup
+;MPH1915100118;Sets;MPH1915100;mplProductCatalog:Staged;$uidGroup
+;MPH1915100119;Toe-rings;MPH1915100;mplProductCatalog:Staged;$uidGroup
+;MPH1915100120;Waistband;MPH1915100;mplProductCatalog:Staged;$uidGroup
+######
+;MPH1915101100;Anklets;MPH1915101;mplProductCatalog:Staged;$uidGroup
+;MPH1915101101;Armlet;MPH1915101;mplProductCatalog:Staged;$uidGroup
+;MPH1915101102;Bangle;MPH1915101;mplProductCatalog:Staged;$uidGroup
+;MPH1915101103;Bracelets;MPH1915101;mplProductCatalog:Staged;$uidGroup
+;MPH1915101104;Chains;MPH1915101;mplProductCatalog:Staged;$uidGroup
+;MPH1915101105;Earrings;MPH1915101;mplProductCatalog:Staged;$uidGroup
+;MPH1915101106;Headpiece;MPH1915101;mplProductCatalog:Staged;$uidGroup
+;MPH1915101107;Kada;MPH1915101;mplProductCatalog:Staged;$uidGroup
+;MPH1915101108;Mangalsutras;MPH1915101;mplProductCatalog:Staged;$uidGroup
+;MPH1915101109;Necklaces;MPH1915101;mplProductCatalog:Staged;$uidGroup
+;MPH1915101110;Nosering & Nosepin;MPH1915101;mplProductCatalog:Staged;$uidGroup
+;MPH1915101111;Others 1;MPH1915101;mplProductCatalog:Staged;$uidGroup
+;MPH1915101112;Others 2;MPH1915101;mplProductCatalog:Staged;$uidGroup
+;MPH1915101113;Others 3;MPH1915101;mplProductCatalog:Staged;$uidGroup
+;MPH1915101114;Others 4;MPH1915101;mplProductCatalog:Staged;$uidGroup
+;MPH1915101115;Others 5;MPH1915101;mplProductCatalog:Staged;$uidGroup
+;MPH1915101116;Pendants;MPH1915101;mplProductCatalog:Staged;$uidGroup
+;MPH1915101117;Rings;MPH1915101;mplProductCatalog:Staged;$uidGroup
+;MPH1915101118;Sets;MPH1915101;mplProductCatalog:Staged;$uidGroup
+;MPH1915101119;Toe-rings;MPH1915101;mplProductCatalog:Staged;$uidGroup
+;MPH1915101120;Waistband;MPH1915101;mplProductCatalog:Staged;$uidGroup
+
+INSERT_UPDATE Category;code[unique=true];name[lang=en];$supercategories;$catalogVersion;allowedPrincipals(uid)
+
+;MSH19;Fine Jewellery;MSH1;mplProductCatalog:Staged;$uidGroup 
+;MSH1910;"Coins,Bars,Stones";MSH19;mplProductCatalog:Staged;$uidGroup
+;MSH1911;Diamond Jewellery;MSH19;mplProductCatalog:Staged;$uidGroup
+;MSH1912;Gold Jewellery;MSH19;mplProductCatalog:Staged;$uidGroup
+;MSH1913;Platinum Jewellery;MSH19;mplProductCatalog:Staged;$uidGroup
+;MSH1914;Semi-Precious Jewellery;MSH19;mplProductCatalog:Staged;$uidGroup
+;MSH1915;Silver Jewellery;MSH19;mplProductCatalog:Staged;$uidGroup
+
+
+;MSH1910100;Bars;MSH1910;mplProductCatalog:Staged;$uidGroup
+;MSH1910101;Coins;MSH1910;mplProductCatalog:Staged;$uidGroup
+;MSH1910102;Stones;MSH1910;mplProductCatalog:Staged;$uidGroup
+;MSH1911100;Gold;MSH1911;mplProductCatalog:Staged;$uidGroup
+;MSH1911101;Silver;MSH1911;mplProductCatalog:Staged;$uidGroup
+;MSH1911102;Solitaire;MSH1911;mplProductCatalog:Staged;$uidGroup
+;MSH1912100;Plain;MSH1912;mplProductCatalog:Staged;$uidGroup
+;MSH1912101;Stone Studded;MSH1912;mplProductCatalog:Staged;$uidGroup
+;MSH1913100;Diamond Studded;MSH1913;mplProductCatalog:Staged;$uidGroup
+;MSH1913101;Plain;MSH1913;mplProductCatalog:Staged;$uidGroup
+;MSH1913102;Stone Studded;MSH1913;mplProductCatalog:Staged;$uidGroup
+;MSH1914100;Birthstone;MSH1914;mplProductCatalog:Staged;$uidGroup
+;MSH1914101;Others;MSH1914;mplProductCatalog:Staged;$uidGroup
+;MSH1915100;Plain;MSH1915;mplProductCatalog:Staged;$uidGroup
+;MSH1915101;Stone Studded;MSH1915;mplProductCatalog:Staged;$uidGroup
+
+
+
+INSERT_UPDATE Category;code[unique=true];name[lang=en];$supercategories;$catalogVersion;allowedPrincipals(uid)
+
+;MBH19;Fine Jewellery;MBH1;mplProductCatalog:Staged;admingroup
+;MBH19L00001;Tanishq;MBH19;mplProductCatalog:Staged;admingroup
+;MBH19L00002;Anajali Jewellery;MBH19;mplProductCatalog:Staged;admingroup
+;MBH19L00003;GILI;MBH19;mplProductCatalog:Staged;admingroup
+;MBH19L00004;LUCERA;MBH19;mplProductCatalog:Staged;admingroup
+;MBH19L00005;Gleem Baguette;MBH19;mplProductCatalog:Staged;admingroup
+;MBH19L00006;NAKSHATRA;MBH19;mplProductCatalog:Staged;admingroup
+;MBH19L00007;ASMI;MBH19;mplProductCatalog:Staged;admingroup
+;MBH19L00008;NIRVANA;MBH19;mplProductCatalog:Staged;admingroup
+;MBH19L00009;SHUDDHI;MBH19;mplProductCatalog:Staged;admingroup
+
+
+
+

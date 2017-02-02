@@ -1,0 +1,44 @@
+# ImpEx for Importing Products Stock Levels and Warehouses
+
+# Macros / Replacement Parameter definitions
+$productCatalog=mplProductCatalog
+$productCatalogName=Marketplace Product Catalog
+$vendor=TATA
+$warehouse=mpl_warehouse
+
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+
+
+INSERT_UPDATE Vendor;code[unique=true]
+;$vendor
+
+INSERT_UPDATE Warehouse;code[unique=true];vendor(code);default[default=true]
+;mpl_warehouse;$vendor
+
+# Set product approval status to Approved only for those products that have prices.
+$approved=approvalstatus(code)[default='approved']
+
+UPDATE Product;code[unique=true];$approved;$catalogVersion
+;MP000000000595001;
+;MP000000000595002;
+;MP000000000595003;
+;MP000000000595004;
+;MP000000000595005;
+;MP000000000595006;
+;MP000000000595007;
+;MP000000000595008;
+;MP000000000595009;
+;MP000000000595010;
+
+
+INSERT_UPDATE StockLevel;available;warehouse(code)[unique=true];inStockStatus(code);maxPreOrder;maxStockLevelHistoryCount;overSelling;preOrder;productCode[unique=false];reserved;sellerArticleSKU[unique=true]
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000000595001;0;123651Tanishq2200060021
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000000595002;0;123651Tanishq2200060022
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000000595003;0;123651Tanishq2200060023
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000000595004;0;123654diya2200060024
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000000595005;0;123655Anjali2200060025
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000000595006;0;123656parineeta22000600
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000000595007;0;123657Anjali2200060027
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000000595008;0;123658Tanishq2200060028
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000000595009;0;123659diya2200060029
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000000595010;0;123651Tanishq2200060030

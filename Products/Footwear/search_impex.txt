@@ -1,0 +1,31 @@
+#
+# Import the Solr configuration for the store
+#
+$prefix=mpl
+$productCatalog=$prefixProductCatalog
+$catalogVersions=catalogVersions(catalog(id),version);
+$serverConfigName=$prefixSolrServerConfig
+$indexConfigName=$prefixSolrIndexConfig
+$searchConfigName=$prefixPageSize
+$facetSearchConfigName=$prefixIndex
+$facetSearchConfigDescription=Marketplace Solr Index
+$searchIndexNamePrefix=$prefix
+$solrIndexedType=$prefixProductType
+$indexBaseSite=$prefix
+$indexLanguages=en
+$indexCurrencies=INR
+$priceRangeINR=$prefixPriceRangeINR
+$classAttributeAssignment=classAttributeAssignment(classificationAttribute(code),classificationClass(code))
+$classificationAttributeAssignments=classificationAttributeAssignments(classificationAttribute(code),classificationClass(code))
+
+
+#
+# Setup the Solr server, indexer, and search configs
+#
+
+# Create the solr server configuration
+INSERT_UPDATE SolrServerConfig;name[unique=true];mode(code);embeddedMaster
+;$serverConfigName;embedded;true
+
+INSERT_UPDATE SolrFacetSearchConfig;name[unique=true];SolrServerConfig(mode(code))
+;$facetSearchConfigName;embedded

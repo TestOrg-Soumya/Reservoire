@@ -1,0 +1,30 @@
+#{defaultImpexProductHeader}
+$productCatalog=mplProductCatalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$supercategories=supercategories(code, $catalogVersion)
+$baseProduct=baseProduct(code,$catalogVersion)
+$approved=approvalstatus(code)[default='approved']
+$unit=unit(code)[default='pieces']
+$clAttrModifiers=system='pcmClassification',version='1',translator=de.hybris.platform.catalog.jalo.classification.impex.ClassificationAttributeTranslator,lang=en
+$catalogversion=catalogversion(catalog(id[default=mplProductCatalog]),version[default='Staged'])[unique=true,default=mplProductCatalog:Staged]
+$lang=en          
+INSERT_UPDATE PcmProductVariant	;code[unique=true,alias=PIMID]	;name[lang=$lang]					;title								;articleMiniDescription		;articleDescription						;createdOn[dateformat=yyyyMMddHHmmss]	;size	;colour	;baseProduct(code,$catalogVersion)	;reviews			;mrp;$supercategories					;deliveryModes(code)			;capacity;$catalogversion;$approved;$unit;
+								;MPF220006011					;Luca Fashion Girls Sandals RED		;Luca Fashion Girls Sandals RED		;Girls Casual				;Luca Fashion Girls Casual Sandals RED	;20151104051422							;7		;RED	;MPF22000601						;Excellent product	;150;MPH1310108,MSH1312103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPF220006012					;Luca Fashion Girls Sandals RED		;Luca Fashion Girls Sandals RED		;Girls Casual				;Luca Fashion Girls Casual Sandals RED	;20151105051422							;8		;RED	;MPF22000601						;Excellent product	;200;MPH1310108,MSH1312103,MBH13F00001	;home-delivery,express-delivery	;
+
+								;MPF220006013					;Luca Fashion Girls Sandals RED		;Luca Fashion Girls Sandals RED		;Girls Casual				;Luca Fashion Girls Casual Sandals RED	;20151106051422							;9		;RED	;MPF22000601						;Excellent product	;250;MPH1310108,MSH1312103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPF220006014					;Luca Fashion Girls Sandals BLUE	;Luca Fashion Girls Sandals BLUE	;Girls Casual				;Luca Fashion Girls Casual Sandals BLUE	;20151104051422							;9		;BLUE	;MPF22000601						;Excellent product	;300;MPH1310108,MSH1312103,MBH13F00001	;home-delivery,express-delivery	;
+
+								;MPF220006015					;Luca Fashion Girls Sandals BLUE	;Luca Fashion Girls Sandals BLUE	;Girls Casual				;Luca Fashion Girls Casual Sandals BLUE	;20151105051422							;8		;BLUE	;MPF22000601						;Excellent product	;350;MPH1310108,MSH1312103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPF220006016					;Luca Fashion Girls Sandals BLUE	;Luca Fashion Girls Sandals BLUE	;Girls Casual				;Luca Fashion Girls Casual Sandals BLUE	;20151106051422							;7		;BLUE	;MPF22000601						;Excellent product	;400;MPH1310108,MSH1312103,MBH13F00001	;home-delivery,express-delivery	;
+
+								;MPF220006021					;Luca Fashion Boys Sandals RED		;Luca Fashion Boys Sandals RED		;Boys Casual				;Luca Fashion Boys Casual Sandals RED	;20151104051422							;7		;RED	;MPF22000602						;Excellent product	;150;MPH1310108,MSH1312103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPF220006022					;Luca Fashion Boys Sandals RED		;Luca Fashion Boys Sandals RED		;Boys Casual				;Luca Fashion Boys Casual Sandals RED	;20151105051422							;8		;RED	;MPF22000602						;Excellent product	;200;MPH1310108,MSH1312103,MBH13F00001	;home-delivery,express-delivery	;
+
+								;MPF220006023					;Luca Fashion Boys Sandals RED		;Luca Fashion Boys Sandals RED		;Boys Casual				;Luca Fashion Boys Casual Sandals RED	;20151106051422							;9		;RED	;MPF22000602						;Excellent product	;250;MPH1310108,MSH1312103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPF220006024					;Luca Fashion Boys Sandals BLUE		;Luca Fashion Boys Sandals BLUE		;Boys Casual				;Luca Fashion Boys Casual Sandals BLUE	;20151104051422							;9		;BLUE	;MPF22000602						;Excellent product	;300;MPH1310108,MSH1312103,MBH13F00001	;home-delivery,express-delivery	;
+
+								;MPF220006025					;Luca Fashion Boys Sandals BLUE		;Luca Fashion Boys Sandals BLUE		;Boys Casual				;Luca Fashion Boys Casual Sandals BLUE	;20151105051422							;8		;BLUE	;MPF22000602						;Excellent product	;350;MPH1310108,MSH1312103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPF220006026					;Luca Fashion Boys Sandals BLUE		;Luca Fashion Boys Sandals BLUE		;Boys Casual				;Luca Fashion Boys Casual Sandals BLUE	;20151106051422							;7		;BLUE	;MPF22000602						;Excellent product	;400;MPH1310108,MSH1312103,MBH13F00001	;home-delivery,express-delivery	;
+
+

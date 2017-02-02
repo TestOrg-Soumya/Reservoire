@@ -1,0 +1,25 @@
+#{defaultImpexProductHeader}
+            	$productCatalog=mplProductCatalog
+				$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+				$supercategories=supercategories(code, $catalogVersion)
+				$baseProduct=baseProduct(code,$catalogVersion)
+				$approved=approvalstatus(code)[default='approved']
+				$unit=unit(code)[default='pieces']
+				$clAttrModifiers=system='pcmClassification',version='1',translator=de.hybris.platform.catalog.jalo.classification.impex.ClassificationAttributeTranslator,lang=en
+				$catalogversion=catalogversion(catalog(id[default=mplProductCatalog]),version[default='Staged'])[unique=true,default=mplProductCatalog:Staged]
+				$variantType=variantType(code)[default='PcmProductVariant']
+    			$lang=en
+    		      
+				
+INSERT_UPDATE Product;code[unique=true];name[lang=$lang];title;articleMiniDescription;articleDescription;createdOn[dateformat=yyyyMMddHHmmss];reviews;mrp;$supercategories[cellDecorator=com.tisl.mpl.core.celldecorator.LuxuryProductCategoryDecorator];deliveryModes(code);variantType(code);luxIndicator(code)[default='marketplace'];sequenceId[translator=de.hybris.platform.acceleratorservices.dataimport.batch.converter.SequenceIdTranslator];$catalogversion;$approved;$unit
+
+# code,name,Title,articleMiniDescription,articleDescription,createdOn,reviews,mrp,supercategories,DeliveryModes,VariantType,luxIndicator
+;MP000001110987011;GILI DIAMOND PENDANT PP15045           ; GILI DIAMOND PENDANT PP15045            ;GILI DIAMOND PENDANT PP15045            ;GILI DIAMOND PENDANT PP15045           ;20161215204012 ;Execellent; 20000   ; MPH1911101116,MSH1911100,MBH19L00003;home-delivery;PcmProductVariant;
+;MP000001110987012;LUCERA SILVER BRACELET                 ;LUCERA SILVER BRACELET                   ;LUCERA SILVER BRACELET                  ;LUCERA SILVER BRACELET                 ;20161215204012 ;Execellent; 20001   ; MPH1912101117,MSH1912101,MBH19L00004;home-delivery;PcmProductVariant;
+;MP000001110987013;Senco Gold Golden Coloured Bangle      ;Senco Gold Golden Coloured Bangle        ;Senco Gold Golden Coloured Bangle       ;Senco Gold Golden Coloured Bangle      ;20161215204012 ;Execellent; 20002   ; MPH1913100118,MSH1913101,MBH19L00002;home-delivery;PcmProductVariant;
+;MP000001110987014;NAKSHATRA DIAMOND MANGALSUTRA ADN00063 ;NAKSHATRA DIAMOND MANGALSUTRA ADN00063   ;MAYA GOLD NECKLACE RZN00030_22KT        ;MAYA GOLD NECKLACE RZN00030_22KT       ;20161215204012 ;Execellent; 20003   ; MPH1912101109,MSH1912100,MBH19L00006;home-delivery;PcmProductVariant;
+;MP000001110987015;ASMI DIAMOND BANGLE                 	  ; ASMI DIAMOND BANGLE                		;ASMI DIAMOND BANGLE                	 ;ASMI DIAMOND BANGLE                    ;20161215204012 ;Execellent; 20004   ; MPH1913101105,MSH1913102,MBH19L00007;home-delivery;PcmProductVariant;
+;MP000001110987016;NIRVANA DIAMOND RING IRL039            ; NIRVANA DIAMOND RING IRL039             ;NIRVANA DIAMOND RING IRL039             ;NIRVANA DIAMOND RING IRL039            ;20161215204012 ;Execellent; 20005   ; MPH1914100103,MSH1914101,MBH19L00008;home-delivery;PcmProductVariant;
+;MP000001110987017;SHUDDHI DIAMOND EARRINGS VDE00026      ;SHUDDHI DIAMOND EARRINGS VDE00026        ;SHUDDHI DIAMOND EARRINGS VDE00026       ;SHUDDHI DIAMOND EARRINGS VDE00026      ;20161215204012 ;Execellent; 20006   ; MPH1911102117,MSH1911100,MBH19L00009;home-delivery;PcmProductVariant;
+
+

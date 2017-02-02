@@ -1,0 +1,29 @@
+#{defaultImpexProductHeader}
+            	$productCatalog=mplProductCatalog
+				$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+				$supercategories=supercategories(code, $catalogVersion)
+				$baseProduct=baseProduct(code,$catalogVersion)
+				$approved=approvalstatus(code)[default='approved']
+				$unit=unit(code)[default='pieces']
+				$clAttrModifiers=system='pcmClassification',version='1',translator=de.hybris.platform.catalog.jalo.classification.impex.ClassificationAttributeTranslator,lang=en
+				$catalogversion=catalogversion(catalog(id[default=mplProductCatalog]),version[default='Staged'])[unique=true,default=mplProductCatalog:Staged]
+				$variantType=variantType(code)[default='PcmProductVariant']
+    			$lang=en
+    		      
+				
+INSERT_UPDATE Product;code[unique=true];name[lang=$lang];title;articleMiniDescription;articleDescription;createdOn[dateformat=yyyyMMddHHmmss];reviews;mrp;$supercategories[cellDecorator=com.tisl.mpl.core.celldecorator.LuxuryProductCategoryDecorator];deliveryModes(code);variantType(code);luxIndicator(code)[default='marketplace'];sequenceId[translator=de.hybris.platform.acceleratorservices.dataimport.batch.converter.SequenceIdTranslator];$catalogversion;$approved;$unit
+
+# code,name,Title,articleMiniDescription,articleDescription,createdOn,reviews,mrp,supercategories,DeliveryModes,VariantType,luxIndicator
+
+
+;MP000000000595001;THE GLORIOUS SUN DROP EARRINGS;THE GLORIOUS SUN DROP EARRINGS;"Huggie hook closures offer security to the wearer. A combination of high-polished and matte finishes give an attractive appeal to the earrings";"Huggie hook closures offer security to the wearer. A combination of high-polished and matte finishes give an attractive appeal to the earrings";20161214171212;Beautiful;14514;MPH1911100105,MSH1911100,MBH19L00001;home-delivery;PcmProductVariant;
+;MP000000000595002;THE NABHA RING;THE NABHA RING;"The ring consists of red diamond studded at its centre.A combination of high-polished diamond will give an attractive look to your hand";"The ring consists of red diamond studded at its centre.A combination of high-polished diamond will give an attractive to your hand";20161214171212;Beautiful;21222;MPH1911100117,MSH1911100,MBH19L00002;home-delivery;PcmProductVariant;
+;MP000000000595003;THE ATRYN BANGLE;THE ATRYN BANGLE;Bangles studded with small white and red stones and high polished and finishing will be magnificient;Bangles studded with small white and red stones and high polished and finishinmg will be magnificient;20161214171212;Beautiful;25000;MPH1911101102,MSH1912101,MBH19L00003;home-delivery;PcmProductVariant;
+;MP000000000595004;THE KALAKRITI BANGLE;THE KALAKRITI BANGLE;Bangles studded with small green and red stones and high polished and finishing will be magnificient;Bangles studded with small green and red stones and high polished and finishing will be magnificient;20161214171212;Beautiful;18500;MPH1911101102,MSH1912101,MBH19L00004;home-delivery;PcmProductVariant;
+;MP000000000595005;THE SYMPHONIC RAAGA BRACELET;THE SYMPHONIC RAAGA BRACELET;THE SYMPHONIC RAAGA BRACELET;THE SYMPHONIC RAAGA BRACELET;20161214171212;Execellent;27000;MPH1911101103,MSH1913100,MBH19L00002;home-delivery;PcmProductVariant;
+;MP000000000595006;THE SIDDHIVINAYAK BRACELET;THE SIDDHIVINAYAK BRACELET;The bracelet is studded with lord ganesha shape locket at centre ;The bracelet is studded with lord ganesha shape locket at centre;20161214171212;Execellent;25300;MPH1911101103,MSH1913102,MBH19L00005;home-delivery;PcmProductVariant;
+;MP000000000595007;THE SHUBHA NECKLACE;THE SHUBHA NECKLACE;Necklace studded with white stones which are polished and shining; Necklace studded with white stones which are polished and shining;20161214171212;Execellent;22300;MPH1911101109,MSH1913100,MBH19L00002;home-delivery;PcmProductVariant;
+;MP000000000595008;THE RENEE MANGALSUTRA;THE RENEE MANGALSUTRA;THE RENEE MANGALSUTRA;THE RENEE MANGALSUTRA;20161214171212;Execellent;28500;MPH1911101108,MSH1911100,MBH19L00001;home-delivery;PcmProductVariant;
+;MP000000000595009;THE GIOIA RING;THE GIOIA RING;"The ring consists of  coral at its centre.A combination of high-polished coral will give an attractive look to your hand";"The ring consists of  coral at its centre.A combination of high-polished coral will give an attractive look to your hand";20161214171212;Execellent;25300;MPH1911100117,MSH1911100,MBH19L00004;home-delivery;PcmProductVariant;
+;MP000000000595010;THE CHARMING OJASWINI JHUMKA;THE CHARMING OJASWINI JHUMKA;"Huggie hook closures offer security to the wearer. A combination of high-polished and matte finishes give an attractive appeal to the earrings";"Huggie hook closures offer security to the wearer. A combination of high-polished and matte finishes give an attractive appeal to the earrings";20161214171212;Execellent;21200;MPH1911100105,MSH1911100,MBH19L00002;home-delivery;PcmProductVariant;
+
