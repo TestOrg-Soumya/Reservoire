@@ -1,0 +1,54 @@
+#
+# Import the Solr configuration for the store
+#
+$prefix=mpl
+$productCatalog=$prefixProductCatalog
+$catalogVersions=catalogVersions(catalog(id),version);
+$serverConfigName=$prefixSolrServerConfig
+$indexConfigName=$prefixSolrIndexConfig
+$searchConfigName=$prefixPageSize
+$facetSearchConfigName=$prefixIndex
+$facetSearchConfigDescription=Marketplace Solr Index
+$searchIndexNamePrefix=$prefix
+$solrIndexedType=$prefixProductType
+$indexBaseSite=$prefix
+$indexLanguages=en
+$indexCurrencies=INR
+$priceRangeINR=$prefixPriceRangeINR
+$classAttributeAssignment=classAttributeAssignment(classificationAttribute(code),classificationClass(code))
+$classificationAttributeAssignments=classificationAttributeAssignments(classificationAttribute(code),classificationClass(code))
+$lang=en
+
+
+
+INSERT_UPDATE CategorySolrSearchProfile;code[unique=true];categorycode;indexedtype(identifier)
+;MSH1810-luggage;MSH1810;$solrIndexedType
+;MSH1811100-Leather;MSH1811100;$solrIndexedType
+;MSH1811101-NonLeather;MSH1811101;$solrIndexedType
+;MSH1812-OutdoorNSports;MSH1812;$solrIndexedType
+;MSH1812100-Leather;MSH1812100;$solrIndexedType
+;MSH1812101-NonLeather;MSH1812101;$solrIndexedType
+;MSH1813-Kids;MSH1813;$solrIndexedType
+;MSH1813100-School;MSH1813100;$solrIndexedType
+;MSH1813101-Luggage;MSH1813101;$solrIndexedType
+;MSH1814-Accessories;MSH1814;$solrIndexedType
+
+
+INSERT_UPDATE SolrFacetReconfiguration	;facet(name)[unique=true]				;priority	;visible;solrsearchprofiles(code);
+										;uppermaterialtrlg						;1200		;0		;MSH1811100-Leather,MSH1812100-Leather,MSH1814-Accessories
+										;briefcasetypetrlg						;1200		;0		;MSH1810-luggage,MSH1812-OutdoorNSports,MSH1812100-Leather,MSH1812101-NonLeather,MSH1813-Kids,MSH1813100-School,MSH1813101-Luggage,MSH1814-Accessories
+										;duffelbagtypetrlg						;1200		;0		;MSH1810-luggage,MSH1811-Business,MSH1811100-Leather,MSH1811101-NonLeather,MSH1814-Accessories,MSH1812-OutdoorNSports,MSH1812100-Leather,MSH1812101-NonLeather,MSH1813100-School
+                                        ;handletypetrlg							;1200		;0		;MSH1811-Business,MSH1811100-Leather,MSH1811101-NonLeather,MSH1812-OutdoorNSports,MSH1812100-Leather,MSH1812101-NonLeather,MSH1813100-School,MSH1814-Accessories
+                                        ;laptopbagtypetrlg						;1200		;0		;MSH1810-luggage,MSH1812-OutdoorNSports,MSH1812100-Leather,MSH1812101-NonLeather,MSH1813-Kids,MSH1813100-School,MSH1813101-Luggage,MSH1814-Accessories
+                                        ;luggagetypetrlg						;1200		;0		;MSH1811-Business,MSH1811100-Leather,MSH1811101-NonLeather,MSH1812-OutdoorNSports,MSH1812100-Leather,MSH1812101-NonLeather,MSH1813100-School,MSH1814-Accessories
+                                        ;messengerbagtypetrlg					;1200		;0		;MSH1810-luggage,MSH1812-OutdoorNSports,MSH1812100-Leather,MSH1812101-NonLeather,MSH1813-Kids,MSH1813100-School,MSH1813101-Luggage,MSH1814-Accessories
+                                        ;occasiontrlg							;1200		;0		;MSH1811-Business,MSH1811100-Leather,MSH1811101-NonLeather
+                                        ;straptypetrlg							;1200		;0		;MSH1810-luggage,MSH1814-Accessories,MSH1813101-Luggage
+                                        ;strollywheeltypetrlg					;1200		;0		;MSH1811-Business,MSH1811100-Leather,MSH1811101-NonLeather,MSH1812-OutdoorNSports,MSH1812100-Leather,MSH1812101-NonLeather,MSH1813100-School,MSH1814-Accessories
+                                        ;weighttrlg								;1200		;0		;MSH1811-Business,MSH1811100-Leather,MSH1811101-NonLeather,MSH1812-OutdoorNSports,MSH1812100-Leather,MSH1812101-NonLeather,MSH1813-Kids,MSH1813100-School,MSH1813101-Luggage,MSH1814-Accessories
+										;leathertypetrlg						;1200		;0		;MSH1810-luggage;MSH1811101-NonLeather,MSH1812-OutdoorNSports,MSH1813-Kids,MSH1814-Accessories
+### Ranges
+										;height-classification					;1200		;0		;MSH1811-Business,MSH1811100-Leather,MSH1811101-NonLeather,MSH1812-OutdoorNSports,MSH1812100-Leather,MSH1812101-NonLeather,MSH1813-Kids,MSH1813100-School,MSH1813101-Luggage,MSH1814-Accessories
+										;capacity-classification				;1200		;0		;MSH1814-Accessories
+										;compatiblelaptopsizet-classification	;1200		;0		;MSH1810-luggage,MSH1813-Kids,MSH1813100-School,MSH1813101-Luggage,MSH1814-Accessories
+										

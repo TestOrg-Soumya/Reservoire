@@ -1,0 +1,58 @@
+# ImpEx for Importing Category Classifications
+
+# Macros / Replacement Parameter definitions
+$productCatalog=mplProductCatalog
+$productCatalogName=Marketplace Product Catalog
+$classificationCatalog=pcmClassification
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$classCatalogVersion=catalogversion(catalog(id[default='$classificationCatalog']),version[default='1.0'])[unique=true,default='$classificationCatalog:1.0']
+$classSystemVersion=systemVersion(catalog(id[default='$classificationCatalog']),version[default='1.0'])[unique=true]
+$class=classificationClass(ClassificationClass.code,$classCatalogVersion)[unique=true]
+$supercategories=source(code, $classCatalogVersion)[unique=true]
+$categories=target(code, $catalogVersion)[unique=true]
+$attribute=classificationAttribute(code,$classSystemVersion)[unique=true]
+$unit=unit(code,$classSystemVersion)
+
+
+
+INSERT_UPDATE  classificationAttribute;code[unique=true];name[lang=en];systemVersion(catalog(id),version);;;;;
+
+;genderfshnjwlry;Gender;pcmClassification:1;;;;;
+;stylecodefshnjwlry;Style Code;pcmClassification:1;;;;;
+;fineorfashionfshnjwlry;Fine or Fashion;pcmClassification:1;;;;;
+;collectionfshnjwlry;Collection;pcmClassification:1;;;;;
+;themefshnjwlry;Theme;pcmClassification:1;;;;;
+;occasionfshnjwlry;Occasion;pcmClassification:1;;;;;
+;featurefshnjwlry;Feature;pcmClassification:1;;;;;
+;certificationfshnjwlry;Certification;pcmClassification:1;;;;;
+;metalfshnjwlry;Metal;pcmClassification:1;;;;;
+;metalcolorfshnjwlry;Metal Color;pcmClassification:1;;;;;
+;brandcolorfshnjwlry;Brand Color;pcmClassification:1;;;;;
+;materialusedfshnjwlry;Material Used;pcmClassification:1;;;;;
+;lengthfshnjwlry;Length;pcmClassification:1;;;;;
+;widthfshnjwlry;Width;pcmClassification:1;;;;;
+;heightfshnjwlry;Height;pcmClassification:1;;;;;
+;sizeguidefshnjwlry;Size Guide;pcmClassification:1;;;;;
+;designtypefshnjwlry;Design Type;pcmClassification:1;;;;;
+;setfshnjwlry;Set;pcmClassification:1;;;;;
+;settypefshnjwlry;Set Type;pcmClassification:1;;;;;
+;setitemscountfshnjwlry;Set Items Count;pcmClassification:1;;;;;
+;ringsizefshnjwlry;Size;pcmClassification:1;;;;;
+;ringtypefshnjwlry;Ring Type;pcmClassification:1;;;;;
+;earringbackfshnjwlry;Earring Back;pcmClassification:1;;;;;
+;earringtypefshnjwlry;Earring Type;pcmClassification:1;;;;;
+;chainlengthfshnjwlry;Chain Length;pcmClassification:1;;;;;
+;chainmaketypefshnjwlry;Chain Make Type;pcmClassification:1;;;;;
+;chainandnecklacedesigntypefshnjwlry;Chain & Necklace Design Type;pcmClassification:1;;;;;
+;chainandnecklacelengthtypefshnjwlry;Chain & Necklace Length Type;pcmClassification:1;;;;;
+;pendanttypefshnjwlry;Pendant Type;pcmClassification:1;;;;;
+;banglesizefshnjwlry;Size;pcmClassification:1;;;;;
+;braceletsizefshnjwlry;Size;pcmClassification:1;;;;;
+;bangletypefshnjwlry;Bangle Type;pcmClassification:1;;;;;
+;bracelettypefshnjwlry;Bracelet Type;pcmClassification:1;;;;;
+;ankletlengthfshnjwlry;Anklet Length;pcmClassification:1;;;;;
+;anklettypefshnjwlry;Anklet Type;pcmClassification:1;;;;;
+;kadasizefshnjwlry;Size;pcmClassification:1;;;;;
+;waistbandsizefshnjwlry;Size;pcmClassification:1;;;;;
+;headpiecetypefshnjwlry;Headpiece Type;pcmClassification:1;;;;;
+;occasionalotherstypefshnjwlry;Type;pcmClassification:1;;;;;

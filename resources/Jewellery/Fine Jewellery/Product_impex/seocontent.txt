@@ -1,0 +1,39 @@
+# Insert SEO
+            	$productCatalog=mplProductCatalog
+				$classificationCatalog=pcmClassification
+				$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+ INSERT_UPDATE SeoContent;seoMetaTitle[unique=true];seoMetaKeyword[unique=true];seoMetaDescription[unique=true];tags;productSource(code,$catalogVersion)[unique=true];$catalogVersion
+ 
+
+# seoMetaTitle;seoMetaKeyword;seoMetaDescription;tags;productSource
+
+;GILI DIAMOND PENDANT PP15045                              ; GILI DIAMOND PENDANT PP15045                             ;GILI DIAMOND PENDANT PP15045                               ;MP000000111087041
+;ASMI DIAMOND PENDANT FP212                                ; ASMI DIAMOND PENDANT FP212                               ;ASMI DIAMOND PENDANT FP212                                 ;MP000000111087042
+;RIVAAZ GOLD NECKLACE ADN00244_18KT                        ; RIVAAZ GOLD NECKLACE ADN00244_18KT                       ;RIVAAZ GOLD NECKLACE ADN00244_18KT                         ;MP000000111087043
+;MAYA GOLD NECKLACE RZN00030_22KT                          ; MAYA GOLD NECKLACE RZN00030_22KT                         ;MAYA GOLD NECKLACE RZN00030_22KT                           ;MP000000111087044
+;SENSES DIAMOND EARRINGS SN925YADE00506XJK                 ; SENSES DIAMOND EARRINGS SN925YADE00506XJK                ;SENSES DIAMOND EARRINGS SN925YADE00506XJK                  ;MP000000111087045
+;LUCERA SILVER BRACELET BF26643                            ; LUCERA SILVER BRACELET BF26643                           ;LUCERA SILVER BRACELET BF26643                             ;MP000000111087046
+;RIVAAZ GOLD RING RZR00085_18KT                            ; RIVAAZ GOLD RING RZR00085_18KT                           ;RIVAAZ GOLD RING RZR00085_18KT                             ;MP000000111087047
+;MAYA GOLD RING ADR00683_22KT                              ; MAYA GOLD RING ADR00683_22KT                             ;MAYA GOLD RING ADR00683_22KT                               ;MP000000111087048
+;RIVAAZ GOLD NOSEPIN RZJ00014_18KT                         ; RIVAAZ GOLD NOSEPIN RZJ00014_18KT                        ;RIVAAZ GOLD NOSEPIN RZJ00014_18KT                          ;MP000000111087049
+;Gleem Baguette Solitaire Ring                             ; Gleem Baguette Solitaire Ring                            ;Gleem Baguette Solitaire Ring                              ;MP000000111087050
+;Senco Gold 22k Yellow Gold Bangle                         ; Senco Gold 22k Yellow Gold Bangle                        ;Senco Gold 22k Yellow Gold Bangle                          ;MP000000111087051
+;Voylla Gold Plated Men's Ring With Diamond Embellishments ; Voylla Gold Plated Men's Ring With Diamond Embellishments;Voylla Gold Plated Men's Ring With Diamond Embellishments  ;MP000000111087052
+;Pearl Earrings, 18 Kt Yellow Gold                         ; Pearl Earrings, 18 Kt Yellow Gold                        ;Pearl Earrings, 18 Kt Yellow Gold                          ;MP000000111087053
+;NAKSHATRA DIAMOND MANGALSUTRA ADN00063                    ; NAKSHATRA DIAMOND MANGALSUTRA ADN00063                   ;NAKSHATRA DIAMOND MANGALSUTRA ADN00063                     ;MP000000111087054
+;Sangini diamond MANGALSUTRA                               ; Sangini diamond MANGALSUTRA                              ;Sangini diamond MANGALSUTRA                                ;MP000000111087055
+;Majesty diamond gold MANGALSUTRA                          ; Majesty diamond gold MANGALSUTRA                         ;Majesty diamond gold MANGALSUTRA                           ;MP000000111087056
+;SANGINI DIAMOND BANGLE                                    ; SANGINI DIAMOND BANGLE                                   ;SANGINI DIAMOND BANGLE                                     ;MP000000111087057
+;ASMI DIAMOND BANGLE                                       ; ASMI DIAMOND BANGLE                                      ;ASMI DIAMOND BANGLE                                        ;MP000000111087058
+;NAKSHATRA DIAMOND BANGLE                                  ; NAKSHATRA DIAMOND BANGLE                                 ;NAKSHATRA DIAMOND BANGLE                                   ;MP000000111087059
+;SHUDDHI DIAMOND PENDANT PP14110                           ; SHUDDHI DIAMOND PENDANT PP14110                          ;SHUDDHI DIAMOND PENDANT PP14110                            ;MP000000111087060
+;DIYA DIAMOND PENDANT DDP01325SI-JK                        ; DIYA DIAMOND PENDANT DDP01325SI-JK                       ;DIYA DIAMOND PENDANT DDP01325SI-JK                         ;MP000000111087061
+;GILI DIAMOND PENDANT GP16424SI-JK                         ; GILI DIAMOND PENDANT GP16424SI-JK                        ;GILI DIAMOND PENDANT GP16424SI-JK                          ;MP000000111087062
+;NIRVANA DIAMOND RING IRL039                               ; NIRVANA DIAMOND RING IRL039                              ;NIRVANA DIAMOND RING IRL039                                ;MP000000111087063
+;ISKIUSKI DIAMOND RING LR0002                              ; ISKIUSKI DIAMOND RING LR0002                             ;ISKIUSKI DIAMOND RING LR0002                               ;MP000000111087064
+;HOOP 925 STERLING SILVER BRACELET BF24642                 ; HOOP 925 STERLING SILVER BRACELET BF24642                ;HOOP 925 STERLING SILVER BRACELET BF24642                  ;MP000000111087065
+;NAKSHATRA DIAMOND EARRINGS NERA172B                       ; NAKSHATRA DIAMOND EARRINGS NERA172B                      ;NAKSHATRA DIAMOND EARRINGS NERA172B                        ;MP000000111087066
+;SHUDDHI DIAMOND EARRINGS VDE00026                         ; SHUDDHI DIAMOND EARRINGS VDE00026                        ;SHUDDHI DIAMOND EARRINGS VDE00026                          ;MP000000111087067
+;ASMI DIAMOND EARRINGS DDE15533                            ; ASMI DIAMOND EARRINGS DDE15533                           ;ASMI DIAMOND EARRINGS DDE15533                             ;MP000000111087068
+;8KT Promise Gold Diamond Finger Ring                      ; 8KT Promise Gold Diamond Finger Ring                     ;8KT Promise Gold Diamond Finger Ring                       ;MP000000111087069
+;24KT 8 Gram Gold Coin                                     ; 24KT 8 Gram Gold Coin                                    ;24KT 8 Gram Gold Coin                                      ;MP000000111087070

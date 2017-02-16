@@ -1,0 +1,17 @@
+# Insert SEO
+$productCatalog=mplProductCatalog
+$classificationCatalog=pcmClassification
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+INSERT_UPDATE SeoContent;seoMetaTitle[unique=true];seoMetaKeyword[unique=true];seoMetaDescription[unique=true];tags;productSource(code,$catalogVersion)[unique=true];$catalogVersion
+
+# seoMetaTitle;seoMetaKeyword;seoMetaDescription;tags;productSource
+;Skybag RAIDER 02 BLUE;Skybag RAIDER 02 BLUE;Skybag RAIDER 02 BLUE;Skybag RAIDER 02 BLUE;MP000000000595970;
+;VIP leather briefcase;VIP leather briefcase;VIP leather briefcase;VIP leather briefcase;MP000000000598875;
+;American Tourister Jasper Backpack;American Tourister Jasper Backpack;American Tourister Jasper Backpack;American Tourister Jasper Backpack;MP000000000591221;
+;Skybags Polycarbonate Hardsided Suitcase;Skybags Polycarbonate Hardsided Suitcase;Skybags Polycarbonate Hardsided Suitcase;Skybags Polycarbonate Hardsided Suitcase;MP000000000595961
+;Skybags Polycarbonate Hardsided Suitcase;Skybags Polycarbonate Hardsided Suitcase;Skybags Polycarbonate Hardsided Suitcase;Skybags Polycarbonate Hardsided Suitcase;MP000000000598002
+;American Tourister;American Tourister Softsided Suitcase;MP000000000591006
+;VIP leather briefcase;VIP leather briefcase;VIP leather briefcase;VIP leather briefcase;MP000000000598005
+;Fastrack Backpack;Fastrack Backpack;Fastrack Backpack;Fastrack Backpack;MP000000000595001
+;Wildcraft Travel Jasper Backpack;Wildcraft Travel Jasper Backpack;Wildcraft Travel Jasper Backpack;Wildcraft Travel Jasper Backpack;MP000000000591003
+;Safari Laptop Backpack;Safari Laptop Backpack;Safari Laptop Backpack;Safari Laptop Backpack;MP000000000595004

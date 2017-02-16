@@ -1,0 +1,21 @@
+	$productCatalog=mplProductCatalog
+				$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+				$supercategories=supercategories(code, $catalogVersion)
+				$baseProduct=baseProduct(code,$catalogVersion)
+				$approved=approvalstatus(code)[default='check']
+				$unit=unit(code)[default='pieces']
+				$clAttrModifiers=system='pcmClassification',version='1',translator=de.hybris.platform.catalog.jalo.classification.impex.ClassificationAttributeTranslator,lang=en
+				$catalogversion=catalogversion(catalog(id[default=mplProductCatalog]),version[default='Staged'])[unique=true,default=mplProductCatalog:Staged]
+				          
+				INSERT_UPDATE RichAttribute;homeDelivery(code);expressDelivery(code);clickAndCollect(code);typeOfItem1(code);typeOfItem2(code);shippingmodes(code);paymentModes(code);deliveryfulfillmodes(code);cancellationwindow;returnwindow;replacementwindow;exchangeallowedwindow;warrantyType(code);warrantyPeriod;ispromotionallowed(code);leadtimeforhomedelivery;sellerfulfilledshippingcharge;emi(code);deliveryfulfillmodebyp1(code);returnfulfillmode(code);returnfulfillmodebyp1(code);sellerhandlingtime;giftwrappable(code);returnatstoreeligible(code);isfragile(code);isprecious(code);mediationrequired(code);scheduleddelivery(code);sellerInfo(sellerArticleSKU,$catalogVersion)[unique=true];isSshipCodEligible(code);$catalogversion
+        	
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123655Skybag2200060020;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123656VIP2200060020;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123655American2200060030;true
+;yes;no;no;precious;premium;air;cod;tship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123451Fastrack2200060021;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123452Skybags2200060022;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123453Wildcraft2200060023;true
+;yes;no;no;precious;premium;air;cod;tship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123454Safari2200060024;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123455Fastrack2200060025;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123456American2200060026;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123655Skybag3200060020;true

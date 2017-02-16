@@ -1,0 +1,547 @@
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$storePrefix=mpl
+$contentCatalog=$storePrefixContentCatalog
+$contentCatalogName=Marketplace Content Catalog
+$productCatalog=mplProductCatalog
+$productCatalogName=Marketplace Product Catalog
+
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$picture=media(code, $contentCV);
+$image=image(code, $contentCV);
+$media=media(code, $contentCV);
+$page=page(uid, $contentCV);
+$category=category(code, $productCV)
+$product=product(code, $productCV)
+$contentPage=contentPage(uid, $contentCV);
+$siteResource=jar:com.tisl.mpl.initialdata.setup.InitialDataSystemSetup&/marketplaceinitialdata/import/contentCatalogs/$contentCatalog
+$productResource=jar:com.tisl.mpl.initialdata.setup.InitialDataSystemSetup&/marketplaceinitialdata/import/productCatalogs/$productCatalog
+$jarResourceCms=jar:com.tisl.mpl.initialdata.setup.InitialDataSystemSetup&/marketplaceinitialdata/import/sampledata/cockpits/cmscockpit
+# Language
+$lang=en
+
+# CMS Link Components
+INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url;&linkRef;&componentRef;target(code)[default='sameWindow'];$category;$product;linkName[lang=$lang]
+#L1
+#;;WomenCategoryLink;Women Categoty Link;/womens-clothing/c-msh10;WomenCategoryLink;WomenCategoryLink;;MSH10;;"Women Clothing"
+#;;MenCategoryLink;Men Categoty Link;/mens-clothing/c-msh11;MenCategoryLink;MenCategoryLink;;MSH11;;"Men Clothing"
+#;;ElectronicsCategoryLink;Electronics Categoty Link;/electronics/c-msh12;ElectronicsCategoryLink;ElectronicsCategoryLink;;MSH12;;"Electronics"
+#;;FootwareCategoryLink;Footware Categoty Link;/footwear/c-msh13;FootwareCategoryLink;FootwareCategoryLink;;MSH13;;"Footware"
+#;;WatchesCategoryLink;Watches Categoty Link;/watches/c-msh15;WatchesCategoryLink;WatchesCategoryLink;;MSH15;;"Watches"
+#;;AccessoriesCategoryLink;Watches Categoty Link;accessories/c-msh16;AccessoriesCategoryLink;AccessoriesCategoryLink;;MSH16;;"Accessories"
+;;MplTravelAndLuggageComponentLink;Travel And Luggage Categoty Link;travel-and-luggage/c-msh18;MplTravelAndLuggageComponentLink;MplTravelAndLuggageComponentLink;;MSH18;;"Travel And Luggage"
+
+INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);links(&linkRef);&nodeRef;title[lang=en]
+#;WomenNavNode;;Women Nav Node Links;SiteRootNode;WomenCategoryLink;WomenNavNode;"Women's Clothing"
+#;MenNavNode;;Men Nav Node Links;SiteRootNode;MenCategoryLink;MenNavNode;"Men's Clothing"
+#;ElectronicsComponentsNavNode;;Electronics Nav Node Links;SiteRootNode;ElectronicsCategoryLink;ElectronicsComponentsNavNode;"Electronics"
+#;FootwareComponentsNavNode;;Footware Nav Node Links;SiteRootNode;FootwareCategoryLink;FootwareComponentsNavNode;"Footwear"
+#;WatchesComponentsNavNode;;Watches Nav Node Links;SiteRootNode;WatchesCategoryLink;WatchesComponentsNavNode;"Watches"
+#;AccessoriesComponentsNavNode;;Accessories Components Nav Node Links;SiteRootNode;AccessoriesCategoryLink;AccessoriesComponentsNavNode;"Accessories"
+;MplTravelAndLuggageComponentNavNode;;Travel And Luggage Nav Node Links;SiteRootNode;MplTravelAndLuggageComponentLink;MplTravelAndLuggageComponentNavNode;"Travel And Luggage"
+
+INSERT_UPDATE NavigationBarComponent;$contentCV[unique=true];uid[unique=true];name;wrapAfter;navigationNode(&nodeRef);link(uid, $contentCV);styleClass;dropDownLayout(code);&componentRef
+#;;WomensClothingComponent;Women's Clothing Component;10;WomenNavNode;WomenCategoryLink;;AUTO;WomensClothingComponent
+#;;MensClothingComponent;Men's Clothing Component;10;MenNavNode;MenCategoryLink;;AUTO;MensClothingComponent
+#;;ElectronicsComponent;Electronics Component;10;ElectronicsComponentsNavNode;ElectronicsCategoryLink;;AUTO;ElectronicsComponent
+#;;FootwareComponent;Footware Component;10;FootwareComponentsNavNode;FootwareCategoryLink;;AUTO;FootwareComponent
+#;;WatchesComponent;Watches Component;10;WatchesComponentsNavNode;WatchesCategoryLink;;AUTO;WatchesComponent
+#;;AccessoriesComponent;Accessories Component;10;AccessoriesComponentsNavNode;AccessoriesCategoryLink;;AUTO;AccessoriesComponent
+;;MplTravelAndLuggageComponent;Travel And Luggage;10;MplTravelAndLuggageComponentNavNode;MplTravelAndLuggageComponentLink;;AUTO;MplTravelAndLuggageComponent
+
+
+# Navigation Bar Component
+INSERT_UPDATE NavigationBarCollectionComponent;$contentCV[unique=true];uid[unique=true];name;components(uid, $contentCV);&componentRef
+;;ShopByDepartmentComponent1;Shop By Department one;MplTravelAndLuggageComponent;ShopByDepartmentComponent1
+
+
+
+INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);links(&linkRef);&nodeRef;title[lang=en]
+#Women
+
+;EthicWareNavNode;;Ethnic wear;WomenNavNode;WomenEthnicWearLink,KurtaKurtiLink,SuitsLink,SareesLink,BottomsLink,DressMaterialLink,dupattaLink;EthicWareNavNode;"Ethnic wear"
+;SwimwearNavNode;;Swim wear;WomenNavNode;swimbeachwearLink,SwimwearLink;SwimwearNavNode;"Swim & Beachwear"
+;InnerandNightWareNavNode;;Inner and Night wear;WomenNavNode;inner&nightwearLink,BrasLink,pantiesLink,SetsLink,camisoleLink,sleepwear&robesLink,ShapewearLink,Stockings&TightsLink,Corset&BustierLink,Gowns&NightiesLink,SocksLink,IntimateWearLink;InnerandNightWareNavNode;"Inner & Nightwear"
+;CasualWareNavNode;;Casual wear;WomenNavNode;CasualWearLink,CasualDressesLink,JacketsandBlazersLink,TopsandTunicsLink,CasualShirtsLink,TrousersLink,SkirtsLink,JeansLink,LeggingsLink,JumpSuitsLink,ShortsLink,SweatersLink,CaprisLink,ShrugsLink,SweatshirtsLink;CasualWareNavNode;"Casual wear"
+;FormalWareNavNode;;Formal wear;WomenNavNode;FormalWearLink,ShirtsLink,TrouserssLink,JacketsandcoatsLink,DressesLink,SuitsLink;FormalWareNavNode;"Formal wear"
+;SportsWareNavNode;;Sports wear;WomenNavNode;womensportswearLink,womensportswearTshirtsLink,womensportswearShortsLink,womensportswearJacketsLink,womensportswearTrackPantsLink,womensportswearInnerwearLink,womensportswearSetsLink;SportsWareNavNode;"Sports wear"
+;MaternityWareNavNode;;Maternity wear;WomenNavNode;MaternityWearLink,MaternityWearclothsLink,MaternityWearLingerieLink;MaternityWareNavNode;"Maternity wear"
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#Men
+;EthicWearNavNodeMen;;Ethnic Wear;MenNavNode;MenEthnicWearLink,MenKurtaLink,MenKurtasetsLink,MenSuitsLink;EthicWearNavNodeMen;"Ethnic Wear"
+;CasualWearNavNodeMen;;Casual wear;MenNavNode;TshirtandPoloLink,MensShirtsLink,MenssweatShirtsLink,MensJacketsLink,MensJeansLink,ChinosLink,ShortsLink;CasualWearNavNode;"Casual wear"
+;NightWearNavNodeMen;;Night wear;MenNavNode;MenInnerandNightwearLink,BoxerLink,BriefsLink,VestsLink,NightSuitsLink,socksLink;NightWearNavNode;"Inner & Nightwear"
+
+;FormalWearNavNodeMen;;Formal wear;MenNavNode;MenFormalWearLink,MenShirtsLink,MenTrouserssLink,JacketsandBlazersLink,MenSuitsLink;FormalWearNavNodeMen;"Formal Wear"
+
+;SportsWearNavNodeMen;;Sports Wear;MenNavNode;MenSportsWearLink,MenSportsWearShirtLink,MenSportsWearShortsLink,MenSportsWearJacketsLink,MenSportsWearTrackPantsLink,MenSportsWearSetsLink;SportsWearNavNodeMen;"Sports Wear"
+
+;SwimWearNavNodeMen;;Swim & Beachwear;MenNavNode;MensswimbeachwearLink,TrunksLink;SwimWearNavNodeMen;"Swim & Beachwear"
+
+
+
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#Electronics
+;MobilePhonesNavNode;;Mobile Phones;ElectronicsComponentsNavNode;mobilephonesLink,smartphonesLink,iphoneLink;MobilePhonesNavNode;"Mobile Phones"
+
+;TabletsNavNode;;Tablets;ElectronicsComponentsNavNode;TabletLink,IpadLink,EreadersLink;TabletsNavNode;"Tablets"
+
+
+;LargeAppliencesNavNode;;Large Appliances;ElectronicsComponentsNavNode;largeappliancesLink,refrigeratorsLink,washingmachineLink,clothesdryerLink;LargeAppliencesNavNode;"Large Appliances"
+
+;TVNavNode;;TV;ElectronicsComponentsNavNode;TVandEntertainmentLInk,hdreadytvLink,fullhdledtvLink,smarttvLink,4kultrahdtvLink,tvaccessoriesLink;TVNavNode;"TV"
+
+;WearableDeviceNavNode;;Wearable Device;ElectronicsComponentsNavNode;wearabledevicesLink,SmartWatchLink,pedometerLink,FitnessTrackerLink;WearableDeviceNavNode;"Wearable Devices"
+
+;CameraNavNode;;Camera;ElectronicsComponentsNavNode;CameraLink,securitycamerasLink,camcorderLink,dslrLink,instantcameraLink,camerabagsLink,digitalcameraLink,binocularsLink,photoframeLink,tripodLink,cameralensLink,flashbatteryLink;CameraNavNode;"Camera"
+
+;GamingNavNode;;Gaming;ElectronicsComponentsNavNode;gamingLink,consolespadsLink,softwareLink,mouseLink;GamingNavNode;"Gaming"
+
+;DesktopNavNode;;Desktop;ElectronicsComponentsNavNode;desktopLink,allinoneLink,imacLink,monitorLink;DesktopNavNode;"Desktop"
+
+;LaptopNavNode;;Laptops;ElectronicsComponentsNavNode;LaptopLink,NotebookLink,2in1Link;LaptopNavNode;"Laptops"
+
+;PrinterNavNode;;Printer & Parts;ElectronicsComponentsNavNode;Printer&PartsLink,AllinoneLink,Cartridge&TonerLink,LaserPrinterLink,PaperLink;PrinterNavNode;"Printer & Parts"
+
+#;NetworkingDevicesNavNode;;Networking Devices;ElectronicsComponentsNavNode;NWDevicesLink,ProjectorsLink,DVDPlayersLink,WifiDongleLink;NetworkingDevicesNavNode;"Networking Devices"
+
+;StorageDevicesNavNode;;Storage Devices;ElectronicsComponentsNavNode;StorageDevicesLink,HardDiskLink,SSDLink,PendriveLink,CloudStorageLink;StorageDevicesNavNode;"Storage Devices"
+
+;ElectronicAccesoriesNavNode;;Electronic Accesories;ElectronicsComponentsNavNode;ElectronicAccessoriesLink,ChargerLink,Covers&CasesLink,MemoryCardLink,PowerBankLink,SelfieStickLink,TabletKeyboardLink,ScreenProtectorLink,ProtectionPlanLink,TabletStandLink;ElectronicAccesoriesNavNode;"Accessories"
+
+;KitchenAppliancessNavNode;;Kitchen Appliances;ElectronicsComponentsNavNode;kitchenAppliancesLink,microwaveovenLink,airfryerLink,cookerLink,cooktopLink,foodrotimakerLink,toasterLink,coffeemakerLink,espressomachineLink,kettleLink,blenderjuicerLink,chopperLink,mixergrinderLink,chopperLink;KitchenAppliancessNavNode;"Kitchen Appliances"
+
+;AirConditionerNavNode;;Air Conditioner;ElectronicsComponentsNavNode;AirConditionerLink,OtherACLink,SplitACLink,WindowACLink;AirConditionerNavNode;"Air Conditioner"
+
+;SmallAppliancesNavNode;;Small Appliances;ElectronicsComponentsNavNode;SmallAppliancesLink,AirPurifierLink,VacuumCleanerLink,AirCoolerLink,WaterPurifierLink;SmallAppliancesNavNode;"Small Appliances"
+
+;AudioandVideoNavNode;;Audio and Video;ElectronicsComponentsNavNode;audiovideoLink,dvdplayerLink,ProjectorLink,IPODLink,MP3PlayerLink;AudioandVideoNavNode;"Audio & Video"
+
+;speakersNavNode;;Speakers;ElectronicsComponentsNavNode;bluetoothspeakersLink,boomboxLink,soundbarLink,dockLink,portablespeakersLink;speakersNavNode;"Speakers"
+
+
+;HeadPhonesNavNode;;Head Phones;ElectronicsComponentsNavNode;headphonesLink,earphonesLink,headsetsLink;HeadPhonesNavNode;"Head Phones"
+#;HomeTheaterNavNode;;Home Theater;ElectronicsComponentsNavNode;HomeTheaterLink,ElectronicsAccessoriesL3Link,Amp&RecieverLink,HomeTheaterL3Link,SpeakerL3Link,MicrophoneLink;HomeTheaterNavNode;"Home Theater"
+
+
+;PersonalCareNavNode;;Personal Care;ElectronicsComponentsNavNode;Personalcarel3Link,EpilatorLink,hairdryerLink,hairstylerLink,trimmershaverLink,healthcareLink,oralcareLink;PersonalCareNavNode;"Personal Care"
+
+
+
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------### Footwear
+#;WomenFootwearNavNode;;Women;FootwareComponentsNavNode;WomenFootwearLink,FlipFlopFootwearLink,ChinosLink,WomenEthnicFootwearLink,StilettoLink,BallerinaLink,SandalsLink,comfortLink,bootsLink,runningLink;WomenFootwearNavNode;"Women"
+;MenFootwearNavNode;;Men;FootwareComponentsNavNode;MenFootwearLink,MenFormalFootwearLink,MenCasualFootwearLink,MenSneakersFootwearLink,MenHomebeachwearFootwearLink,MenRunningFootwearLink,MenTrainingFootwearLink,MenTennisFootwearLink,MenCricketFootwearLink,MenEthnicFootwearLink;MenFootwearNavNode;"Men"
+;KidsFootwearNavNode;;Kids;FootwareComponentsNavNode;KidsShoeLink,boyscasualLink,girlscasualLink,girlssportsLink,girlshomebeachwearLink,boysrainLink;KidsFootwearNavNode;"Kids"
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------### Watch nav node
+;MenwatchesNavNode;;Men;WatchesComponentsNavNode;MenWatchesLink,MenWatchesAnalogLink,MenWatchesDigitalLink,MenWatchesAnalogandDigitalLink,MenWatchesotherLink;MenwatchesNavNode;"Men"
+;WomenwatchesNavNode;;Women;WatchesComponentsNavNode;WomenWatchesLink,WomenanalogWatchesLink,WomendigitalWatchesLink,WomenWatchesAnalogandDigitalLink;WomenwatchesNavNode;"Women"
+;KidswatchesNavNode;;Kids;WatchesComponentsNavNode;KidsWatchesLink,KidsAnalogWatchesLink,KidsDigitalWatchesLink;KidswatchesNavNode;"Kids"
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#### Accessories
+;WomenBagsNavNode;;Women Bags;AccessoriesComponentsNavNode;WomenBagsLink,SlingBagLink,clutchesLink,walletsLink,BackpacksLink,toteLink,SatchelsLink,Cases&PouchesLink,MessengerBagLink,MakeupBagsLink,ShoulderBagLink,HandbagsLink,potliLink,CrossBodyBagsLink,OthersBagsLink;WomenBagsNavNode;"Women Bags"
+;MensBagsNavNode;;Mens Bags;AccessoriesComponentsNavNode;mensbagLink,mensWalletsLink,mensmessengerbagLink,menscasespouchesLink,mensslingbagLink,mensbagBackpacksLink,mensbagOthersLink,mensCrossBodybagLink;MensBagsNavNode;"Mens Bags"
+;WomenBeltsNavNode;;Women Belt;AccessoriesComponentsNavNode;womenbeltscasualLink,womenbeltsLink;WomenBeltsNavNode;"Women Belts"
+;MensFashionEssentialNavNode;;Mens Fashion Essential;AccessoriesComponentsNavNode;mensfashionessentialsLink,TiesLink,CufflinksLink,PocketquaresLink,Hats&CapsLink,CravatLink,MenOthersBagsLink;MensFashionEssentialNavNode;"Men's Fashion Essentials"
+;WomenBeltsNavNode;;Women Belt;AccessoriesComponentsNavNode;womenbeltsLink,womenbeltscasualLink;WomenBeltsNavNode;"Women Belts"
+;MenBeltsNavNode;;Men Belt;AccessoriesComponentsNavNode;MenbeltsLink,MenCasualbeltsLink,MenFormalbeltsLink;MenBeltsNavNode;"Men's Belts"
+
+
+===============================================================================================
+# CMS Link Components
+INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url;&linkRef;&componentRef;target(code)[default='sameWindow'];$category;$product;linkName[lang=$lang]
+###Women
+;;WomenFootwearLink;Women Footwear Categoty Link;/footwear/footwear-women/c-msh1310;WomenFootwearLink;WomenFootwearLink;;MSH1310;;"Women"
+#;;FlipFlopFootwearLink;Flip Flop Footwear Categoty Link;/footwear-women-flip-flop/c-msh1310110;FlipFlopFootwearLink;FlipFlopFootwearLink;;MSH1310110;;"Flip Flop"
+#;;WomenEthnicFootwearLink;Women  Ethnic Footwear Categoty Link;/footwear-women-ethnic/c-msh1310106;WomenEthnicFootwearLink;WomenEthnicFootwearLink;;MSH1310106;;"Ethnic"
+#;;StilettoLink;Stiletto Categoty Link;/footwear-women-stiletto/c-msh1310101;StilettoLink;StilettoLink;;MSH1310101;;"Stiletto"
+#;;BallerinaLink;Ballerina Categoty Link;/footwear-women-ballerina/c-msh1310104;BallerinaLink;BallerinaLink;;MSH1310104;;"Ballerina"
+#;;SandalsLink;Sandals Categoty Link;/footwear-women-sandal/c-msh1310105;SandalsLink;SandalsLink;;MSH1310105;;"Sandals"
+;;comfortLink;comfort Categoty Link;/footwear-women-comfort/c-msh1310124;comfortLink;comfortLink;;MSH1310124;;"Comfort"
+;;bootsLink;boots Categoty Link;/footwear-women-boots/c-msh1310114;bootsLink;bootsLink;;MSH1310114;;"Boots"
+;;runningLink;running Categoty Link;/footwear-women-running/c-msh1310117;runningLink;runningLink;;MSH1310117;;"Running"
+
+###Kids
+;;KidsShoeLink;Kids Shoe Categoty Link;/footwear-kids/c-msh1319;KidsShoeLink;KidsShoeLink;;MSH1319;;"Kids"
+;;boyscasualLink;boys casual Categoty Link;/footwear-kids-boys-casual/c-msh1319101;boyscasualLink;boyscasualLink;;MSH1319101;;"Boys Casual"
+;;girlscasualLink;Girls casual Categoty Link;/footwear-kids-girls-casual/c-msh1319108;girlscasualLink;girlscasualLink;;MSH1319108;;"Girls Casual"
+;;girlssportsLink;Girls Sports Categoty Link;/footwear-kids-girls-sports/c-msh1319109;girlssportsLink;girlssportsLink;;MSH1319109;;"Girls Sports"
+;;girlshomebeachwearLink;Girls Home & Beach Wear Categoty Link;/footwear-kids-girls-home-beach-wear/c-msh1319111;girlshomebeachwearLink;girlshomebeachwearLink;;MSH1319111;;"Girls Home & Beach Wear"
+;;boysrainLink;boys rain casual Categoty Link;/footwear-kids-boys-rain/c-msh1319106;boysrainLink;boysrainLink;;MSH1319106;;"Boys Rain"
+
+
+######Men
+;;MenFootwearLink;Men Footwear Categoty Link;/footwear-men/c-msh1311;MenFootwearLink;MenFootwearLink;;MSH1311;;"Men"
+;;MenFormalFootwearLink;Men Formal Footwear Categoty Link;/footwear-men-formal/c-msh1311112;MenFormalFootwearLink;MenFormalFootwearLink;;MSH1311112;;"Formal"
+;;MenCasualFootwearLink;Men Casual Footwear Categoty Link;/footwear-men-casual/c-msh1311113;MenCasualFootwearLink;MenCasualFootwearLink;;MSH1311113;;"Casual"
+;;MenSneakersFootwearLink;Men Sneakers Footwear Categoty Link;/footwear-men-sneakers/c-msh1311115;MenSneakersFootwearLink;MenSneakersFootwearLink;;MSH1311115;;"Sneakers"
+;;MenHomebeachwearFootwearLink;Men home beach wear Footwear Categoty Link;/footwear-men-home-beach-wear/c-msh1311116;MenHomebeachwearFootwearLink;MenHomebeachwearFootwearLink;;MSH1311116;;"Home & Beach Wear"
+;;MenRunningFootwearLink;Men  Running Footwear Categoty Link;/footwear-men-running/c-msh1311117;MenRunningFootwearLink;MenRunningFootwearLink;;MSH1311117;;"Running"
+;;MenTrainingFootwearLink;Men  Training Footwear Categoty Link;/footwear-men-training/c-msh1311118;MenTrainingFootwearLink;MenTrainingFootwearLink;;MSH1311118;;"Training"
+;;MenTennisFootwearLink;Men  Tennis Footwear Categoty Link;/footwear-men-tennis/c-msh1311119;MenTennisFootwearLink;MenTennisFootwearLink;;MSH1311119;;"Tennis"
+;;MenCricketFootwearLink;Men  Cricket Footwear Categoty Link;/footwear-men-cricket/c-msh1311120;MenCricketFootwearLink;MenCricketFootwearLink;;MSH1311120;;"Cricket"
+;;MenEthnicFootwearLink;Men  Ethnic Footwear Categoty Link;/footwear-men-ethnic/c-msh1311124;MenEthnicFootwearLink;MenEthnicFootwearLink;;MSH1311124;;"Ethnic"
+
+;;MenSportsWearLink;Sports Wear Categoty Link;/mens-clothing-sports-wear/c-msh1118;MenSportsWearLink;MenSportsWearLink;;MSH1118;;"Sports Wear"
+;;MenSportsWearShirtLink;Men Sports Wear Categoty Link;/mens-clothing-sports-wear-t-shirts/c-msh1118100;MenSportsWearShirtLink;MenSportsWearShirtLink;;MSH1118100;;"T-shirts"
+;;MenSportsWearShortsLink;Men Sports Shorts Wear Categoty Link;/mens-clothing-sports-wear-shorts/c-msh1118101;MenSportsWearShortsLink;MenSportsWearShortsLink;;MSH1118101;;"Shorts"
+;;MenSportsWearJacketsLink;Men Sports Jackets Wear Categoty Link;/mens-clothing-sports-wear-jackets/c-msh1118103;MenSportsWearJacketsLink;MenSportsWearJacketsLink;;MSH1118103;;"Jackets"
+;;MenSportsWearTrackPantsLink;Men Sports Track Pants Wear Categoty Link;/mens-clothing-sports-wear-track-pants/c-msh1118104;MenSportsWearTrackPantsLink;MenSportsWearTrackPantsLink;;MSH1118104;;"Track Pants"
+;;MenSportsWearSetsLink;Men Sports Sets Wear Categoty Link;/mens-clothing-sports-wear-sets/c-msh1118102;MenSportsWearSetsLink;MenSportsWearSetsLink;;MSH1118102;;"Sets"
+
+
+;;CasualWearLink;Casual Wear Categoty Link;/womens-clothing-casual-wear/c-msh1016;CasualWearLink;CasualWearLink;;MSH1016;;"Casual Wear"
+;;CasualDressesLink;Casual Dresses Categoty Link;/womens-clothing-casual-wear-dresses/c-msh1016100;CasualDressesLink;CasualDressesLink;;MSH1016100;;"Dresses"
+;;JacketsandBlazersLink;Jackets and Blazers Categoty Link;/womens-clothing-casual-wear-jackets-blazers/c-msh1016101;JacketsandBlazersLink;JacketsandBlazersLink;;MSH1016101;;"Jackets & Blazers"
+;;JeansLink;Jeans Categoty Link;/women-western-wear-denim-and-jeans/c-msh1016106;JeansLink;JeansLink;;MSH1016106;;"Jeans"
+;;JumpSuitsLink;JumpSuit Categoty Link;/women-western-wear-jumpsuits/c-msh1016108;JumpSuitsLink;JumpSuitsLink;;MSH1016108;;"Jumpsuits"
+;;TopsandTunicsLink;Tops & Tunics Categoty Link;/womens-clothing-casual-wear-tops-tunics/c-msh1016102;TopsandTunicsLink;TopsandTunicsLink;;MSH1016102;;"Tops & Tunics"
+;;CasualShirtsLink; Casual Shirts Categoty Link;/womens-clothing-casual-wear-shirts/c-msh1016103;CasualShirtsLink;CasualShirtsLink;;MSH1016103;;"Shirts"
+;;TrousersLink;Trousers Categoty Link;/womens-clothing-casual-wear-trousers/c-msh1016104;TrousersLink;TrousersLink;;MSH1016104;;"Trousers"
+;;SkirtsLink;Skirts Categoty Link;/womens-clothing-casual-wear-skirts/c-msh1016105;SkirtsLink;SkirtsLink;;MSH1016105;;"Skirts"
+;;LeggingsLink;Leggings Categoty Link;/womens-clothing-casual-wear-leggings/c-msh1016107;LeggingsLink;LeggingsLink;;MSH1016107;;"Leggings"
+;;ShortsLink;Shorts Categoty Link;/womens-clothing-casual-wear-shorts/c-msh1016109;ShortsLink;ShortsLink;;MSH1016109;;"Shorts"
+;;SweatersLink;Sweaters Categoty Link;/womens-clothing-casual-wear-sweaters/c-msh1016110;SweatersLink;SweatersLink;;MSH1016110;;"Sweaters"
+;;CaprisLink;Capris Categoty Link;/womens-clothing-casual-wear-capris/c-msh1016112;CaprisLink;CaprisLink;;MSH1016112;;"Capris"
+;;ShrugsLink;Shrugs Categoty Link;/womens-clothing-casual-wear-shrugs/c-msh1016114;ShrugsLink;ShrugsLink;;MSH1016114;;"Shrugs"
+;;SweatshirtsLink;Sweatshirts Categoty Link;/womens-clothing-casual-wear-sweatshirts/c-msh1016113;SweatshirtsLink;SweatshirtsLink;;MSH1016113;;"Sweatshirts"
+
+
+;;swimbeachwearLink;swim beachwear Categoty Link;/womens-clothing-swim-beachwear/c-msh1013;swimbeachwearLink;swimbeachwearLink;;MSH1013;;"Swim & Beachwear"
+;;SwimwearLink;Swimwear Categoty Link;/womens-clothing-swim-beachwear-swimwear/c-msh1015106;SwimwearLink;SwimwearLink;;MSH1015106;;"Swimwear"
+
+
+;;womensportswearLink;sports wear Categoty Link;/womens-clothing-sports-wear/c-msh1018;womensportswearLink;womensportswearLink;;MSH1018;;"Sports Wear"
+;;womensportswearTshirtsLink;sports wear T-shirts Categoty Link;/womens-clothing-sports-wear-t-shirts/c-msh1018100;womensportswearTshirtsLink;womensportswearTshirtsLink;;MSH1018100;;"T-shirts"
+;;womensportswearShortsLink;sports wear Shorts Categoty Link;/womens-clothing-sports-wear-shorts/c-msh1018101;womensportswearShortsLink;womensportswearShortsLink;;MSH1018101;;"Shorts"
+;;womensportswearJacketsLink;sports wear Jackets Categoty Link;/womens-clothing-sports-wear-jackets/c-msh1018103;womensportswearJacketsLink;womensportswearJacketsLink;;MSH1018103;;"Jackets"
+;;womensportswearTrackPantsLink;sports wear Track Pants Categoty Link;/womens-clothing-sports-wear-track-pants/c-msh1018104;womensportswearTrackPantsLink;womensportswearTrackPantsLink;;MSH1018104;;"Track Pants"
+;;womensportswearInnerwearLink;sports wear Innerwear Categoty Link;/womens-clothing-sports-wear-innerwear/c-msh1018105;womensportswearInnerwearLink;womensportswearInnerwearLink;;MSH1018105;;"Innerwear"
+;;womensportswearSetsLink;sports wear Sets Categoty Link;/womens-clothing-sports-wear-sets/c-msh1018102;womensportswearSetsLink;womensportswearSetsLink;;MSH1018102;;"Sets"
+
+
+;;DressesLink;Dresses Categoty Link;/womens-clothing-formal-wear-dresses/c-msh1017100;DressesLink;DressesLink;;MSH1017100;;"Dress"
+;;ShirtsLink;Shirts Categoty Link;/womens-clothing-formal-wear-shirts/c-msh1017100;ShirtsLink;ShirtsLink;;MSH1017100;;"shirt"
+;;TrouserssLink;Trousers Categoty Link;/womens-clothing-formal-wear-trousers/c-msh1017101;TrouserssLink;TrouserssLink;;MSH1017101;;"Trousers"
+;;JacketsandcoatsLink;Jackets and Coats Categoty Link;/womens-clothing-formal-wear-jackets-coats/c-msh1017103;JacketsandcoatsLink;JacketsandcoatsLink;;MSH1017103;;"Jackets & Coats"
+;;SuitsLink;Suits Categoty Link;/womens-clothing-formal-wear-suits/c-msh1017102;SuitsLink;SuitsLink;;MSH1017102;;"Suits"
+;;FormalWearLink;Formal Wear Categoty Link;/women-apparel-tops-and-t-shirts/c-msh1011101;FormalWearLink;FormalWearLink;;MSH1017;;"Formal Wear"
+
+
+;;MaternityWearLink;Maternity Wear Categoty Link;/womens-clothing-maternity-wear/c-msh1019;MaternityWearLink;MaternityWearLink;;MSH1019;;"Maternity Wear"
+;;MaternityWearclothsLink;Maternity Wear cloths Categoty Link;/womens-clothing-maternity-wear-clothes/c-msh1019100;MaternityWearclothsLink;MaternityWearclothsLink;;MSH1019100;;"Clothes"
+;;MaternityWearLingerieLink;Maternity Wear Lingerie Categoty Link;/womens-clothing-maternity-wear-lingerie/c-msh1019101;MaternityWearLingerieLink;MaternityWearLingerieLink;;MSH1019101;;"Lingerie"
+
+
+
+####Women Formal####
+;;WomenEthnicWearLink;Women Ethnic Wear Categoty Link;/womens-clothing-ethnic-wear/c-msh1012;WomenEthnicWearLink;WomenEthnicWearLink;;MSH1012;;"Ethnic Wear"
+;;KurtaKurtiLink;Kurta and Kurti Categoty Link;/womens-clothing-ethnic-wear-kurtis-kurtas/c-msh1012100;KurtaKurtiLink;KurtaKurtiLink;;MSH1012100;;"Kurtis and Kurtas"
+;;SuitsLink;Suit Categoty Link;/womens-clothing-ethnic-wear-suits/c-msh1012101;SuitsLink;SuitsLink;;MSH1012101;;"suits"
+;;SareesLink;Sarees Categoty Link;/womens-clothing-ethnic-wear-sarees/c-msh1012102;SareesLink;SareesLink;;MSH1012102;;"sarees"
+;;SuitSetsLink;Suit Sets Categoty Link;/women-ethnic-wear-suits-sets/c-msh1012101;SuitSetsLink;SuitSetsLink;;MSH1012101;;"Suits Sets"
+;;BottomsLink;Bottoms Categoty Link;/womens-clothing-ethnic-wear-bottoms/c-msh1012103;BottomsLink;BottomsLink;;MSH1012103;;"Bottoms"
+;;DressMaterialLink;Dress Material Categoty Link;/womens-clothing-ethnic-wear-dress-materials/c-msh1012104;DressMaterialLink;DressMaterialLink;;MSH1012104;;"Dress Material"
+;;dupattaLink;dupatta Categoty Link;/womens-clothing-ethnic-wear-dupatta/c-msh1012105;dupattaLink;dupattaLink;;MSH1012105;;"Dupatta"
+
+
+####Women Innerwear and Nightwear####
+;;ShapewearLink;Shape wear Categoty Link;/womens-clothing-inner-nightwear-shapewear/c-msh1014107;ShapewearLink;ShapewearLink;;MSH1014107;;"Shapewear"
+;;sleepwear&robesLink;sleepwear & robes Categoty Link;/womens-clothing-inner-nightwear-sleepwear-robes/c-msh1014106;sleepwear&robesLink;sleepwear&robesLink;;MSH1014106;;"Sleepwear & Robes"
+;;camisoleLink;camisole wear Categoty Link;/womens-clothing-inner-nightwear-camisole/c-msh1014103;camisoleLink;camisoleLink;;MSH1014103;;"Camisole"
+;;SetsLink;Sets Categoty Link;/womens-clothing-inner-nightwear-sets/c-msh1014102;SetsLink;SetsLink;;MSH1014102;;"Sets"
+;;pantiesLink;panties Categoty Link;/womens-clothing-inner-nightwear-panties/c-msh1014101;pantiesLink;pantiesLink;;MSH1014101;;"Panties"
+;;BrasLink;Bras Categoty Link;/womens-clothing-inner-nightwear-bras/c-msh1014100;BrasLink;BrasLink;;MSH1014100;;"Bras"
+;;inner&nightwearLink;inner & nightwear Categoty Link;/womens-clothing-inner-nightwear/c-msh1014;inner&nightwearLink;inner&nightwearLink;;MSH1014;;"Inner & Nightwear"
+;;Stockings&TightsLink;Stockings & Tights Categoty Link;/womens-clothing-inner-nightwear-stockings-tights/c-msh1014105;Stockings&TightsLink;Stockings&TightsLink;;MSH1014105;;"Stockings & Tights"
+;;Corset&BustierLink;Corset & Bustier Categoty Link;/womens-clothing-inner-nightwear-corset-bustier/c-msh1014104;Corset&BustierLink;Corset&BustierLink;;MSH1014104;;"Corset & Bustier"
+;;Gowns&NightiesLink;Gowns & Nighties Categoty Link;/womens-clothing-inner-nightwear-gowns-nighties/c-msh1014108;Gowns&NightiesLink;Gowns&NightiesLink;;MSH1014108;;"Gowns & Nighties"
+;;SocksLink;Socks Categoty Link;/womens-clothing-inner-nightwear-socks/c-msh1014112;SocksLink;SocksLink;;MSH1014112;;"Socks"
+;;IntimateWearLink;Intimate Wear Categoty Link;/womens-clothing-inner-nightwear-intimate-wear/c-msh1014113;IntimateWearLink;IntimateWearLink;;MSH1014113;;"Intimate Wear"
+
+
+
+
+;;MenInnerandNightwearLink;Men Inner & Nightwear Categoty Link;/mens-clothing-inner-nightwear/c-msh1114;MenInnerandNightwearLink;MenInnerandNightwearLink;;MSH1114;;"Inner & Nightwear"
+;;BriefsLink;Briefs Categoty Link;/mens-clothing-inner-nightwear-briefs/c-msh1114102;BriefsLink;BriefsLink;;MSH1114102;;"Briefs"
+;;socksLink;socks Categoty Link;/mens-clothing-inner-nightwear-socks/c-msh1114107;socksLink;socksLink;;MSH1114107;;"Socks"
+;;NightSuitsLink;Night Suits Categoty Link;/mens-clothing-inner-nightwear-night-suits/c-msh1114104;NightSuitsLink;NightSuitsLink;;MSH1114104;;"Night Suits"
+;;HoodiesLink;Hoodies Categoty Link;/men-casuals-hoodies-and-sweatshirts/c-msh1116102;HoodiesLink;HoodiesLink;;MSH1116102;;"Hoodies"
+#;;PyjamasLink;Pyjamas Categoty Link;/men-inner-and-sleep-wear-pyjamas-and-lounge-pants/c-msh1114105;PyjamasLink;PyjamasLink;;MSH1114105;;"Pyjamas"
+
+;;BoxerLink;Boxer Categoty Link;/mens-clothing-inner-nightwear-boxers/c-msh1114101;BoxerLink;BoxerLink;;MSH1114101;;"Boxers"
+;;VestsLink;Vests Categoty Link;/mens-clothing-inner-nightwear-vests/c-msh1114103;VestsLink;VestsLink;;MSH1114103;;"Vests"
+
+
+;;MensCasualWearLink;Mens Casual Wear Categoty Link;/mens-clothing-casual-wear/c-msh1116;MensCasualWearLink;MensCasualWearLink;;MSH1116;;"Casual Wear"
+;;MensShirtsLink;Mens Shirts Categoty Link;/mens-clothing-casual-wear-shirts/c-msh1116101;MensShirtsLink;MensShirtsLink;;MSH1116101;;"Shirts"
+;;MenssweatShirtsLink;Mens Sweat Shirts Categoty Link;/mens-clothing-casual-wear-sweatshirts/c-msh1116102;MenssweatShirtsLink;MenssweatShirtsLink;;MSH1116102;;"Sweat Shirts"
+;;MensJacketsLink;Mens Jackets Categoty Link;/mens-clothing-casual-wear-jackets/c-msh1116103;MensJacketsLink;MensJacketsLink;;MSH1116105;;"Jackets"
+;;MensJeansLink;Mens Jeans Categoty Link;/mens-clothing-casual-wear-jeans/c-msh1116105;MensJeansLink;MensJeansLink;;MSH1116105;;"Jeans"
+
+;;TshirtandPoloLink; Tshirt and Polo Link;/mens-clothing-casual-wear-t-shirts-polos/c-msh1116100;TshirtandPoloLink;TshirtandPoloLink;;MSH1116100;;"T-shirts & Polos"
+;;ChinosLink;Chinos Categoty Link;/mens-clothing-casual-wear-trousers-chinos/c-msh1116106;ChinosLink;ChinosLink;;MSH1116106;;"Trousers and Chinos" 
+
+;;ShortsLink;Shorts Categoty Link;/mens-clothing-casual-wear-shorts/c-msh1116107;ShortsLink;ShortsLink;;MSH1116107;;"Shorts"
+
+
+;;MensswimbeachwearLink; Mens swim beachwear Categoty Link;/mens-clothing-swim-beachwear/c-msh1119;MensswimbeachwearLink;MensswimbeachwearLink;;MSH1119;;"Swim & Beachwear"
+;;TrunksLink;Trunks Categoty Link;/mens-clothing-swim-beachwear-trunks/c-msh1119100;TrunksLink;TrunksLink;;MSH1119100;;"Trunks"
+
+
+;;MenEthnicWearLink;Men Ethnic Wear Categoty Link;/mens-clothing-ethnic-wear/c-msh1112;MenEthnicWearLink;MenEthnicWearLink;;MSH1112;;"Ethnic Wear"
+;;MenKurtaLink;Men Kurta Categoty Link;/mens-clothing-ethnic-wear-kurta/c-msh1112102;MenKurtaLink;MenKurtaLink;;MSH1112102;;"Kurta"
+;;MenKurtasetsLink;Men Kurta setsCategoty Link;/mens-clothing-ethnic-wear-kurta-sets/c-msh1112101;MenKurtasetsLink;MenKurtasetsLink;;MSH1112101;;"Kurta sets"
+;;MenSuitsLink;Men Suits Categoty Link;/mens-clothing-ethnic-wear-suits/c-msh1112109;MenSuitsLink;MenSuitsLink;;MSH1112102;;"Suits"
+
+
+;;MenFormalWearLink;Men Formal Wear Categoty Link;/mens-clothing-formal-wear/c-msh1117;MenFormalWearLink;MenFormalWearLink;;MSH1117;;"Formal Wear"
+;;MenShirtsLink;Men Shirts Categoty Link;/mens-clothing-formal-wear-shirts/c-msh1117100;MenShirtsLink;MenShirtsLink;;MSH1117100;;"shirt"
+;;MenTrouserssLink;Men Trousers Categoty Link;/mens-clothing-formal-wear-trousers/c-msh1117101;MenTrouserssLink;MenTrouserssLink;;MSH1117101;;"Trousers"
+;;JacketsandBlazersLink;Jackets and Blazers Categoty Link;/mens-clothing-formal-wear-jackets-blazers/c-msh1117102;JacketsandBlazersLink;JacketsandBlazersLink;;MSH1117102;;"Jackets & Blazers"
+;;MenSuitsLink;Men Suits Categoty Link;/mens-clothing-formal-wear-suits/c-msh1117103;MenSuitsLink;MenSuitsLink;;MSH1117103;;"Suits"
+
+
+;;LaptopLink;Laptop Categoty Link;/electronics-laptop/c-msh1223;LaptopLink;LaptopLink;;MSH1232102;;"Laptop"
+;;NotebookLink;Notebook & Mackbook Categoty Link;/electronics-laptop-notebook-macbook/c-msh1223100;NotebookLink;NotebookLink;;MSH1223100;;"Notebook & Macbook"
+;;2in1Link;2-in-1 Categoty Link;/electronics-laptop-2-in-1/c-msh1223101;2in1Link;2in1Link;;MSH1223101;;"2-in-1"
+
+
+;;audiovideoLink;audio and video Categoty Link;/electronics-audio-video/c-msh1232;audiovideoLink;audiovideoLink;;MSH1232;;"Audio & Video"
+;;dvdplayerLink;dvd player Categoty Link;/electronics-audio-video-dvd-player/c-msh1232100;dvdplayerLink;dvdplayerLink;;MSH1232100;;"DVD Player"
+;;ProjectorLink;Projector Categoty Link;/electronics-audio-video-projector/c-msh1232101;ProjectorLink;ProjectorLink;;MSH1232101;;"Projector"
+;;IPODLink;IPOD Categoty Link;/electronics-audio-video-ipod/c-msh1232102;IPODLink;IPODLink;;MSH1232102;;"IPOD"
+;;MP3PlayerLink;MP3 Player Categoty Link;/electronics-audio-video-mp3-player/c-msh1232103;MP3PlayerLink;MP3PlayerLink;;MSH1232103;;"MP3 Player"
+
+
+;;Printer&PartsLink;Printer & Parts Categoty Link;/electronics-printer-parts/c-msh1227;Printer&PartsLink;Printer&PartsLink;;MSH1227;;"Printer & Parts"
+;;AllinoneLink;All In One Categoty Link;/electronics-printer-parts-all-in-one/c-msh1227100;AllinoneLink;AllinoneLink;;MSH1227100;;"All In One"
+;;Cartridge&TonerLink;Cartridge & Toner Categoty Link;/electronics-printer-parts-cartridge-toner/c-msh1227101;Cartridge&TonerLink;Cartridge&TonerLink;;MSH1227101;;"Cartridge & Toner"
+;;LaserPrinterLink;Laser Printer Categoty Link;/electronics-printer-parts-laser-printer/c-msh1227102;LaserPrinterLink;LaserPrinterLink;;MSH1227102;;"Laser Printer"
+;;PaperLink;Paper Categoty Link;/electronics-printer-parts-paper/c-msh1227103;PaperLink;PaperLink;;MSH1227103;;"Paper"
+
+;;StorageDevicesLink;Storage Devices Categoty Link;/electronics-storage-devices/c-msh1228;StorageDevicesLink;StorageDevicesLink;;MSH1228;;"Storage Devices"
+;;HardDiskLink;Hard Disk Categoty Link;/electronics-storage-devices-hard-disk/c-msh1228101;HardDiskLink;HardDiskLink;;MSH1228101;;"Hard Disk"
+;;SSDLink;SSD Categoty Link;/electronics-storage-devices-ssd/c-msh1228103;SSDLink;SSDLink;;MSH1228103;;"SSD"
+;;PendriveLink;Pen drive Categoty Link;/electronics-storage-devices-pen-drive/c-msh1228102;PendriveLink;PendriveLink;;MSH1228102;;"Pen drive"
+;;CloudStorageLink;Cloud Storage Categoty Link;/electronics-storage-devices-cloud-storage/c-msh1228100;CloudStorageLink;CloudStorageLink;;MSH1228100;;"Cloud Storage"
+
+
+;;AirConditionerLink;Air Conditioner Categoty Link;/electronics-air-conditioner/c-msh1230;AirConditionerLink;AirConditionerLink;;MSH1230;;"Air Conditioner"
+;;OtherACLink;Other AC Categoty Link;/electronics-air-conditioner-other-ac/c-msh1230102;OtherACLink;OtherACLink;;MSH1230102;;"Other AC"
+;;SplitACLink;Split AC Categoty Link;/electronics-air-conditioner-split-ac/c-msh1230100;SplitACLink;SplitACLink;;MSH1230100;;"Split AC"
+;;WindowACLink;Window AC Categoty Link;/electronics-air-conditioner-window-ac/c-msh1230101;WindowACLink;WindowACLink;;MSH1230101;;"Window AC"
+
+;;ElectronicAccessoriesLink; Electronic Accessories Categoty Link;/electronics-accessories/c-msh1222;ElectronicAccessoriesLink;ElectronicAccessoriesLink;;MSH1222;;"Accessories"
+;;ChargerLink; Charger Categoty Link;/electronics-accessories-charger/c-msh1222100;ChargerLink;ChargerLink;;MSH1222100;;"Charger"
+;;Covers&CasesLink; Covers & Cases Categoty Link;/electronics-accessories-covers-cases/c-msh1222101;Covers&CasesLink;Covers&CasesLink;;MSH1222101;;"Covers & Cases"
+;;MemoryCardLink; Memory Card Categoty Link;/electronics-accessories-memory-card/c-msh1222102;MemoryCardLink;MemoryCardLink;;MSH1222102;;"Memory Card"
+;;PowerBankLink; Power Bank Categoty Link;/electronics-accessories-power-bank/c-msh1222103;PowerBankLink;PowerBankLink;;MSH1222103;;"Power Bank"
+;;SelfieStickLink; Selfie Stick Categoty Link;/electronics-accessories-selfie-stick/c-msh1222107;SelfieStickLink;SelfieStickLink;;MSH1222107;;"Selfie Stick"
+;;TabletKeyboardLink; Tablet Keyboard Categoty Link;/electronics-accessories-tablet-keyboard/c-msh1222105;TabletKeyboardLink;TabletKeyboardLink;;MSH1222105;;"Tablet Keyboard"
+;;ScreenProtectorLink; Screen Protector Categoty Link;/electronics-accessories-screen-protector/c-msh1222104;ScreenProtectorLink;ScreenProtectorLink;;MSH1222104;;"Screen Protector"
+;;ProtectionPlanLink; Protection Plan Categoty Link;/electronics-accessories-protection-plan/c-msh1222108;ProtectionPlanLink;ProtectionPlanLink;;MSH1222108;;"Protection Plan"
+;;TabletStandLink; Tablet Stand Categoty Link;/electronics-accessories-tablet-stand/c-msh1222106;TabletStandLink;TabletStandLink;;MSH1222106;;"Tablet Stand"
+
+
+
+
+
+;;HomeTheaterLink;Home Theater Categoty Link;/electronics-home-theater/c-msh1233;HomeTheaterACLink;HomeTheaterACLink;;MSH1233;;"Home Theater"
+;;ElectronicsAccessoriesL3Link;Electronics Accessories Categoty Link;/electronics-home-theater-accessories/c-msh1233101;ElectronicsAccessoriesL3Link;ElectronicsAccessoriesL3Link;;MSH1233101;;"Accessories"
+;;Amp&RecieverLink;Amp & Reciever Categoty Link;/electronics-home-theater-amp-reciever/c-msh1233104;Amp&RecieverLink;Amp&RecieverLink;;MSH1233104;;"Amp & Reciever"
+;;HomeTheaterL3Link;Home Theater L3 Categoty Link;/electronics-home-theater-home-theatre/c-msh1233102;HomeTheaterL3Link;HomeTheaterL3Link;;MSH1233102;;"Home Theater"
+;;SpeakerL3Link;Spearker L3 Categoty Link;/electronics-home-theater-speaker/c-msh1233105;SpeakerL3Link;SpeakerL3Link;;MSH1233105;;"Speaker"
+;;MicrophoneLink;Microphone Categoty Link;/electronics-home-theater-microphone/c-msh1233103;MicrophoneLink;MicrophoneLink;;MSH1233103;;"Microphone"
+
+
+;;SmallAppliancesLink;Small Appliances Categoty Link;/electronics-small-appliances/c-msh1231;SmallAppliancesLink;SmallAppliancesLink;;MSH1231;;"Small Appliances"
+;;AirPurifierLink;Air Purifier Categoty Link;/electronics-small-appliances-air-purifier/c-msh1231100;AirPurifierLink;AirPurifierLink;;MSH1231100;;"Air Purifier"
+;;VacuumCleanerLink;Vacuum Cleaner Categoty Link;/electronics-small-appliances-vacuum-cleaner/c-msh1231101;VacuumCleanerLink;VacuumCleanerLink;;MSH1231101;;"Vacuum Cleaner"
+;;AirCoolerLink;Air Cooler Categoty Link;/electronics-small-appliances-air-cooler/c-msh1231102;AirCoolerLink;AirCoolerLink;;MSH1231102;;"Air Cooler"
+;;WaterPurifierLink;Water Purifier Categoty Link;/electronics-small-appliances-water-purifier/c-msh1231103;WaterPurifierLink;WaterPurifierLink;;MSH1231103;;"Water Purifier"
+
+
+;;TabletLink;Tablet Categoty Link;/electronics-tablets-tablet/c-msh1211100;TabletLink;TabletLink;;MSH1211100;;"Tablet"
+;;IpadLink;Ipad Categoty Link;/electronics-tablets-ipad/c-msh1211101;IpadLink;IpadLink;;MSH1211101;;"iPad"
+;;EreadersLink;Ereaders Categoty Link;/electronics-tablets-e-readers/c-msh1211104;EreadersLink;EreadersLink;;MSH1211104;;"Kindle"
+;;TVandaccessoriseLink;TV & Accessorise Categoty Link;/electronics-tv-and-entertainment-tv-accessories/c-msh1216101;TVandaccessoriseLink;TVandaccessoriseLink;;MSH1216101;;"TV & Accessorise"
+
+;;NWDevicesLink;Networking Devices Categoty Link;/electronics-networking-devices/c-msh1225;NWDevicesLink;NWDevicesLink;;MSH1225;;"Networking Devices"
+#;;ProjectorsLink;Projector Categoty Link;/electronics-tv-and-entertainment-projectors/c-msh1216102;ProjectorsLink;ProjectorsLink;;MSH1216102;;"Projectors"
+#;;DVDPlayersLink;DVD Categoty Link;electronics-tv-and-entertainment-dvd-players/c-msh1216103;DVDPlayersLink;DVDPlayersLink;;MSH1216103;;"DVD Players"
+;;WifiDongleLink;Wifi Dongle Categoty Link;/electronics-networking-devices-wifi-dongle/c-msh1225100;WifiDongleLink;WifiDongleLink;;MSH1225100;;"Wifi Dongel"
+
+
+#####Personal Care
+
+;;Personalcarel3Link;Personal care Categoty Link;/electronics-personal-care/c-msh1236;Personalcarel3Link;Personalcarel3Link;;MSH1236;;"Personal Care"
+;;EpilatorLink;epilator Categoty Link;/electronics-personal-care-epilator/c-msh1236100;EpilatorLink;EpilatorLink;;MSH1236100;;"Epilator"
+;;hairdryerLink;hair dryer Categoty Link;/electronics-personal-care-hair-dryer/c-msh1236101;hairdryerLink;hairdryerLink;;MSH1236101;;"Hair Dryer"
+;;hairstylerLink;hair styler Categoty Link;/electronics-personal-care-hair-styler/c-msh1236103;hairstylerLink;hairstylerLink;;MSH1236103;;"Hair Styler"
+;;trimmershaverLink;trimmer shaver Categoty Link;/electronics-personal-care-trimmer-shaver/c-msh1236105;trimmershaverLink;trimmershaverLink;;MSH1236105;;"Trimmer & Shaver"
+;;healthcareLink;health care Categoty Link;/electronics-personal-care-health-care/c-msh1236106;healthcareLink;healthcareLink;;MSH1236106;;"Health Care"
+;;oralcareLink;oral care Categoty Link;/electronics-personal-care-oral-care/c-msh1236104;oralcareLink;oralcareLink;;MSH1236104;;"Oral Care"
+
+
+###Headphones
+;;earphonesLink;earphones Categoty Link;/electronics-head-phones-earphones/c-msh1234100;earphonesLink;earphonesLink;;MSH1234100;;"Earphones"
+;;headsetsLink;headsets Categoty Link;/electronics-head-phones-headsets/c-msh1234101;headsetsLink;headsetsLink;;MSH1234101;;"Headsets"
+;;headphonesLink;head phones Categoty Link;/electronics-head-phones/c-msh1234;headphonesLink;headphonesLink;;MSH1234;;"Head Phones"
+
+
+#####camera#####
+
+;;CameraLink;Camera Categoty Link;/electronics-camera/c-msh1220;CameraLink;CameraLink;;MSH1220;;"Camera"
+;;securitycamerasLink;security cameras Categoty Link;/electronics-camera-security-cameras/c-msh1220103;securitycamerasLink;securitycamerasLink;;MSH1220103;;"Security Cameras"
+;;camcorderLink;camcorder Categoty Link;/electronics-camera-camcorder/c-msh1220104;camcorderLink;camcorderLink;;MSH1220104;;"Camcorder"
+;;dslrLink;dslr Categoty Link;/electronics-camera-dslr/c-msh1220105;dslrLink;dslrLink;;MSH1220105;;"DSLR"
+;;instantcameraLink;instant camera Categoty Link;/electronics-camera-instant-camera/c-msh1220106;instantcameraLink;instantcameraLink;;MSH1220106;;"Instant Camera"
+;;camerabagsLink;camera bags Categoty Link;/electronics-camera-camera-bags/c-msh1220110;camerabagsLink;camerabagsLink;;MSH1220110;;"Camera Bags"
+;;digitalcameraLink;digital camera Categoty Link;/electronics-camera-digital-camera/c-msh1220107;digitalcameraLink;digitalcameraLink;;MSH1220107;;"Digital Camera"
+;;binocularsLink;binoculars Categoty Link;/electronics-camera-binoculars/c-msh1220109;binocularsLink;binocularsLink;;MSH1220109;;"Binoculars"
+;;photoframeLink;photo frame Categoty Link;/electronics-camera-photo-frame/c-msh1220113;photoframeLink;photoframeLink;;MSH1220113;;"Photo Frame"
+;;tripodLink;tripod Categoty Link;/electronics-camera-tripod/c-msh1220114;tripodLink;tripodLink;;MSH1220114;;"Tripod"
+;;cameralensLink;camera lens Categoty Link;/electronics-camera-camera-lens/c-msh1220112;cameralensLink;cameralensLink;;MSH1220112;;"Camera Lens"
+;;flashbatteryLink;flash battery Categoty Link;/electronics-camera-flash-battery/c-msh1220111;flashbatteryLink;flashbatteryLink;;MSH1220111;;"Flash & Battery"
+#;;cameraaccessoriesLink;camera accessories Categoty Link;/electronics-camera-camera-accessories/c-msh1220115;cameraaccessoriesLink;cameraaccessoriesLink;;MSH1220115;;"Camera Accessories"
+
+###Wearable Devices
+;;wearabledevicesLink;wearable devices Categoty Link;/electronics-wearable-devices/c-msh1219;wearabledevicesLink;wearabledevicesLink;;MSH1219;;"Wearable Devices"
+;;SmartWatchLink;Smart Watch Categoty Link;/electronics-wearable-devices-smart-watch/c-msh1219104;SmartWatchLink;SmartWatchLink;;MSH1219104;;"Smart Watch"
+;;pedometerLink;pedometer Categoty Link;/electronics-wearable-devices-pedometer/c-msh1219103;pedometerLink;pedometerLink;;MSH1219103;;"Pedometer"
+;;FitnessTrackerLink;Fitness Tracker Categoty Link;/electronics-wearable-devices-fitness-tracker/c-msh1219105;FitnessTrackerLink;FitnessTrackerLink;;MSH1219105;;"Fitness Tracker"
+
+
+####Mobile Phone###
+;;iphoneLink;iphone Categoty Link;/electronics-mobile-phones-iphone/c-msh1210102;iphoneLink;iphoneLink;;MSH1210102;;"iPhone"
+;;smartphonesLink;smartphones Categoty Link;/electronics-mobile-phones-smartphones/c-msh1210100;smartphonesLink;smartphonesLink;;MSH1210100;;"Smartphones"
+;;mobilephonesLink;mobile phones Categoty Link;/electronics-mobile-phones/c-msh1210;mobilephonesLink;mobilephonesLink;;MSH12;;"Mobile Phones"
+
+###Large Appliances###
+;;largeappliancesLink;large-appliances Categoty Link;/electronics-large-appliances/c-msh1214;largeappliancesLink;largeappliancesLink;;MSH1214;;"Large Appliances"
+;;refrigeratorsLink;refrigerators Categoty Link;/electronics-large-appliances-refrigerators/c-msh1214100;refrigeratorsLink;refrigeratorsLink;;MSH1214100;;"Refrigerators"
+;;washingmachineLink;washing machine Categoty Link;/electronics-large-appliances-washing-machine/c-msh1214103;washingmachineLink;washingmachineLink;;MSH1214103;;"Washing Machine"
+;;clothesdryerLink;clothes-dryer Categoty Link;/electronics-large-appliances-clothes-dryer/c-msh1214104;clothesdryerLink;clothesdryerLink;;MSH1214104;;"Clothes Dryer"
+
+
+####TV
+;;TVandEntertainmentLInk;TV & Entertainment Categoty Link;/electronics-tv/c-msh1216;TVandEntertainmentLInk;TVandEntertainmentLInk;;MSH1216;;"TV"
+;;fullhdledtvLink;full hdv led tv Categoty Link;/electronics-tv-full-hd-led-tv/c-msh1216104;fullhdledtvLink;fullhdledtvLink;;MSH1216104;;"Full HD LED TV"
+;;smarttvLink;smart tv Categoty Link;/electronics-tv-smart-tv/c-msh1216106;smarttvLink;smarttvLink;;MSH1216106;;"Smart TV"
+;;4kultrahdtvLink;4k ultra hd tv Categoty Link;/electronics-tv-4k-ultra-hd-tv/c-msh1216107;4kultrahdtvLink;4kultrahdtvLink;;MSH1216107;;"4k Ultra HD TV"
+;;hdreadytvLink;hd ready tv Categoty Link;/electronics-tv-hd-ready-tv/c-msh1216105;hdreadytvLink;hdreadytvLink;;MSH1216105;;"HD Ready TV"
+;;tvaccessoriesLink;tv accessories Categoty Link;/electronics-tv-tv-accessories/c-msh1216101;tvaccessoriesLink;tvaccessoriesLink;;MSH1216101;;"TV Accessories"
+
+###Men watches node
+
+;;MenWatchesLink;Men Watches Categoty Link;/watches-men/c-msh1500;MenWatchesLink;MenWatchesLink;;MSH1500;;"Men"
+;;MenWatchesAnalogLink;Men Watches Analog Categoty Link;/watches-men-analog/c-msh1500000;MenWatchesAnalogLink;MenWatchesAnalogLink;;MSH1500000;;"Analog"
+;;MenWatchesDigitalLink;Men Watches Digital Categoty Link;/watches-men-digital/c-msh1500001;MenWatchesDigitalLink;MenWatchesDigitalLink;;MSH1500001;;"Digital"
+;;MenWatchesAnalogandDigitalLink;Men Watches Analog & Digital Categoty Link;/watches-men-analog-digital/c-msh1500002;MenWatchesAnalogandDigitalLink;MenWatchesAnalogandDigitalLink;;MSH1500002;;"Analog & Digital"
+;;MenWatchesotherLink;Men Watches other Categoty Link;/watches-men-others/c-msh1500004;MenWatchesotherLink;MenWatchesotherLink;;MSH1500004;;"Others"
+
+
+##### Women Watches Node
+
+;;WomenWatchesLink;Women Watches Categoty Link;/watches-women/c-msh1501;WomenWatchesLink;WomenWatchesLink;;MSH1501;;"Women"
+;;WomenanalogWatchesLink;Women Analog Watches Categoty Link;/watches-women-analog/c-msh1501000;WomenanalogWatchesLink;WomenanalogWatchesLink;;MSH1501000;;"Analog"
+;;WomendigitalWatchesLink;Women Digital Watches Categoty Link;/watches-women-digital/c-msh1501001;WomendigitalWatchesLink;WomendigitalWatchesLink;;MSH1501001;;"Digital"
+;;WomenWatchesAnalogandDigitalLink;Women Watches Analog & Digital Categoty Link;/watches-women-digital/c-msh1501001;WomenWatchesAnalogandDigitalLink;WomenWatchesAnalogandDigitalLink;;MSH1501001;;"Analog & Digital"
+
+#### KIds
+
+;;KidsWatchesLink;Kids Watches Categoty Link;/watches-kids/c-msh1502;KidsWatchesLink;KidsWatchesLink;;MSH1502;;"Kids"
+;;KidsAnalogWatchesLink;Kids Analog Watches Categoty Link;/watches-kids-analog/c-msh1502000;KidsAnalogWatchesLink;KidsAnalogWatchesLink;;MSH1502000;;"Analog"
+;;KidsDigitalWatchesLink;Kids Digital Watches Categoty Link;/watches-kids-digital/c-msh1502001;KidsDigitalWatchesLink;KidsDigitalWatchesLink;;MSH1502001;;"Digital"
+
+
+###Gaming
+;;gamingLink;Gaming Categoty Link;/electronics-gaming/c-msh1221;gamingLink;gamingLink;;MSH1221;;"Gaming"
+;;consolespadsLink;consoles pads Categoty Link;/electronics-gaming-consoles-pads/c-msh1221100;consolespadsLink;consolespadsLink;;MSH1221100;;"Consoles & Pads"
+;;softwareLink;software Categoty Link;/electronics-gaming-software/c-msh1221101;softwareLink;softwareLink;;MSH1221101;;"Software"
+;;mouseLink;mouse Categoty Link;/electronics-gaming-mouse/c-msh1221103;mouseLink;mouseLink;;MSH1221103;;"Mouse"
+
+
+###Desktop
+;;desktopLink;desktop Categoty Link;/electronics-desktop/c-msh1224;desktopLink;desktopLink;;MSH1224;;"Desktop"
+;;allinoneLink;all in one Categoty Link;/electronics-desktop-all-in-one/c-msh1224100;allinoneLink;allinoneLink;;MSH1224100;;"All In One"
+;;imacLink;imac Categoty Link;/electronics-desktop-imac/c-msh1224101;imacLink;imacLink;;MSH1224101;;"iMac"
+;;monitorLink;monitor Categoty Link;/electronics-desktop-monitor/c-msh1224103;monitorLink;monitorLink;;MSH1224103;;"Monitor"
+
+
+#####Kitchen Appliances
+
+;;kitchenAppliancesLink;Kitchen Appliances Categoty Link;/electronics-kitchen-appliances/c-msh1229;kitchenAppliancesLink;kitchenAppliancesLink;;MSH1229;;"Kitchen Appliances"
+;;microwaveovenLink;microwave oven Categoty Link;/electronics-kitchen-appliances-microwave-oven/c-msh1229100;microwaveovenLink;microwaveovenLink;;MSH1229100;;"Microwave Oven"
+;;airfryerLink;air fryer Categoty Link;/electronics-kitchen-appliances-air-fryer/c-msh1229101;airfryerLink;airfryerLink;;MSH1229101;;"Air Fryer"
+;;cookerLink;cooker Categoty Link;/electronics-kitchen-appliances-cooker/c-msh1229102;cookerLink;cookerLink;;MSH1229102;;"Cooker"
+;;cooktopLink;cooktop Categoty Link;/electronics-kitchen-appliances-cooktop/c-msh1229103;cooktopLink;cooktopLink;;MSH1229103;;"Cooktop"
+;;foodrotimakerLink;food roti maker Categoty Link;/electronics-kitchen-appliances-food-roti-maker/c-msh1229105;foodrotimakerLink;foodrotimakerLink;;MSH1229105;;"Food & Roti Maker"
+;;toasterLink;toaster Categoty Link;/electronics-kitchen-appliances-toaster/c-msh1229106;toasterLink;toasterLink;;MSH1229106;;"Toaster"
+;;coffeemakerLink;coffee maker Categoty Link;/electronics-kitchen-appliances-coffee-maker/c-msh1229107;coffeemakerLink;coffeemakerLink;;MSH1229107;;"Coffee Maker"
+;;espressomachineLink;espresso machine Categoty Link;/electronics-kitchen-appliances-espresso-machine/c-msh1229108;espressomachineLink;espressomachineLink;;MSH1229108;;"Espresso Machine"
+;;kettleLink;kettle Categoty Link;/electronics-kitchen-appliances-kettle/c-msh1229109;kettleLink;kettleLink;;MSH1229109;;"Kettle"
+;;blenderjuicerLink;blender juicer Categoty Link;/electronics-kitchen-appliances-blender-juicer/c-msh1229110;blenderjuicerLink;blenderjuicerLink;;MSH1229110;;"Blender & Juicer"
+;;chopperLink;chopper Categoty Link;/electronics-kitchen-appliances-chopper/c-msh1229111;chopperLink;chopperLink;;MSH1229111;;"Chopper"
+;;mixergrinderLink;mixer grinder Categoty Link;/electronics-kitchen-appliances-mixer-grinder/c-msh1229112;mixergrinderLink;mixergrinderLink;;MSH1229112;;"Mixer & Grinder"
+;;chopperLink;chopper Categoty Link;/electronics-kitchen-appliances-chopper/c-msh1229111;chopperLink;chopperLink;;MSH1229111;;"Chopper"
+
+
+###Speakers
+;;speakersLink;speakers Categoty Link;/electronics-speakers/c-msh1235;speakersLink;speakersLink;;MSH1235;;"Speakers"
+;;bluetoothspeakersLink;bluetooth speakers Categoty Link;/electronics-speakers-bluetooth/c-msh1235100;bluetoothspeakersLink;bluetoothspeakersLink;;MSH1235100;;"Bluetooth"
+;;boomboxLink;boombox Categoty Link;/electronics-speakers-boombox/c-msh1235101;boomboxLink;boomboxLink;;MSH1235101;;"Boombox"
+;;soundbarLink;sound bar Categoty Link;/electronics-speakers-sound-bar/c-msh1235104;soundbarLink;soundbarLink;;MSH1235104;;"Sound Bar"
+;;dockLink;dock Categoty Link;/electronics-speakers-dock/c-msh1235103;dockLink;dockLink;;MSH1235103;;"Dock"
+;;portablespeakersLink;portable speakers Categoty Link;/electronics-speakers-portable-speakers/c-msh1235102;portablespeakersLink;portablespeakersLink;;MSH1235102;;"Portable Speakers"
+
+
+
+;;WomenBagsLink;Women Bags Categoty Link;/accessories-women-bags/c-msh1600;WomenBagsLink;WomenBagsLink;;MSH1600;;"Women Bags"
+;;SlingBagLink;Sling Bag Categoty Link;/accessories-women-bags-sling-bags/c-msh1600000;SlingBagLink;SlingBagLink;;MSH1600000;;"Sling Bag"
+;;clutchesLink;clutches Categoty Link;/accessories-women-bags-clutches/c-msh1600001;clutchesLink;clutchesLink;;MSH1600001;;"Clutches"
+;;walletsLink;wallets Categoty Link;/accessories-women-bags-wallets/c-msh1600002;walletsLink;walletsLink;;MSH1600002;;"Wallets"
+
+;;BackpacksLink;Backpacks Categoty Link;/accessories-women-bags-backpacks/c-msh1600003;BackpacksLink;BackpacksLink;;MSH1600003;;"Backpacks"
+;;toteLink;tote Categoty Link;/accessories-women-bags-tote-bags/c-msh1600004;toteLink;toteLink;;MSH1600004;;"Tote Bags"
+;;SatchelsLink;Satchels Categoty Link;/accessories-women-bags-satchels/c-msh1600005;SatchelsLink;SatchelsLink;;MSH1600005;;"Satchels"
+;;Cases&PouchesLink;Cases & Pouches Categoty Link;/accessories-women-bags-cases-pouches/c-msh1600006;Cases&PouchesLink;Cases&PouchesLink;;MSH1600006;;"Cases & Pouches"
+;;MessengerBagLink;Messenger Categoty Link;/accessories-women-bags-messenger-bags/c-msh1600007;MessengerBagLink;MessengerBagLink;;MSH1600007;;"Messenger Bags"
+;;ShoulderBagLink;Shoulder bags Categoty Link;/accessories-women-bags-shoulder-bags/c-msh1600009;ShoulderBagLink;ShoulderBagLink;;MSH1600009;;"Shoulder Bags"
+;;HandbagsLink;Handbags Categoty Link;/accessories-women-bags-handbags/c-msh1600010;HandbagsLink;HandbagsLink;;MSH1600010;;"Handbags"
+;;potliLink;potli Categoty Link;/accessories-women-bags-potli-bags/c-msh1600011;potliLink;potliLink;;MSH1600011;;"Potli Bags"
+;;CrossBodyBagsLink;Cross Body Bags Categoty Link;/accessories-women-bags-cross-body-bags/c-msh1600012;CrossBodyBagsLink;CrossBodyBagsLink;;MSH1600011;;"Cross Body Bags"
+;;OthersBagsLink;Others Bags Categoty Link;/accessories-women-bags-others/c-msh1600013;OthersBagsLink;OthersBagsLink;;MSH1600013;;"Others"
+;;MakeupBagsLink;Makeup Bags Categoty Link;/accessories-women-bags-makeup-bags/c-msh1600008;MakeupBagsLink;MakeupBagsLink;;MSH1600008;;"Makeup Bags"
+
+;;mensfashionessentialsLink;mens fashion essentials Categoty Link;/accessories-mens-fashion-essentials/c-msh1605?q=%3Arelevance;mensfashionessentialsLink;mensfashionessentialsLink;;MSH1605;;"Men's Fashion Essentials"
+;;TiesLink;Ties Categoty Link;/accessories-mens-fashion-essentials-ties/c-msh1605001?q=%3Arelevance%3AisLuxuryProduct%3Afalse;TiesLink;TiesLink;;MSH1605001;;"Ties"
+;;CufflinksLink;Cufflinks Categoty Link;/accessories-mens-fashion-essentials-cufflinks/c-msh1605003;CufflinksLink;CufflinksLink;;MSH1605003;;"Cufflinks"
+;;PocketSquaresLink;Pocket Squares Categoty Link;/accessories-mens-fashion-essentials-pocket-squares/c-msh1605005;PocketSquaresLink;PocketSquaresLink;;MSH1605005;;"Pocket Squares"
+;;CravatLink;Cravat Categoty Link;/accessories-mens-fashion-essentials-cravat/c-msh1605010;CravatLink;CravatLink;;MSH1605010;;"Cravat"
+;;PocketquaresLink;Pocket Squares Categoty Link;/accessories-mens-fashion-essentials-pocket-squares/c-msh1605005;PocketquaresLink;PocketquaresLink;;MSH1605005;;"Pocket Squares"
+;;Hats&CapsLink;Hats & Caps Categoty Link;/accessories-mens-fashion-essentials-hats-caps/c-msh1605007;Hats&CapsLink;Hats&CapsLink;;MSH1605007;;"Hats & Caps"
+;;MenOthersBagsLink;Men Others Bags Categoty Link;/accessories-mens-fashion-essentials-others/c-msh1605016;MenOthersBagsLink;MenOthersBagsLink;;MSH1605016;;"Others"
+
+
+;;womenbeltsLink;Women Belts Categoty Link;/accessories-women-belts/c-msh1603;womenbeltsLink;womenbeltsLink;;MSH1603;;"Women Belts"
+;;womenbeltscasualLink;Women Belts Casual Categoty Link;/accessories-women-belts-casuals/c-msh1603000;womenbeltscasualLink;womenbeltscasualLink;;MSH1603000;;"Casuals"
+
+
+;;MenbeltsLink;Men Belts Categoty Link;/accessories-mens-belts/c-msh1606;MenbeltsLink;MenbeltsLink;;MSH1606;;"Men's Belts"
+;;MenCasualbeltsLink;Men Casual Belts Categoty Link;/accessories-mens-belts-casuals/c-msh1606000;MenCasualbeltsLink;MenCasualbeltsLink;;MSH1606000;;"Casuals"
+;;MenFormalbeltsLink;Men Formal Belts Categoty Link;/accessories-mens-belts-formals/c-msh1606001;MenFormalbeltsLink;MenFormalbeltsLink;;MSH1606001;;"Formals"
+
+
+
+;;mensbagLink;mens bags Categoty Link;/accessories-mens-bags/c-msh1604;mensbagLink;mensbagLink;;MSH1604;;"Mens Bags"
+;;mensWalletsLink;mens Wallets Categoty Link;/accessories-mens-bags-wallets/c-msh1604000;mensWalletsLink;mensWalletsLink;;MSH1604000;;"Wallets"
+;;mensmessengerbagLink;mens  messenger bags Categoty Link;/accessories-mens-bags-messenger-bags/c-msh1604001;mensmessengerbagLink;mensmessengerbagLink;;MSH1604001;;"Messenger Bags"
+;;menscasespouchesLink;mens cases pouches Categoty Link;/accessories-mens-bags-cases-pouches/c-msh1604003;menscasespouchesLink;menscasespouchesLink;;MSH1604003;;"Cases & Pouches"
+;;mensslingbagLink;mens  sling bags Categoty Link;/accessories-mens-bags-sling-bags/c-msh1604004;mensslingbagLink;mensslingbagLink;;MSH1604004;;"Sling Bags"
+;;mensbagBackpacksLink;mens bags Backpacks Categoty Link;/accessories-mens-bags-backpacks/c-msh1604005;mensbagBackpacksLink;mensbagBackpacksLink;;MSH1604005;;"Backpacks"
+;;mensbagOthersLink;mens bags Others Categoty Link;/accessories-mens-bags-others/c-msh1604007;mensbagOthersLink;mensbagOthersLink;;MSH1604;;"Others"
+;;mensCrossBodybagLink;mens  Cross Body bags Categoty Link;/accessories-mens-bags-cross-body-bags/c-msh1604006;mensCrossBodybagLink;mensCrossBodybagLink;;MSH1604006;;"Cross Body Bags"

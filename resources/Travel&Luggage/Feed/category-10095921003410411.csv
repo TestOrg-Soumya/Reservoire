@@ -1,0 +1,76 @@
+# code,name,supercategories
+LSH1010100106,Satchels,LSH1010100
+LSH1110101100,Jeans,LSH1110101
+MBH16A00133,Hugo Boss,MBH16
+MBH11W00237,Armani Jeans,MBH11
+MPH1110101102,Jeans,"waistriseCC,denimtreatmentsCC,womencasualbottomwearjeanslowersizeCC,womenbottomwearfitCC,womenpatternCC,jeanslengthCC,MPH1110101"
+MPH1600000002,Satchels,"MPH1600000,10002,10007,10008,10014,10016"
+MSH1016106,Jeans,MSH1016
+MSH1604002,Satchels,MSH1604
+
+
+####################################################
+
+
+LSH1010101100,Sweatshirts and hoodies,LSH1010101
+LSH1010101101,Jeans,LSH1010101
+LSH1010101108,Polos and t-shirts,LSH1010101
+MBH11A00001,Global Desi,MBH11
+MBH11A00003,Fusion Beats,MBH11
+MBH11A00004,Westside,MBH11
+MBH11A00005,Aurelia,MBH11
+MBH11A00009,Ethnicity,MBH11
+MBH11A00013,Haute Curry,MBH11
+MBH11A00014,109 F,MBH11
+MBH11A00015,AND,MBH11
+MBH11A00016,UCB,MBH11
+MBH11A00018,Vero Moda,MBH11
+MBH11A00019,Only,MBH11
+MBH11A00029,Mango Basics,MBH11
+MBH11A00031,Lee Cooper,MBH11
+MBH11A00045,Seven East,MBH11
+MBH11A00049,Mango,MBH11
+MBH12E00016,Samsung,MBH12
+MBH16W00211,Trendy Lions,MBH16
+MPH1110100104,Ethnic bottom,"womenethinicwearbottomwearsizeCC,womenbottomwearfitCC,womenethinicbottomwearpatternCC,MPH1110100"
+MPH1110101101,casual shirts,"womencasualtopwearsizeCC,womencasualtopwearneckcollarCC,womentopwearfitCC,womenpatternCC,womencasualtopwearsleeveCC,MPH1110101"
+MPH1110102104,Formal dress,"dressshapeCC,dresslengthCC,womenformaltopwearsizeCC,womenformalsetdressneckcollarCC,womentopwearfitCC,womensleeveCC,womenpatternCC,MPH1110102"
+MPH1110104104,Track pants,"waistriseCC,womenformalbottomwearsizeCC,womenbottomwearfitCC,MPH1110104"
+MPH1110105107,Intimate wear,"wiringCC,bratypeCC,paddingCC,womeninnerwearbrasizeCC,womenethinictopwearneckcollarCC,nightweartypeCC,sleepwearcoverageCC,MPH1110105"
+MPH1111101100,T-Shirts,"tshirttypeCC,mencasualtopwearsizeCC,mencasualtopwearcollarneckCC,fittopwearmenCC,mensleeveCC,brandfitnameCC,MPH1111101"
+MPH1111101102,Jeans,"waistriseCC,denimtreatmentsCC,mencasualbottomwearsizeCC,fitbottomwearmenCC,brandfitnameCC,MPH1111101"
+MPH1111101105,Sweatshirts and hoodies,"tshirttypeCC,mencasualtopwearsizeCC,mencasualtopwearcollarneckCC,fittopwearmenCC,mensleeveCC,MPH1111101"
+MPH1111102101,Sports shorts,"waistriseCC,meninnerwearsizeCC,fitbottomwearmenCC,brandfitnameCC,MPH1111102"
+MPH1111102102,Sports sets,"mencasualwearsetsizeCC,fittopwearmenCC,mensleeveCC,MPH1111102"
+MPH1111102105,Swimwear,"meninnerwearsizeCC,fittopwearmenCC,MPH1111102"
+MPH1111103100,Kurta & kurtis,"menethinicweartopwearsizeCC,menethinicwearcollarneckCC,fittopwearmenCC,mensleeveCC,MPH1111103"
+MPH1111103103,Ethnic suits,"setitemsCC,menethinicwearsetsizeCC,menethinicwearcollarneckCC,fittopwearmenCC,mensleeveCC,mensetcontentsCC,MPH1111103"
+MPH1111103104,Ethnic headgear,"menethinicweartopwearsizeCC,fittopwearmenCC,mensleeveCC,MPH1111103"
+MPH1112100101,Shirts,"sizechartCC,modelfitCC,mencasualtopwearsizeCC,menformaltopwearcollarneckCC,mencasualtopwearcollarneckCC,mensleeveCC,MPH1112100"
+MPH1112100103,Shorts,"sizechartCC,waistriseCC,modelfitCC,trousertypeCC,mencasualbottomwearsizeCC,MPH1112100"
+MPH1112100105,Ethnic,"sizechartCC,modelfitCC,menethinicweartopwearsizeCC,menethinicwearbottomwearsizeCC,mencasualtopwearcollarneckCC,menethinicwearcollarneckCC,mensleeveCC,MPH1112100"
+MPH1112100106,Winter,"sizechartCC,modelfitCC,setitemsCC,mencasualtopwearsizeCC,mencasualbottomwearsizeCC,menformaltopwearcollarneckCC,mencasualtopwearcollarneckCC,mensleeveCC,MPH1112100"
+MPH1112100107,Innerwear and nightwear,"sizechartCC,modelfitCC,brieftypeCC,setitemsCC,mencasualtopwearsizeCC,mencasualbottomwearsizeCC,meninnerwearcollarneckCC,fitbottomwearmenCC,mensleeveCC,MPH1112100"
+MPH1218102100,Smart Phones,MPH1218102
+MSH1012103,Bottoms,MSH1012
+MSH1015102,Work Wear,MSH1015
+MSH1015103,Casual Day Out,MSH1015
+MSH1016100,Dresses,MSH1016
+MSH1016103,Shirts,MSH1016
+MSH1016107,Leggings,MSH1016
+MSH1016111,Work wear,MSH1016
+MSH1110100,Apparel,MSH1110
+MSH1112102,Kurta,MSH1112
+MSH1112105,Waistcoats and Jackets,MSH1112
+MSH1112107,Accessories,MSH1112
+MSH1115101,Traditional and Festive,MSH1115
+MSH1115103,Casual Day Out,MSH1115
+MSH1115104,College Look,MSH1115
+MSH1116100,T-shirts & Polos,MSH1116
+MSH1116102,Sweatshirts,MSH1116
+MSH1116105,Jeans,MSH1116
+MSH1116109,Sports wear,MSH1116
+MSH1210100,Smartphones,MSH1210
+
+
+

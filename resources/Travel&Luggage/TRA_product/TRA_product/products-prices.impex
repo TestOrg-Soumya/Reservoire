@@ -1,0 +1,66 @@
+$productCatalog=mplProductCatalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default='$productCatalog:Staged']
+$taxGroup=Europe1PriceFactory_PTG(code)[default=jp-vat-full]
+
+# Set product approval status to Approved only for those products that have prices.
+$approved=approvalstatus(code)[default='approved']
+
+UPDATE Product;code[unique=true];$approved;$catalogVersion;$taxGroup
+;MP000000000595970;
+;MP000000000598875;
+;MP000000000591221;
+;MP000000000595001;
+;MP000000000598002;
+;MP000000000591003;
+;MP000000000595004;
+;MP000000000598005;
+;MP000000000591006;
+;MP000000000595961;
+
+
+INSERT_UPDATE PriceRow;product(code,$catalogVersion)[unique=true];unit(code[unique=true,default=pieces]);currency(isocode)[unique=true];price;minqtd;unitFactor;net;sellerArticleSKU[unique=true];mrp
+;MP000000000595970;pieces;INR;4,93;1;1;false;123655Skybag2200060020;561
+;MP000000000598875;pieces;INR;4,95;1;1;false;123656VIP2200060020;562
+;MP000000000591221;pieces;INR;4,63;1;1;false;123655American2200060030;563
+;MP000000000595001;pieces;INR;4,43;1;1;false;123451Fastrack2200060021;600
+;MP000000000598002;pieces;INR;4,95;1;1;false;123452Skybags2200060022;599
+;MP000000000591003;pieces;INR;4,23;1;1;false;123453Wildcraft2200060023;562
+;MP000000000595004;pieces;INR;4,13;1;1;false;123454Safari2200060024;599
+;MP000000000598005;pieces;INR;4,95;1;1;false;123455Fastrack2200060025;599
+;MP000000000591006;pieces;INR;4,94;1;1;false;123456American2200060026;568
+;MP000000000595961;pieces;INR;4,91;1;1;false;123655Skybag3200060020;632
+
+
+
+$catalog-id=mplProductCatalog
+$syncJobCode=sync $catalog-id:Staged->Online
+$sourceversion=sourceversion(catalog(id[default=$catalog-id]),version[default=Staged])[unique=true,default=$catalog-id:Staged]
+$targetversion=targetversion(catalog(id[default=$catalog-id]),version[default=Online])[unique=true,default=$catalog-id:Online]
+INSERT_UPDATE CatalogVersionSyncJob;code[unique=true];active;roottypes(code)[mode=append];sessionUser(uid);$sourceversion;$targetversion
+;sync mplProductCatalog:Staged->Online;true;SellerInformation,GlobalIdentifier,RichAttribute,Brand,SeoContent,SizeGuide;syncmanager
+INSERT_UPDATE SearchRestriction;code[unique=true];name[lang=de];name[lang=en];query;restrictedType(code);principal(UID);active;generate
+;SyncManagerRestriction;SyncManagerRestriction;SyncManagerRestriction;({approvalStatus}=  ({{select {appstatus:pk} from {ArticleApprovalStatus as appstatus} where {appstatus:code}='approved'}}));Product;syncmanager;true;true
+$inCurrency=INR
+                      
+INSERT_UPDATE MplZoneDeliveryModeValue ; deliveryMode(code)[unique=true] ; zone(code)[default='in'] ; currency(isocode) ; value  ; minimum;sellerArticleSKU[unique=true];productCode[unique=true];deliveryFulfillModes(Code)
+                                   			   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;123655Skybag2200060020;MP000000000595970;sship
+                               
+                                   	           ; express-delivery   ;      							; $inCurrency       ; 21,99  ; 0,00	  ;123656VIP2200060020;MP000000000598875;sship
+									   
+                                   			   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;123655American2200060030;MP000000000591221;tship
+											   
+											     ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;123451Fastrack2200060021;MP000000000595001;sship
+                                     		   
+                                   	           ; express-delivery   ;      							; $inCurrency       ; 21,99  ; 0,00	  ;123452Skybags2200060022;MP000000000598002;sship
+											   
+											   
+                                   			   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;123453Wildcraft2200060023;MP000000000591003;tship
+											   
+											     ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;123454Safari2200060024;MP000000000595004;sship
+                                     		   
+                                   	           ; express-delivery   ;      							; $inCurrency       ; 21,99  ; 0,00	  ;123455Fastrack2200060025;MP000000000598005;sship
+											   
+											   
+                                   			   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;123456American2200060026;MP000000000591006;tship
+											   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;123655Skybag3200060020;MP000000000595961;tship
+											   

@@ -1,0 +1,43 @@
+# ImpEx for Importing Products Stock Levels and Warehouses
+
+# Macros / Replacement Parameter definitions
+$productCatalog=mplProductCatalog
+$productCatalogName=Marketplace Product Catalog
+$vendor=TATA
+$warehouse=mpl_warehouse
+
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+
+
+INSERT_UPDATE Vendor;code[unique=true]
+;$vendor
+
+INSERT_UPDATE Warehouse;code[unique=true];vendor(code);default[default=true]
+;mpl_warehouse;$vendor
+
+# Set product approval status to Approved only for those products that have prices.
+$approved=approvalstatus(code)[default='approved']
+
+UPDATE Product;code[unique=true];$approved;$catalogVersion
+;MP000000000595970;
+;MP000000000598875;
+;MP000000000591221;
+;MP000000000595001;
+;MP000000000598002;
+;MP000000000591003;
+;MP000000000595004;
+;MP000000000598005;
+;MP000000000591006;
+;MP000000000595961;
+
+INSERT_UPDATE StockLevel;available;warehouse(code)[unique=true];inStockStatus(code);maxPreOrder;maxStockLevelHistoryCount;overSelling;preOrder;productCode[unique=false];reserved;sellerArticleSKU[unique=true]
+;110;mpl_warehouse;forceInStock;0;0;0;0;MP000000000595970;0;123655Skybag2200060020
+;120;mpl_warehouse;forceInStock;0;0;0;0;MP000000000598875;0;123656VIP2200060020
+;130;mpl_warehouse;forceInStock;0;0;0;0;MP000000000591221;0;123655American2200060030
+;110;mpl_warehouse;forceInStock;0;0;0;0;MP000000000595001;0;123451Fastrack2200060021
+;120;mpl_warehouse;forceInStock;0;0;0;0;MP000000000598002;0;123452Skybags2200060022
+;130;mpl_warehouse;forceInStock;0;0;0;0;MP000000000591003;0;123453Wildcraft2200060023
+;110;mpl_warehouse;forceInStock;0;0;0;0;MP000000000595004;0;123454Safari2200060024
+;120;mpl_warehouse;forceInStock;0;0;0;0;MP000000000598005;0;123455Fastrack2200060025
+;130;mpl_warehouse;forceInStock;0;0;0;0;MP000000000591006;0;123456American2200060026
+;130;mpl_warehouse;forceInStock;0;0;0;0;MP000000000595961;0;123655Skybag3200060020

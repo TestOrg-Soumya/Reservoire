@@ -1,0 +1,142 @@
+#Classifying;Class;creation;;;;;;;
+#-----------------------------;;;;;;;;;
+
+# ImpEx for Importing Category Classifications
+
+# Macros / Replacement Parameter definitions
+$productCatalog=mplProductCatalog
+$productCatalogName=Marketplace Product Catalog
+$classificationCatalog=pcmClassification
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$classCatalogVersion=catalogversion(catalog(id[default='$classificationCatalog']),version[default='1.0'])[unique=true,default='$classificationCatalog:1.0']
+$classSystemVersion=systemVersion(catalog(id[default='$classificationCatalog']),version[default='1.0'])[unique=true]
+$class=classificationClass(ClassificationClass.code,$classCatalogVersion)[unique=true]
+$supercategories=source(code, $classCatalogVersion)[unique=true]
+$categories=target(code, $catalogVersion)[unique=true]
+$attribute=classificationAttribute(code,$classSystemVersion)[unique=true]
+$unit=unit(code,$classSystemVersion)
+
+
+INSERT_UPDATE classificationclass;code[unique=true];name[lang=en];catalogVersion(catalog(id),version);;;;;
+
+;20pd;Product Details;pcmClassification:1;
+;braceletsizefshnjwlryCC;braceletsizefshnjwlryClassifyingCategory;pcmClassification:1;
+;certificationfshnjwlryCC;certificationfshnjwlryClassifyingCategory;pcmClassification:1;
+;featurefshnjwlryCC;Sub title;pcmClassification:1;
+;2010100104pd;Product Details;pcmClassification:1;
+;2010100119pd;Product Details;pcmClassification:1;
+;2010101104pd;Product Details;pcmClassification:1;
+;2010101119pd;Product Details;pcmClassification:1;
+;2011100105pd;Product Details;pcmClassification:1;
+;2011100120pd;Product Details;pcmClassification:1;
+;2011101105pd;Product Details;pcmClassification:1;
+;2011101120pd;Product Details;pcmClassification:1;
+;2012100104pd;Product Details;pcmClassification:1;
+;2012100119pd;Product Details;pcmClassification:1;
+;2012101104pd;Product Details;pcmClassification:1;
+;2012101119pd;Product Details;pcmClassification:1;
+;2013100104pd;Product Details;pcmClassification:1;
+;2013100118pd;Product Details;pcmClassification:1;
+;2013101104pd;Product Details;pcmClassification:1;
+;2013101118pd;Product Details;pcmClassification:1;
+;occasionfshnjwlryCC;occasionfshnjwlryClassifyingCategory;pcmClassification:1;
+;2010100102pd;Product Details;pcmClassification:1;
+;2010100103pd;Product Details;pcmClassification:1;
+;2010100107pd;Product Details;pcmClassification:1;
+;2010101102pd;Product Details;pcmClassification:1;
+;2010101103pd;Product Details;pcmClassification:1;
+;2010101107pd;Product Details;pcmClassification:1;
+;2011100102pd;Product Details;pcmClassification:1;
+;2011100103pd;Product Details;pcmClassification:1;
+;2011100104pd;Product Details;pcmClassification:1;
+;2011100109pd;Product Details;pcmClassification:1;
+;2011101102pd;Product Details;pcmClassification:1;
+;2011101103pd;Product Details;pcmClassification:1;
+;2011101104pd;Product Details;pcmClassification:1;
+;2011101109pd;Product Details;pcmClassification:1;
+;2012100102pd;Product Details;pcmClassification:1;
+;2012100103pd;Product Details;pcmClassification:1;
+;2012100108pd;Product Details;pcmClassification:1;
+;2012101102pd;Product Details;pcmClassification:1;
+;2012101103pd;Product Details;pcmClassification:1;
+;2012101108pd;Product Details;pcmClassification:1;
+;2013100102pd;Product Details;pcmClassification:1;
+;2013100103pd;Product Details;pcmClassification:1;
+;2013100107pd;Product Details;pcmClassification:1;
+;2013101102pd;Product Details;pcmClassification:1;
+;2013101103pd;Product Details;pcmClassification:1;
+;2013101107pd;Product Details;pcmClassification:1;
+;themefshnjwlryCC;themefshnjwlryClassifyingCategory;pcmClassification:1;
+;collectionfshnjwlryCC;collectionfshnjwlryClassifyingCategory;pcmClassification:1;
+;fineorfashionfshnjwlryCC;fineorfashionfshnjwlryClassifyingCategory;pcmClassification:1;
+;stylecodefshnjwlryCC;stylecodefshnjwlryClassifyingCategory;pcmClassification:1;
+;2010100101pd;Product Details;pcmClassification:1;
+;2010101101pd;Product Details;pcmClassification:1;
+;2011100101pd;Product Details;pcmClassification:1;
+;2011101101pd;Product Details;pcmClassification:1;
+;2012100101pd;Product Details;pcmClassification:1;
+;2012101101pd;Product Details;pcmClassification:1;
+;2013100101pd;Product Details;pcmClassification:1;
+;2013101101pd;Product Details;pcmClassification:1;
+;earringbackfshnjwlryCC;earringbackfshnjwlryClassifyingCategory;pcmClassification:1;
+;2010100100pd;Product Details;pcmClassification:1;
+;2010100109pd;Product Details;pcmClassification:1;
+;2010101100pd;Product Details;pcmClassification:1;
+;2010101109pd;Product Details;pcmClassification:1;
+;2011100100pd;Product Details;pcmClassification:1;
+;2011100111pd;Product Details;pcmClassification:1;
+;2011101100pd;Product Details;pcmClassification:1;
+;2011101111pd;Product Details;pcmClassification:1;
+;2012100100pd;Product Details;pcmClassification:1;
+;2012100110pd;Product Details;pcmClassification:1;
+;2012101100pd;Product Details;pcmClassification:1;
+;2012101110pd;Product Details;pcmClassification:1;
+;2013100100pd;Product Details;pcmClassification:1;
+;2013100109pd;Product Details;pcmClassification:1;
+;2013101100pd;Product Details;pcmClassification:1;
+;2013101109pd;Product Details;pcmClassification:1;
+;genderfshnjwlryCC;genderfshnjwlryClassifyingCategory;pcmClassification:1;
+;ringsizefshnjwlryCC;ringsizefshnjwlryClassifyingCategory;pcmClassification:1;
+;setfshnjwlryCC;setfshnjwlryClassifyingCategory;pcmClassification:1;
+;designtypefshnjwlryCC;designtypefshnjwlryClassifyingCategory;pcmClassification:1;
+;occasionalotherstypefshnjwlryCC;occasionalotherstypefshnjwlryClassifyingCategory;pcmClassification:1;
+;sizeguidefshnjwlryCC;sizeguidefshnjwlryClassifyingCategory;pcmClassification:1;
+;2010100113pd;Product Details;pcmClassification:1;
+;2010101113pd;Product Details;pcmClassification:1;
+;2011100114pd;Product Details;pcmClassification:1;
+;2011101114pd;Product Details;pcmClassification:1;
+;2012100113pd;Product Details;pcmClassification:1;
+;2012101112pd;Product Details;pcmClassification:1;
+;2013100111pd;Product Details;pcmClassification:1;
+;2013101111pd;Product Details;pcmClassification:1;
+;2010100111pd;Product Details;pcmClassification:1;
+;2010101111pd;Product Details;pcmClassification:1;
+;2011100113pd;Product Details;pcmClassification:1;
+;2011101113pd;Product Details;pcmClassification:1;
+;2012100112pd;Product Details;pcmClassification:1;
+;2012101113pd;Product Details;pcmClassification:1;
+;2013100112pd;Product Details;pcmClassification:1;
+;2013101112pd;Product Details;pcmClassification:1;
+;kadasizefshnjwlryCC;kadasizefshnjwlryClassifyingCategory;pcmClassification:1;
+;2010100108pd;Product Details;pcmClassification:1;
+;2010101108pd;Product Details;pcmClassification:1;
+;2011100110pd;Product Details;pcmClassification:1;
+;2011101110pd;Product Details;pcmClassification:1;
+;2012100109pd;Product Details;pcmClassification:1;
+;2012101109pd;Product Details;pcmClassification:1;
+;2013100108pd;Product Details;pcmClassification:1;
+;2013101108pd;Product Details;pcmClassification:1;
+;ankletlengthfshnjwlryCC;ankletlengthfshnjwlryClassifyingCategory;pcmClassification:1;
+;2010100105pd;Product Details;pcmClassification:1;
+;2010101105pd;Product Details;pcmClassification:1;
+;2011100107pd;Product Details;pcmClassification:1;
+;2011101107pd;Product Details;pcmClassification:1;
+;2012100105pd;Product Details;pcmClassification:1;
+;2012101105pd;Product Details;pcmClassification:1;
+;2013100105pd;Product Details;pcmClassification:1;
+;2013101105pd;Product Details;pcmClassification:1;
+;2011100106pd;Product Details;pcmClassification:1;
+;2011101106pd;Product Details;pcmClassification:1;
+;2012100106pd;Product Details;pcmClassification:1;
+;2012101106pd;Product Details;pcmClassification:1;
+

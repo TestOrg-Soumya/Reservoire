@@ -1,0 +1,190 @@
+# ImpEx for Importing Category Classifications
+
+# Macros / Replacement Parameter definitions
+$productCatalog=mplProductCatalog
+$productCatalogName=Marketplace Product Catalog
+$classificationCatalog=pcmClassification
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$classCatalogVersion=catalogversion(catalog(id[default='$classificationCatalog']),version[default='1.0'])[unique=true,default='$classificationCatalog:1.0']
+$classSystemVersion=systemVersion(catalog(id[default='$classificationCatalog']),version[default='1.0'])[unique=true]
+$class=classificationClass(ClassificationClass.code,$classCatalogVersion)[unique=true]
+$supercategories=source(code, $classCatalogVersion)[unique=true]
+$categories=target(code, $catalogVersion)[unique=true]
+$attribute=classificationAttribute(code,$classSystemVersion)[unique=true]
+$unit=unit(code,$classSystemVersion)
+
+
+
+INSERT_UPDATE  classificationAttribute;code[unique=true];name[lang=en];systemVersion(catalog(id),version);;;;;
+
+;genderfinejwlry;Gender;pcmClassification:1;;;;;
+;stylecodefinejwlry;Style Code;pcmClassification:1;;;;;
+;associationcodefinejwlry;Association Code;pcmClassification:1;;;;;
+;fineorfashionfinejwlry;Fine or Fashion;pcmClassification:1;;;;;
+;pricebreakuponpdpfinejwlry;Price Breakup on PDP;pcmClassification:1;;;;;
+;pricebreakuponinvoicefinejwlry;Price Breakup on Invoice;pcmClassification:1;;;;;
+;collectionfinejwlry;Collection;pcmClassification:1;;;;;
+;themefinejwlry;Theme;pcmClassification:1;;;;;
+;occasionfinejwlry;Occasion;pcmClassification:1;;;;;
+;featurefinejwlry;Feature;pcmClassification:1;;;;;
+;certificationfinejwlry;Certification;pcmClassification:1;;;;;
+;metalfinejwlry;Metal;pcmClassification:1;;;;;
+;metalcolorfinejwlry;Metal Color;pcmClassification:1;;;;;
+;brandcolorfinejwlry;Brand Color;pcmClassification:1;;;;;
+;goldpurityfinejwlry;Purity;pcmClassification:1;;;;;
+;silverpurityfinejwlry;Purity;pcmClassification:1;;;;;
+;platinumpurityfinejwlry;Purity;pcmClassification:1;;;;;
+;grossweightfinejwlry;Gross Weight;pcmClassification:1;;;;;
+;metalweightfinejwlry;Metal Weight;pcmClassification:1;;;;;
+;materialusedfinejwlry;Material Used;pcmClassification:1;;;;;
+;lengthfinejwlry;Length;pcmClassification:1;;;;;
+;widthfinejwlry;Width;pcmClassification:1;;;;;
+;heightfinejwlry;Height;pcmClassification:1;;;;;
+;sizeguidefinejwlry;Size Guide;pcmClassification:1;;;;;
+;designtypefinejwlry;Design Type;pcmClassification:1;;;;;
+;setfinejwlry;Set;pcmClassification:1;;;;;
+;settypefinejwlry;Set Type;pcmClassification:1;;;;;
+;setitemscountfinejwlry;Set Items Count;pcmClassification:1;;;;;
+;coinbarweightfinejwlry;Weight;pcmClassification:1;;;;;
+;coindesignfinejwlry;Coin Design;pcmClassification:1;;;;;
+;ringsizefinejwlry;Size;pcmClassification:1;;;;;
+;ringtypefinejwlry;Ring Type;pcmClassification:1;;;;;
+;earringbackfinejwlry;Earring Back;pcmClassification:1;;;;;
+;earringtypefinejwlry;Earring Type;pcmClassification:1;;;;;
+;chainlengthfinejwlry;Chain Length;pcmClassification:1;;;;;
+;chainmaketypefinejwlry;Chain Make Type;pcmClassification:1;;;;;
+;chainandnecklacedesigntypefinejwlry;Chain & Necklace Design Type;pcmClassification:1;;;;;
+;chainandnecklacelengthtypefinejwlry;Chain & Necklace Length Type;pcmClassification:1;;;;;
+;pendanttypefinejwlry;Pendant Type;pcmClassification:1;;;;;
+;banglesizefinejwlry;Size;pcmClassification:1;;;;;
+;braceletsizefinejwlry;Size;pcmClassification:1;;;;;
+;bangletypefinejwlry;Bangle Type;pcmClassification:1;;;;;
+;bracelettypefinejwlry;Bracelet Type;pcmClassification:1;;;;;
+;ankletlengthfinejwlry;Anklet Length;pcmClassification:1;;;;;
+;anklettypefinejwlry;Anklet Type;pcmClassification:1;;;;;
+;kadasizefinejwlry;Size;pcmClassification:1;;;;;
+;waistbandsizefinejwlry;Size;pcmClassification:1;;;;;
+;headpiecetypefinejwlry;Headpiece Type;pcmClassification:1;;;;;
+;occasionalotherstypefinejwlry;Type;pcmClassification:1;;;;;
+;solitaireshapefinejwlry;Shape;pcmClassification:1;;;;;
+;solitairecolorfinejwlry;Color;pcmClassification:1;;;;;
+;solitaireclarityfinejwlry;Clarity;pcmClassification:1;;;;;
+;solitairesettingfinejwlry;Setting;pcmClassification:1;;;;;
+;solitairecountfinejwlry;Count;pcmClassification:1;;;;;
+;solitaireweightfinejwlry;Weight;pcmClassification:1;;;;;
+;solitairecutfinejwlry;Cut;pcmClassification:1;;;;;
+;diamondtypesfinejwlry;Diamond Types;pcmClassification:1;;;;;
+;diamondtotalcountfinejwlry;Total Count;pcmClassification:1;;;;;
+;diamondtotalweightfinejwlry;Total Weight;pcmClassification:1;;;;;
+;diamondshapefinejwlry1;Shape;pcmClassification:1;;;;;
+;diamondcolorfinejwlry1;Color;pcmClassification:1;;;;;
+;diamondclarityfinejwlry1;Clarity;pcmClassification:1;;;;;
+;diamondsettingfinejwlry1;Setting;pcmClassification:1;;;;;
+;diamondcountfinejwlry1;Count;pcmClassification:1;;;;;
+;diamondweightfinejwlry1;Weight;pcmClassification:1;;;;;
+;diamondcutfinejwlry1;Cut;pcmClassification:1;;;;;
+;diamondshapefinejwlry2;Shape;pcmClassification:1;;;;;
+;diamondcolorfinejwlry2;Color;pcmClassification:1;;;;;
+;diamondclarityfinejwlry2;Clarity;pcmClassification:1;;;;;
+;diamondsettingfinejwlry2;Setting;pcmClassification:1;;;;;
+;diamondcountfinejwlry2;Count;pcmClassification:1;;;;;
+;diamondweightfinejwlry2;Weight;pcmClassification:1;;;;;
+;diamondcutfinejwlry2;Cut;pcmClassification:1;;;;;
+;diamondshapefinejwlry3;Shape;pcmClassification:1;;;;;
+;diamondcolorfinejwlry3;Color;pcmClassification:1;;;;;
+;diamondclarityfinejwlry3;Clarity;pcmClassification:1;;;;;
+;diamondsettingfinejwlry3;Setting;pcmClassification:1;;;;;
+;diamondcountfinejwlry3;Count;pcmClassification:1;;;;;
+;diamondweightfinejwlry3;Weight;pcmClassification:1;;;;;
+;diamondcutfinejwlry3;Cut;pcmClassification:1;;;;;
+;diamondshapefinejwlry4;Shape;pcmClassification:1;;;;;
+;diamondcolorfinejwlry4;Color;pcmClassification:1;;;;;
+;diamondclarityfinejwlry4;Clarity;pcmClassification:1;;;;;
+;diamondsettingfinejwlry4;Setting;pcmClassification:1;;;;;
+;diamondcountfinejwlry4;Count;pcmClassification:1;;;;;
+;diamondweightfinejwlry4;Weight;pcmClassification:1;;;;;
+;diamondcutfinejwlry4;Cut;pcmClassification:1;;;;;
+;diamondshapefinejwlry5;Shape;pcmClassification:1;;;;;
+;diamondcolorfinejwlry5;Color;pcmClassification:1;;;;;
+;diamondclarityfinejwlry5;Clarity;pcmClassification:1;;;;;
+;diamondsettingfinejwlry5;Setting;pcmClassification:1;;;;;
+;diamondcountfinejwlry5;Count;pcmClassification:1;;;;;
+;diamondweightfinejwlry5;Weight;pcmClassification:1;;;;;
+;diamondcutfinejwlry5;Cut;pcmClassification:1;;;;;
+;diamondshapefinejwlry6;Shape;pcmClassification:1;;;;;
+;diamondcolorfinejwlry6;Color;pcmClassification:1;;;;;
+;diamondclarityfinejwlry6;Clarity;pcmClassification:1;;;;;
+;diamondsettingfinejwlry6;Setting;pcmClassification:1;;;;;
+;diamondcountfinejwlry6;Count;pcmClassification:1;;;;;
+;diamondweightfinejwlry6;Weight;pcmClassification:1;;;;;
+;diamondcutfinejwlry6;Cut;pcmClassification:1;;;;;
+;diamondshapefinejwlry7;Shape;pcmClassification:1;;;;;
+;diamondcolorfinejwlry7;Color;pcmClassification:1;;;;;
+;diamondclarityfinejwlry7;Clarity;pcmClassification:1;;;;;
+;diamondsettingfinejwlry7;Setting;pcmClassification:1;;;;;
+;diamondcountfinejwlry7;Count;pcmClassification:1;;;;;
+;diamondweightfinejwlry7;Weight;pcmClassification:1;;;;;
+;diamondcutfinejwlry7;Cut;pcmClassification:1;;;;;
+;stonegemstonepresentfinejwlry;Stone/Gemstone Present?;pcmClassification:1;;;;;
+;noofstonetypesfinejwlry;Number of Stone Types;pcmClassification:1;;;;;
+;stonetotalcountfinejwlry;Total Count;pcmClassification:1;;;;;
+;stonefinejwlry1;Stone;pcmClassification:1;;;;;
+;stoneshapefinejwlry1;Shape;pcmClassification:1;;;;;
+;stonecolorfinejwlry1;Color;pcmClassification:1;;;;;
+;stonesizefinejwlry1;Size;pcmClassification:1;;;;;
+;stonesettingfinejwlry1;Setting;pcmClassification:1;;;;;
+;stonecountfinejwlry1;Count;pcmClassification:1;;;;;
+;stonefinejwlry2;Stone;pcmClassification:1;;;;;
+;stoneshapefinejwlry2;Shape;pcmClassification:1;;;;;
+;stonecolorfinejwlry2;Color;pcmClassification:1;;;;;
+;stonesizefinejwlry2;Size;pcmClassification:1;;;;;
+;stonesettingfinejwlry2;Setting;pcmClassification:1;;;;;
+;stonecountfinejwlry2;Count;pcmClassification:1;;;;;
+;stonefinejwlry3;Stone;pcmClassification:1;;;;;
+;stoneshapefinejwlry3;Shape;pcmClassification:1;;;;;
+;stonecolorfinejwlry3;Color;pcmClassification:1;;;;;
+;stonesizefinejwlry3;Size;pcmClassification:1;;;;;
+;stonesettingfinejwlry3;Setting;pcmClassification:1;;;;;
+;stonecountfinejwlry3;Count;pcmClassification:1;;;;;
+;stonefinejwlry4;Stone;pcmClassification:1;;;;;
+;stoneshapefinejwlry4;Shape;pcmClassification:1;;;;;
+;stonecolorfinejwlry4;Color;pcmClassification:1;;;;;
+;stonesizefinejwlry4;Size;pcmClassification:1;;;;;
+;stonesettingfinejwlry4;Setting;pcmClassification:1;;;;;
+;stonecountfinejwlry4;Count;pcmClassification:1;;;;;
+;stonefinejwlry5;Stone;pcmClassification:1;;;;;
+;stoneshapefinejwlry5;Shape;pcmClassification:1;;;;;
+;stonecolorfinejwlry5;Color;pcmClassification:1;;;;;
+;stonesizefinejwlry5;Size;pcmClassification:1;;;;;
+;stonesettingfinejwlry5;Setting;pcmClassification:1;;;;;
+;stonecountfinejwlry5;Count;pcmClassification:1;;;;;
+;stonefinejwlry6;Stone;pcmClassification:1;;;;;
+;stoneshapefinejwlry6;Shape;pcmClassification:1;;;;;
+;stonecolorfinejwlry6;Color;pcmClassification:1;;;;;
+;stonesizefinejwlry6;Size;pcmClassification:1;;;;;
+;stonesettingfinejwlry6;Setting;pcmClassification:1;;;;;
+;stonecountfinejwlry6;Count;pcmClassification:1;;;;;
+;stonefinejwlry7;Stone;pcmClassification:1;;;;;
+;stoneshapefinejwlry7;Shape;pcmClassification:1;;;;;
+;stonecolorfinejwlry7;Color;pcmClassification:1;;;;;
+;stonesizefinejwlry7;Size;pcmClassification:1;;;;;
+;stonesettingfinejwlry7;Setting;pcmClassification:1;;;;;
+;stonecountfinejwlry7;Count;pcmClassification:1;;;;;
+;stonefinejwlry8;Stone;pcmClassification:1;;;;;
+;stoneshapefinejwlry8;Shape;pcmClassification:1;;;;;
+;stonecolorfinejwlry8;Color;pcmClassification:1;;;;;
+;stonesizefinejwlry8;Size;pcmClassification:1;;;;;
+;stonesettingfinejwlry8;Setting;pcmClassification:1;;;;;
+;stonecountfinejwlry8;Count;pcmClassification:1;;;;;
+;stonefinejwlry9;Stone;pcmClassification:1;;;;;
+;stoneshapefinejwlry9;Shape;pcmClassification:1;;;;;
+;stonecolorfinejwlry9;Color;pcmClassification:1;;;;;
+;stonesizefinejwlry9;Size;pcmClassification:1;;;;;
+;stonesettingfinejwlry9;Setting;pcmClassification:1;;;;;
+;stonecountfinejwlry9;Count;pcmClassification:1;;;;;
+;stonefinejwlry10;Stone;pcmClassification:1;;;;;
+;stoneshapefinejwlry10;Shape;pcmClassification:1;;;;;
+;stonecolorfinejwlry10;Color;pcmClassification:1;;;;;
+;stonesizefinejwlry10;Size;pcmClassification:1;;;;;
+;stonesettingfinejwlry10;Setting;pcmClassification:1;;;;;
+;stonecountfinejwlry10;Count;pcmClassification:1;;;;;

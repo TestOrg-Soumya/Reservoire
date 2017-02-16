@@ -1,0 +1,13 @@
+# homedelivery,expressdelivery,clickandcollect,typeofitem1,typeofitem2,shippingmodes,paymentmodes,deliveryfulfillmodes,cancellationwindow,returnwindow,replacementwindow,exchangeAllowedwindow,warrantytype,warrantyperiod,ispromotionallowed,leadtimeforhomedelivery,sellerfulfilledshippingcharge,emi,deliveryfulfillmodebyp1,returnfulfillmode,returnfulfillmodebyp1,sellerhandlingtime,giftwrappable,returnatstoreeligible,isfragile,isprecious,mediationrequired,scheduleddelivery,USSID,isSshipCodEligible
+yes,no,no,precious,premium,air,cod,sship,200,30,0,0,brand,6,allow,10,0,yes,tship,tship,tship,36,no,no,no,no,no,no,987410QWER123464,false
+yes,no,no,precious,premium,air,cod,sship,200,30,0,0,brand,6,allow,10,0,yes,tship,tship,tship,36,no,no,no,no,no,no,987410GGRQ74682,false
+yes,no,no,precious,premium,air,both,tship,200,30,0,0,brand,3,allow,2,0,yes,tship,tship,tship,36,no,no,no,no,yes,no,343434LUXISTRCOL001,false
+yes,no,no,precious,premium,air,both,tship,200,30,0,0,brand,1yer,allow,5,0,yes,tship,tship,tship,36,no,no,no,no,no,no,343434MMJJC66001,false
+yes,no,no,precious,premium,air,both,tship,200,30,0,0,brand,6,allow,10,0,yes,tship,tship,tship,36,no,no,no,no,yes,no,343434MMINB111,false
+yes,no,no,precious,premium,air,cod,sship,200,30,0,0,brand,1yr,allow,2,0,yes,tship,tship,tship,36,no,no,no,no,no,no,200416JENJN007,true
+yes,no,yes,digital,premium,air,both,tship,200,30,0,0,brand,6,allow,5,0,yes,tship,tship,tship,36,no,no,no,no,no,no,298782SANTY45681,false
+yes,no,yes,digital,premium,air,both,tship,200,30,0,0,brand,6,allow,5,0,yes,tship,tship,tship,36,no,no,no,no,no,no,298782SANTY45680,false
+yes,no,no,precious,premium,air,both,tship,200,30,0,0,brand,1yr,allow,2,0,yes,tship,tship,tship,36,no,no,no,no,no,no,987410LUXRCHJN001,false
+yes,no,no,precious,premium,air,both,tship,200,30,0,0,brand,1yr,allow,2,0,yes,tship,tship,tship,36,no,no,no,no,no,no,987410LUXRCHJN004,false
+yes,no,no,precious,premium,air,both,tship,200,30,0,0,brand,1yr,allow,2,0,yes,tship,tship,tship,36,no,no,no,no,no,no,987410LUXRCHJN003,false
+yes,no,no,precious,premium,air,both,tship,200,30,0,0,brand,1yr,allow,2,0,yes,tship,tship,tship,36,no,no,no,no,no,no,987410LUXRCHJN002,false

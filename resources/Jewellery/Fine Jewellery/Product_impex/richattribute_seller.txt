@@ -1,0 +1,58 @@
+#{defaultImpexProductHeader}
+            	$productCatalog=mplProductCatalog
+				$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+				$supercategories=supercategories(code, $catalogVersion)
+				$baseProduct=baseProduct(code,$catalogVersion)
+				$approved=approvalstatus(code)[default='check']
+				$unit=unit(code)[default='pieces']
+				$clAttrModifiers=system='pcmClassification',version='1',translator=de.hybris.platform.catalog.jalo.classification.impex.ClassificationAttributeTranslator,lang=en
+				$catalogversion=catalogversion(catalog(id[default=mplProductCatalog]),version[default='Staged'])[unique=true,default=mplProductCatalog:Staged]
+				          
+INSERT_UPDATE RichAttribute;homeDelivery(code);expressDelivery(code);clickAndCollect(code);typeOfItem1(code);typeOfItem2(code);shippingmodes(code);paymentModes(code);deliveryfulfillmodes(code);cancellationwindow;returnwindow;replacementwindow;exchangeallowedwindow;warrantyType(code);warrantyPeriod;ispromotionallowed(code);leadtimeforhomedelivery;sellerfulfilledshippingcharge;emi(code);deliveryfulfillmodebyp1(code);returnfulfillmode(code);returnfulfillmodebyp1(code);sellerhandlingtime;giftwrappable(code);returnatstoreeligible(code);isfragile(code);isprecious(code);mediationrequired(code);scheduleddelivery(code);sellerInfo(sellerArticleSKU,$catalogVersion)[unique=true];isSshipCodEligible(code);$catalogversion
+        	
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123661Tanishq4200060041;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123661Tanishq4200060042;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123661Tanishq4200060043;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123661Tanishq4200060044;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123661Tanishq4200060045;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123661Tanishq4200060046;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123661Tanishq4200060047;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123661Tanishq4200060048;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123661Tanishq4200060049;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123661Tanishq4200060050;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123661Tanishq4200060051;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123661Tanishq4200060052;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123661Tanishq4200060053;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123661Tanishq4200060054;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123661Tanishq4200060055;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123676Anjali4200060056;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123676Anjali4200060057;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123676Anjali4200060058;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123676Anjali4200060059;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123676Anjali4200060060;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123676Anjali4200060061;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123676Anjali4200060062;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123676Anjali4200060063;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123676Anjali4200060064;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123676Anjali4200060065;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123676Anjali4200060066;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123676Anjali4200060067;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123676Anjali4200060068;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123676Anjali4200060070;true
+;yes;no;no;precious;premium;air;cod;sship;200;30;0;0;brand;1yr;allow;2;0;yes;tship;tship;tship;36;no;no;no;no;no;no;123676Anjali4200060071;true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

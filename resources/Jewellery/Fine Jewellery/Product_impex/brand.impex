@@ -1,0 +1,36 @@
+$productCatalog=mplProductCatalog
+	$classificationCatalog=pcmClassification
+	$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+    INSERT_UPDATE Brand;name[unique=true];description;productSource(code,$catalogVersion)[unique=true];$catalogVersion
+
+#name;description;productSource
+;GILI DIAMOND PENDANT PP15045                              ; GILI DIAMOND PENDANT PP15045                                ;MP000000111087041
+;GILI DIAMOND PENDANT PP15045                               ; GILI DIAMOND PENDANT PP15045                                  ;MP000000111087042
+;GILI DIAMOND PENDANT PP15045                        ; GILI DIAMOND PENDANT PP15045                          ;MP000000111087043
+;GILI DIAMOND PENDANT PP15045                          ;GILI DIAMOND PENDANT PP15045                           ;MP000000111087044
+;GILI DIAMOND PENDANT PP15045                       ;GILI DIAMOND PENDANT PP15045                   ;MP000000111087045
+;LUCERA SILVER BRACELET BF26643                            ; LUCERA SILVER BRACELET BF26643                              ;MP000000111087046
+;LUCERA SILVER BRACELET BF26643                            ;LUCERA SILVER BRACELET BF26643                             ;MP000000111087047
+;LUCERA SILVER BRACELET BF26643                              ;LUCERA SILVER BRACELET BF26643                                ;MP000000111087048
+;LUCERA SILVER BRACELET BF26643                         ;LUCERA SILVER BRACELET BF26643                         ;MP000000111087049
+;Gleem Baguette Solitaire Ring                             ; Gleem Baguette Solitaire Ring                               ;MP000000111087050
+;Gleem Baguette Solitaire Ring                         ; Gleem Baguette Solitaire Ring                           ;MP000000111087051
+;Gleem Baguette Solitaire Ring                           ; Gleem Baguette Solitaire Ring                    ;MP000000111087052
+;Gleem Baguette Solitaire Ring                        ;Gleem Baguette Solitaire Ring                           ;MP000000111087053
+;NAKSHATRA DIAMOND MANGALSUTRA ADN00063                    ;NAKSHATRA DIAMOND MANGALSUTRA ADN00063                      ;MP000000111087054
+;NAKSHATRA DIAMOND MANGALSUTRA ADN00063                              ; NAKSHATRA DIAMOND MANGALSUTRA ADN00063                                 ;MP000000111087055
+;NAKSHATRA DIAMOND MANGALSUTRA ADN00063                         ;NAKSHATRA DIAMOND MANGALSUTRA ADN00063                           ;MP000000111087056
+;NAKSHATRA DIAMOND MANGALSUTRA ADN00063                                   ;NAKSHATRA DIAMOND MANGALSUTRA ADN00063                                      ;MP000000111087057
+;ASMI DIAMOND BANGLE                                        ; ASMI DIAMOND BANGLE                                         ;MP000000111087058
+;ASMI DIAMOND BANGLE                                      ;ASMI DIAMOND BANGLE                                    ;MP000000111087059
+;ASMI DIAMOND BANGLE                                    ;ASMI DIAMOND BANGLE                             ;MP000000111087060
+;ASMI DIAMOND BANGLE                                     ;ASMI DIAMOND BANGLE                          ;MP000000111087061
+;ASMI DIAMOND BANGLE                                     ;ASMI DIAMOND BANGLE                           ;MP000000111087062
+;NIRVANA DIAMOND RING IRL039                              ; NIRVANA DIAMOND RING IRL039                                 ;MP000000111087063
+;NIRVANA DIAMOND RING IRL039                              ;NIRVANA DIAMOND RING IRL039                                ;MP000000111087064
+;NIRVANA DIAMOND RING IRL039                 ;NIRVANA DIAMOND RING IRL039                   ;MP000000111087065
+;NIRVANA DIAMOND RING IRL039                       ;NIRVANA DIAMOND RING IRL039                         ;MP000000111087066
+;SHUDDHI DIAMOND EARRINGS VDE00026                         ; SHUDDHI DIAMOND EARRINGS VDE00026                           ;MP000000111087067
+;SHUDDHI DIAMOND EARRINGS VDE00026                           ;SHUDDHI DIAMOND EARRINGS VDE00026                              ;MP000000111087068
+;SHUDDHI DIAMOND EARRINGS VDE00026                      ; SHUDDHI DIAMOND EARRINGS VDE00026                        ;MP000000111087069
+;SHUDDHI DIAMOND EARRINGS VDE00026                                     ; SHUDDHI DIAMOND EARRINGS VDE00026                                       ;MP000000111087070

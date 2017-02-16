@@ -1,0 +1,195 @@
+#Enum;values;creation;;;;;;;
+#---------------------;;;;;;;;;
+# ImpEx for Importing Category Classifications
+
+# Macros / Replacement Parameter definitions
+$productCatalog=mplProductCatalog
+$productCatalogName=Marketplace Product Catalog
+$classificationCatalog=pcmClassification
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$classCatalogVersion=catalogversion(catalog(id[default='$classificationCatalog']),version[default='1.0'])[unique=true,default='$classificationCatalog:1.0']
+$classSystemVersion=systemVersion(catalog(id[default='$classificationCatalog']),version[default='1.0'])[unique=true]
+$class=classificationClass(ClassificationClass.code,$classCatalogVersion)[unique=true]
+$supercategories=source(code, $classCatalogVersion)[unique=true]
+$categories=target(code, $catalogVersion)[unique=true]
+$attribute=classificationAttribute(code,$classSystemVersion)[unique=true]
+$unit=unit(code,$classSystemVersion)
+
+
+INSERT_UPDATE classificationAttributeValue;code[unique=true];name[lang=en];systemVersion(catalog(id),version)[default=pcmClassification:1];;;;;
+
+
+
+;occasiontrlgbackpacking;Backpacking;;;
+;occasiontrlgoutdoorsport;Outdoor Sport;;;
+;occasiontrlgdaytrip;Daytrip;;;
+;occasiontrlgexpeditionandhiking;Expedition & Hiking;;;
+;occasiontrlggym;Gym;;;
+;occasiontrlgshorttravel;Short Travel;;;
+;occasiontrlglongtravel;Long Travel;;;
+;occasiontrlgeveryday;Everyday;;;
+;occasiontrlgtravel;Travel;;;
+;colorfamilytrlgbeige;Beige ;;;
+;colorfamilytrlgblack;Black;;;
+;colorfamilytrlgblue;Blue ;;;
+;colorfamilytrlgbrown;Brown;;;
+;colorfamilytrlggold;Gold ;;;
+;colorfamilytrlggreen;Green;;;
+;colorfamilytrlggrey;Grey ;;;
+;colorfamilytrlgkhaki;Khaki;;;
+;colorfamilytrlgmaroon;Maroon;;;
+;colorfamilytrlgmulti;Multi;;;
+;colorfamilytrlgnavy;Navy;;;
+;colorfamilytrlgorange;Orange;;;
+;colorfamilytrlgpeach;Peach ;;;
+;colorfamilytrlgpink;Pink ;;;
+;colorfamilytrlgpurple;Purple;;;
+;colorfamilytrlgred;Red ;;;
+;colorfamilytrlgsilver;Silver ;;;
+;colorfamilytrlgtan;Tan;;;
+;colorfamilytrlgturquoise;Turquoise;;;
+;colorfamilytrlgwhite;White ;;;
+;colorfamilytrlgyellow;Yellow;;;
+;colorfamilytrlgpewter;Pewter;;;
+;colorfamilytrlgmetallic;Metallic;;;
+;colorfamilytrlgcoral;Coral;;;
+;gendertrlgmen;Men;;;
+;gendertrlgwomen;Women;;;
+;gendertrlgboys;Boys;;;
+;gendertrlggirls;Girls;;;
+;gendertrlgunisex;Unisex;;;
+;sizetrlgsmall;Small;;;
+;sizetrlgmedium;Medium;;;
+;sizetrlglarge;Large;;;
+;sizetrlgextralarge;Extra Large;;;
+;uppermaterialtrlgabs;ABS;;;
+;uppermaterialtrlgcanvas;Canvas;;;
+;uppermaterialtrlgcurve;Curve;;;
+;uppermaterialtrlgfabric;Fabric;;;
+;uppermaterialtrlgfelt;Felt;;;
+;uppermaterialtrlgleather;Leather;;;
+;uppermaterialtrlgmetal;Metal;;;
+;uppermaterialtrlgnylon;Nylon;;;
+;uppermaterialtrlgpolycarbonate;Polycarbonate;;;
+;uppermaterialtrlgpolyester;Polyester;;;
+;uppermaterialtrlgpolypropylene;Polypropylene;;;
+;uppermaterialtrlgsynthetic;Synthetic;;;
+;innermaterialtrlgabs;ABS;;;
+;innermaterialtrlgcanvas;Canvas;;;
+;innermaterialtrlgcurve;Curve;;;
+;innermaterialtrlgfabric;Fabric;;;
+;innermaterialtrlgfelt;Felt;;;
+;innermaterialtrlgleather;Leather;;;
+;innermaterialtrlglycra;Lycra;;;
+;innermaterialtrlgmesh;Mesh;;;
+;innermaterialtrlgmetal;Metal;;;
+;innermaterialtrlgnylon;Nylon;;;
+;innermaterialtrlgplastic;Plastic;;;
+;innermaterialtrlgpolycarbonate;Polycarbonate;;;
+;innermaterialtrlgpolyester;Polyester;;;
+;innermaterialtrlgpolypropylene;Polypropylene;;;
+;innermaterialtrlgrubber;Rubber;;;
+;innermaterialtrlgsatin;Satin;;;
+;innermaterialtrlgsilk;Silk;;;
+;innermaterialtrlgsuede;Suede;;;
+;innermaterialtrlgsynthetic;Synthetic;;;
+;innermaterialtrlgvelvet;Velvet;;;
+;innermaterialtrlgwool;Wool;;;
+;leathertypetrlgbeltingleather;Belting Leather;;;
+;leathertypetrlgnapaleather;Napa Leather;;;
+;leathertypetrlgnubuck;Nubuck;;;
+;leathertypetrlgpatentleather;Patent Leather;;;
+;leathertypetrlgsmoothleather;Smooth Leather;;;
+;leathertypetrlgsuede;Suede;;;
+;leathertypetrlgvachetta;Vachetta;;;
+;patterntrlgsolid;Solid;;;
+;patterntrlgchecks;Checks;;;
+;patterntrlgprinted;Printed;;;
+;patterntrlgembroidered;Embroidered;;;
+;patterntrlgstripes;Stripes;;;
+;laptopbagtypetrlglaptopbagpack;Laptop Bag Pack;;;
+;laptopbagtypetrlglaptopsleev;Laptop Sleev;;;
+;laptopbagtypetrlglaptoptote;Laptop Tote;;;
+;laptopbagtypetrlgleatherlaptopbag;Leather Laptop Bag;;;
+;laptopbagtypetrlgrollinglaptopbag;Rolling Laptop Bag;;;
+;luggagesettrlgyes;Yes;;;
+;luggagesettrlgno;No;;;
+;luggagetypetrlgwheeledluggage;Wheeled Luggage;;;
+;luggagetypetrlgcarryhyphenonluggage;Carry- On Luggage;;;
+;luggagetypetrlglightweightluggage;Lightweight Luggage;;;
+;luggagetypetrlghardsidelugggage;Hardside Lugggage;;;
+;luggagetypetrlgleatherluggage;Leather Luggage;;;
+;luggagetypetrlgcheckhypheninluggage;Check-In Luggage;;;
+;luggagetypetrlgdesignerluggage;Designer Luggage;;;
+;luggagetypetrlgspinners;Spinners;;;
+;briefcasetypetrlgportfoliocases;Portfolio Cases;;;
+;briefcasetypetrlgfoliocase;Folio Case;;;
+;briefcasetypetrlgattachecase;Attache Case;;;
+;luggagesetcontentstrlg2pieceset;2 piece set;;;
+;luggagesetcontentstrlg3pieceset;3 piece set;;;
+;luggagesetcontentstrlg4pieceset;4 piece set;;;
+;luggagesetcontentstrlg5pieceset;5 piece set;;;
+;luggagesetcontentstrlg6pieceset;6 piece set;;;
+;luggagesetcontentstrlg7pieceset;7 piece set;;;
+;luggagesetcontentstrlg8pieceset;8 piece set;;;
+;luggagesetcontentstrlg9pieceset;9 piece set;;;
+;luggagesetcontentstrlg10pieceset;10 piece set;;;
+;messengerbagtypetrlgmessengerbackpack;Messenger Backpack;;;
+;messengerbagtypetrlglaptopmessenger;Laptop Messenger;;;
+;messengerbagtypetrlgschoolmessengerbag;School Messenger Bag;;;
+;messengerbagtypetrlgleathermessenger;Leather Messenger;;;
+;duffelbagtypetrlgleatherduffel;Leather Duffel;;;
+;duffelbagtypetrlgtravelduffel;Travel Duffel;;;
+;duffelbagtypetrlgwheeledduffel;Wheeled Duffel;;;
+;duffelbagtypetrlglargecapacityduffel;Large Capacity Duffel;;;
+;strollywheeltypetrlgnone;None;;;
+;strollywheeltypetrlg2wheels;2 wheels;;;
+;strollywheeltypetrlg4hyphenwheels;4-wheels;;;
+;straptypetrlgadjustable;Adjustable;;;
+;straptypetrlgback;Back;;;
+;straptypetrlgchain;Chain;;;
+;straptypetrlgconvertible;Convertible;;;
+;straptypetrlgcrossbody;Cross Body;;;
+;straptypetrlgdoublehandle;Double Handle;;;
+;straptypetrlghandle;Handle;;;
+;straptypetrlgpadded;Padded;;;
+;straptypetrlgremovable;Removable;;;
+;straptypetrlgshoulder;Shoulder;;;
+;straptypetrlgsingle;Single;;;
+;straptypetrlgslingback;Slingback;;;
+;straptypetrlgwaist;Waist;;;
+;paddingtypetrlgyes;Yes;;;
+;paddingtypetrlgno;No;;;
+;closuretypetrlgbuckle;Buckle;;;
+;closuretypetrlgbuttons;Buttons;;;
+;closuretypetrlgclasp;Clasp;;;
+;closuretypetrlgdrawstring;Drawstring;;;
+;closuretypetrlgflap;Flap;;;
+;closuretypetrlghookandloop;Hook & Loop;;;
+;closuretypetrlglatch;Latch;;;
+;closuretypetrlgmagnetic;Magnetic;;;
+;closuretypetrlgpushbutton;Push Button;;;
+;closuretypetrlgquicklace;Quick Lace;;;
+;closuretypetrlgsnap;Snap;;;
+;closuretypetrlgturnlock;Turnlock;;;
+;closuretypetrlgzipper;Zipper;;;
+;locktypetrlgbutterflylock;Butterfly Lock;;;
+;locktypetrlgkeylock;Key Lock;;;
+;locktypetrlgnumberlock;Number Lock;;;
+;locktypetrlgtsalock;TSA Lock;;;
+;waterresistanttrlgyes;Yes;;;
+;waterresistanttrlgno;No ;;;
+;handletypetrlgextendable;Extendable;;;
+;handletypetrlgretractableleash;Retractable Leash;;;
+;handletypetrlgtelescopic;Telescopic;;;
+;backpacktypetrlglaptopbackpack;Laptop Backpack;;;
+;backpacktypetrlgdaypack;Daypack;;;
+;backpacktypetrlgschoolbackpack;School Backpack;;;
+;backpacktypetrlgtravelbackpack;Travel Backpack;;;
+;backpacktypetrlgleatherbackpack;Leather backpack;;;
+;backpacktypetrlgwheeledbackpack;Wheeled Backpack;;;
+;backpacktypetrlgmessengerbackpack;Messenger Backpack;;;
+;backpacktypetrlgkidsbackpack;Kids Backpack;;;
+;backpacktypetrlghikingbackpack;Hiking Backpack;;;
+;backpacktypetrlgcamerabagpack;Camera Bagpack;;;
+;backpacktypetrlgdiaperbag;Diaper Bag;;;

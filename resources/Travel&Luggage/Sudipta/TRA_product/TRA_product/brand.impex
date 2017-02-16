@@ -1,0 +1,16 @@
+$productCatalog=mplProductCatalog
+	$classificationCatalog=pcmClassification
+	$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+    INSERT_UPDATE Brand;name[unique=true];description;productSource(code,$catalogVersion)[unique=true];$catalogVersion
+
+#name;description;productSource
+;American Tourister;American Tourister Softsided Suitcase;MP000000000591221
+;VIP;VIP Neon Strolly Softsided Carry-On;MP000000000598875
+;Skybags;Skybags Polycarbonate Hardsided Suitcase;MP000000000595970
+;Skybags;Skybags Polycarbonate Hardsided Suitcase;MP000000000595961
+;Skybags;Skybags Polycarbonate Hardsided Suitcase;MP000000000598002
+;American Tourister;American Tourister Softsided Suitcase;MP000000000591006
+;VIP;VIP Neon Strolly Softsided Carry-On;MP000000000598005
+;Fastrack Backpack;Fastrack Backpack;MP000000000595001
+;Wildcraft Travel Jasper Backpack;Wildcraft Travel Jasper Backpack;MP000000000591003
+;Safari Laptop Backpack;Safari Laptop Backpack;MP000000000595004

@@ -1,0 +1,41 @@
+$productCatalog=mplProductCatalog
+	$classificationCatalog=pcmClassification
+	$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+    INSERT_UPDATE Brand;name[unique=true];description;productSource(code,$catalogVersion)[unique=true];$catalogVersion
+
+#name;description;productSource
+;THE GLORIOUS SUN DROP EARRINGS;Huggie hook closures offer security to the wearer. A combination of high-polished and matte finishes give an attractive appeal to the earrings;MP000000000595001
+;THE NABHA RING;The ring consists of red diamond studded at its centre.A combination of high-polished diamond will give an attractive look to your hand;MP000000000595002
+;THE ATRYN BANGLE;Bangles studded with small white and red stones and high polished and finishing will be magnificient;MP000000000595003
+;THE KALAKRITI BANGLE;Bangles studded with small green and red stones and high polished and finishing will be magnificient;MP000000000595004
+;THE SYMPHONIC RAAGA BRACELET;THE SYMPHONIC RAAGA BRACELET;MP000000000595005
+;THE SIDDHIVINAYAK BRACELET;The bracelet is studded with lord ganesha shape locket at centre;MP000000000595006
+;THE SHUBHA NECKLACE;Necklace studded with white stones which are polished and shining;MP000000000595007
+;THE RENEE MANGALSUTRA;THE RENEE MANGALSUTRA;MP000000000595008
+;THE GIOIA RING;The ring consists of  coral at its centre.A combination of high-polished coral will give an attractive look to your hand;MP000000000595009
+;THE CHARMING OJASWINI JHUMKA;Huggie hook closures offer security to the wearer. A combination of high-polished and matte finishes give an attractive appeal to the earrings;MP000000000595010
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

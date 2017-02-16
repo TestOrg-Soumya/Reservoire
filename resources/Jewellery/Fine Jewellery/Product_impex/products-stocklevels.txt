@@ -1,0 +1,85 @@
+# ImpEx for Importing Products Stock Levels and Warehouses
+
+# Macros / Replacement Parameter definitions
+$productCatalog=mplProductCatalog
+$productCatalogName=Marketplace Product Catalog
+$vendor=TATA
+$warehouse=mpl_warehouse
+
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+
+
+INSERT_UPDATE Vendor;code[unique=true]
+;$vendor
+
+INSERT_UPDATE Warehouse;code[unique=true];vendor(code);default[default=true]
+;mpl_warehouse;$vendor
+
+# Set product approval status to Approved only for those products that have prices.
+$approved=approvalstatus(code)[default='approved']
+
+UPDATE Product;code[unique=true];$approved;$catalogVersion
+;MP000000111087041
+;MP000000111087042
+;MP000000111087043
+;MP000000111087044
+;MP000000111087045
+;MP000000111087046
+;MP000000111087047
+;MP000000111087048
+;MP000000111087049
+;MP000000111087050
+;MP000000111087051
+;MP000000111087052
+;MP000000111087053
+;MP000000111087054
+;MP000000111087055
+;MP000000111087056
+;MP000000111087057
+;MP000000111087058
+;MP000000111087059
+;MP000000111087060
+;MP000000111087061
+;MP000000111087062
+;MP000000111087063
+;MP000000111087064
+;MP000000111087065
+;MP000000111087066
+;MP000000111087067
+;MP000000111087068
+;MP000000111087069
+;MP000000111087070
+
+
+INSERT_UPDATE StockLevel;available;warehouse(code)[unique=true];inStockStatus(code);maxPreOrder;maxStockLevelHistoryCount;overSelling;preOrder;productCode[unique=false];reserved;sellerArticleSKU[unique=true]
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000111087041;0;123661Tanishq4200060041
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000111087042;0;123661Tanishq4200060042
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000111087043;0;123661Tanishq4200060043
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000111087044;0;123661Tanishq4200060044
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000111087045;0;123661Tanishq4200060045
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000111087046;0;123661Tanishq4200060046
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000111087047;0;123661Tanishq4200060047
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000111087048;0;123661Tanishq4200060048
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000111087049;0;123661Tanishq4200060049
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000111087050;0;123661Tanishq4200060050
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000111087051;0;123661Tanishq420006005103
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000111087052;0;123661Tanishq4200060052
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000111087053;0;123661Tanishq4200060053
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000111087054;0;123661Tanishq4200060054
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000111087055;0;123661Tanishq4200060055
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000111087056;0;123676Anjali4200060056
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000111087057;0;123676Anjali4200060057
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000111087058;0;123676Anjali4200060058
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000111087059;0;123676Anjali4200060059
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000111087060;0;123676Anjali4200060060
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000111087061;0;123676Anjali4200060061
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000111087062;0;123676Anjali4200060062
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000111087063;0;123676Anjali4200060063
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000111087064;0;123676Anjali4200060064
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000111087065;0;123676Anjali4200060065
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000111087066;0;123676Anjali4200060066
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000111087067;0;123676Anjali4200060067
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000111087068;0;123676Anjali4200060068
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000111087069;0;123676Anjali4200060070
+;1;mpl_warehouse;forceInStock;0;0;0;0;MP000000111087070;0;123676Anjali4200060071
+
