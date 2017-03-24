@@ -1,0 +1,11 @@
+# Insert Brand
+$productCatalog=mplProductCatalog
+$classificationCatalog=pcmClassification
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+INSERT_UPDATE Brand;name[unique=true];description;productSource(code,$catalogVersion)[unique=true];$catalogVersion
+;Nike;Nike shoe;MPF220006011;
+;Nike;Nike shoe;MPF220006012;
+;Nike;Nike shoe;MPF220006013;
+;Nike;Nike shoe;MPF220006014;
+;Nike;Nike shoe;MPF220006015;
+;Nike;Nike shoe;MPF220006016;

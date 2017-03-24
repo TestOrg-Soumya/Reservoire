@@ -1,0 +1,37 @@
+#{defaultImpexProductHeader}
+            	$productCatalog=mplProductCatalog
+				$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+				$supercategories=supercategories(code, $catalogVersion)
+				$baseProduct=baseProduct(code,$catalogVersion)
+				$approved=approvalstatus(code)[default='check']
+				$unit=unit(code)[default='pieces']
+				$clAttrModifiers=system='pcmClassification',version='1',translator=de.hybris.platform.catalog.jalo.classification.impex.ClassificationAttributeTranslator,lang=en
+				$catalogversion=catalogversion(catalog(id[default=mplProductCatalog]),version[default='Staged'])[unique=true,default=mplProductCatalog:Staged]
+				          
+				INSERT_UPDATE RichAttribute;homeDelivery(code);expressDelivery(code);clickAndCollect(code);typeOfItem1(code);typeOfItem2(code);shippingmodes(code);paymentModes(code);deliveryfulfillmodes(code);cancellationwindow;returnwindow;replacementwindow;exchangeallowedwindow;warrantyType(code);warrantyPeriod;ispromotionallowed(code);leadtimeforhomedelivery;sellerfulfilledshippingcharge;sellerInfo(sellerArticleSKU,$catalogVersion)[unique=true];$catalogversion
+				
+# #homeDelivery;expressDelivery;clickAndCollect;typeOfItem1;typeOfItem2;shippingmodes;paymentModes;deliveryfulfillmodes;cancellationwindow;returnwindow;replacementwi#ndow;exchangeallowedwindow;warrantyType;warrantyPeriod;ispromotionallowed;leadtimeforhomedelivery;sellerfulfilledshippingcharge;sellerInfo
+;yes;yes;no;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;1236552200070020123655;
+;yes;yes;no;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;101;1236562200070020123656;
+;yes;yes;no;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;1236552200070030123655;
+;yes;yes;no;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;101;1236562200070030123656;
+;yes;yes;no;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;1236552200070040123655;
+;yes;yes;no;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;101;1236562200070040123656;
+;yes;yes;no;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;1236552200070050123655;
+;yes;yes;no;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;101;1236562200070050123656;
+;yes;yes;no;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;1236552200070060123655;
+;yes;yes;no;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;101;1236562200070060123656;
+;yes;yes;no;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;1236552200070070123655;
+;yes;yes;no;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;101;1236562200070070123656;
+;yes;yes;no;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;1236552200070080123655;
+;yes;yes;no;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;101;1236562200070080123656;
+;yes;yes;no;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;1236552200070090123655;
+;yes;yes;no;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;101;1236562200070090123656;
+;yes;yes;no;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;1236552200070100123655;
+;yes;yes;no;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;101;1236562200070100123656;
+;yes;yes;no;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;1236552200070110123655;
+;yes;yes;no;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;101;1236562200070110123656;
+;yes;yes;no;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;1236552200070120123655;
+;yes;yes;no;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;101;1236562200070120123656;
+;yes;yes;no;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;1236552200070130123655;
+;yes;yes;no;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;101;1236562200070130123656;

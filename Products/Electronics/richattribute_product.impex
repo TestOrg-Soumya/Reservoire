@@ -1,0 +1,20 @@
+#{defaultImpexProductHeader}
+            	$productCatalog=mplProductCatalog
+				$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+				$supercategories=supercategories(code, $catalogVersion)
+				$baseProduct=baseProduct(code,$catalogVersion)
+				$approved=approvalstatus(code)[default='check']
+				$unit=unit(code)[default='pieces']
+				$clAttrModifiers=system='pcmClassification',version='1',translator=de.hybris.platform.catalog.jalo.classification.impex.ClassificationAttributeTranslator,lang=en
+				$catalogversion=catalogversion(catalog(id[default=mplProductCatalog]),version[default='Staged'])[unique=true,default=mplProductCatalog:Staged]
+				          
+				INSERT_UPDATE RichAttribute;typeOfItem1(code);typeOfItem2(code);shippingmodes(code);paymentModes(code);deliveryfulfillmodes(code);cancellationwindow;returnwindow;replacementwindow;exchangeallowedwindow;warrantyType(code);warrantyPeriod;ispromotionallowed(code);leadtimeforhomedelivery;sellerfulfilledshippingcharge;productsource(code,$catalogVersion)[unique=true];$catalogversion
+
+
+;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MPF220006011;
+;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MPF220006012;
+;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MPF220006013;
+;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MPF220006014;
+;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MPF220006015;
+;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MPF220006016;
+

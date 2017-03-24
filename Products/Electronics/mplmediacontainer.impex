@@ -1,0 +1,19 @@
+$productCatalog=mplProductCatalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$thumbnail=thumbnail(code, $catalogVersion)
+$picture=picture(code, $catalogVersion)
+$thumbnails=thumbnails(code, $catalogVersion)
+$detail=detail(code, $catalogVersion)
+$normal=normal(code, $catalogVersion)
+$others=others(code, $catalogVersion)
+$data_sheet=data_sheet(code, $catalogVersion)
+$medias=medias(code, $catalogVersion)
+$galleryImages=galleryImages(qualifier, $catalogVersion)
+$media=@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator]
+$URI=http:				
+INSERT_UPDATE MediaContainer;qualifier[unique=true];medias(code, $catalogVersion);$catalogVersion
+# Qualifier,Medias
+;MPF220006002_1_frontall;1348Wx2000H/MPF220006002_frontall,437Wx649H/MPF220006002_frontall,252Wx374H/MPF220006002_frontall,97Wx144H/MPF220006002_frontall,113Wx168H/MPF220006002_frontall
+;MPF220006002_2_frontcloseup;1348Wx2000H/MPF220006002_frontcloseup,437Wx649H/MPF220006002_frontcloseup,97Wx144H/MPF220006002_frontcloseup
+;MPF220006002_3_back;1348Wx2000H/MPF220006002_back,437Wx649H/MPF220006002_back,97Wx144H/MPF220006002_back
+;MPF220006002_4_side;1348Wx2000H/MPF220006002_side,437Wx649H/MPF220006002_side,97Wx144H/MPF220006002_side

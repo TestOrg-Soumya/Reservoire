@@ -1,0 +1,37 @@
+# Macros / Replacement Parameter definitions
+$productCatalog=mplProductCatalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$thumbnail=thumbnail(code, $catalogVersion)
+$picture=picture(code, $catalogVersion)
+$thumbnails=thumbnails(code, $catalogVersion)
+$detail=detail(code, $catalogVersion)
+$normal=normal(code, $catalogVersion)
+$others=others(code, $catalogVersion)
+$data_sheet=data_sheet(code, $catalogVersion)
+$medias=medias(code, $catalogVersion)
+$galleryImages=galleryImages(qualifier, $catalogVersion)
+$media=@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator]
+$URI=http:
+$folder=folder(qualifier)[default='images']
+INSERT_UPDATE Media;Qualifier;MediaStatus(code);mediaFormat(qualifier);code[unique=true];$media;mediaType(code)[default='Image'];mime[default='image/jpeg'];mediaPriority;description;$folder;$catalogVersion
+;MPF220006002_1;pcm_new;1348Wx2000H;1348Wx2000H/MPF220006002_frontall;http://img5a.flixcart.com/image/sandal/h/r/d/pink-b-2216-luca-fashion-12-1000x1000-imae5pahgpbv35yb.jpeg;Image;image/jpeg;1
+;MPF220006002_1;pcm_new;437Wx649H;437Wx649H/MPF220006002_frontall;http://img5a.flixcart.com/image/sandal/h/r/d/pink-b-2216-luca-fashion-12-400x400-imae5pahgpbv35yb.jpeg;Image;image/jpeg;1
+;MPF220006002_1;pcm_new;252Wx374H;252Wx374H/MPF220006002_frontall;http://img5a.flixcart.com/image/sandal/h/r/d/pink-b-2216-luca-fashion-12-200x200-imae5pahgpbv35yb.jpeg;Image;image/jpeg;1
+;MPF220006002_1;pcm_new;97Wx144H;97Wx144H/MPF220006002_frontall;http://img6a.flixcart.com/image/sandal/h/r/d/pink-b-2216-luca-fashion-12-100x100-imae5pahgpbv35yb.jpeg;Image;image/jpeg;1
+;MPF220006002_1;pcm_new;113Wx168H;113Wx168H/MPF220006002_frontall;http://img5a.flixcart.com/image/sandal/h/r/d/pink-b-2216-luca-fashion-12-200x200-imae5pahgpbv35yb.jpeg;Image;image/jpeg;1
+
+;MPF220006002_2;pcm_new;1348Wx2000H;1348Wx2000H/MPF220006002_frontcloseup;http://img6a.flixcart.com/image/sandal/h/r/d/pink-b-2216-luca-fashion-12-1000x1000-imae5pahna8tn2sz.jpeg;Image;image/jpeg;1
+;MPF220006002_2;pcm_new;437Wx649H;437Wx649H/MPF220006002_frontcloseup;http://img5a.flixcart.com/image/sandal/h/r/d/pink-b-2216-luca-fashion-12-400x400-imae5pahna8tn2sz.jpeg;Image;image/jpeg;1
+;MPF220006002_2;pcm_new;97Wx144H;97Wx144H/MPF220006002_frontcloseup;http://img5a.flixcart.com/image/sandal/h/r/d/pink-b-2216-luca-fashion-12-100x100-imae5pahna8tn2sz.jpeg;Image;image/jpeg;1
+
+;MPF220006002_3;pcm_new;1348Wx2000H;1348Wx2000H/MPF220006002_back;http://img6a.flixcart.com/image/sandal/h/r/d/pink-b-2216-luca-fashion-12-1000x1000-imae5pahmqpdfefk.jpeg;Image;image/jpeg;1
+;MPF220006002_3;pcm_new;437Wx649H;437Wx649H/MPF220006002_back;http://img6a.flixcart.com/image/sandal/h/r/d/pink-b-2216-luca-fashion-12-400x400-imae5pahmqpdfefk.jpeg;Image;image/jpeg;1
+;MPF220006002_3;pcm_new;97Wx144H;97Wx144H/MPF220006002_back;http://img5a.flixcart.com/image/sandal/h/r/d/pink-b-2216-luca-fashion-12-100x100-imae5pahmqpdfefk.jpeg;Image;image/jpeg;1
+
+;MPF220006002_4;pcm_new;1348Wx2000H;1348Wx2000H/MPF220006002_side;http://img5a.flixcart.com/image/sandal/h/r/d/pink-b-2216-luca-fashion-12-1000x1000-imae5pahp3vebsuh.jpeg;Image;image/jpeg;1
+;MPF220006002_4;pcm_new;437Wx649H;437Wx649H/MPF220006002_side;http://img5a.flixcart.com/image/sandal/h/r/d/pink-b-2216-luca-fashion-12-400x400-imae5pahp3vebsuh.jpeg;Image;image/jpeg;1
+
+#video
+;MPF220006002_4;pcm_new;97Wx144H;97Wx144H/MPF220006002_side;http://www.youtube.com/embed/29w0eifJLus;Video;video/webm;1;desc
+
+			

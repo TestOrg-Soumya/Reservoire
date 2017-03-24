@@ -1,0 +1,13 @@
+# Insert SEO
+$productCatalog=mplProductCatalog
+$classificationCatalog=pcmClassification
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+INSERT_UPDATE SeoContent;seoMetaTitle[unique=true];seoMetaKeyword[unique=true];seoMetaDescription[unique=true];tags;productSource(code,$catalogVersion)[unique=true];$catalogVersion
+
+# seoMetaTitle;seoMetaKeyword;seoMetaDescription;tags;productSource
+;Luca Fashion Girls Sandals;Luca Fashion Girls Sandals;Luca Fashion Girls Sandals;Luca Fashion Girls Sandals;MPF220006011;
+;Luca Fashion Girls Sandals;Luca Fashion Girls Sandals;Luca Fashion Girls Sandals;Luca Fashion Girls Sandals;MPF220006012;
+;Luca Fashion Girls Sandals;Luca Fashion Girls Sandals;Luca Fashion Girls Sandals;Luca Fashion Girls Sandals;MPF220006013;
+;Luca Fashion Girls Sandals;Luca Fashion Girls Sandals;Luca Fashion Girls Sandals;Luca Fashion Girls Sandals;MPF220006014;
+;Luca Fashion Girls Sandals;Luca Fashion Girls Sandals;Luca Fashion Girls Sandals;Luca Fashion Girls Sandals;MPF220006015;
+;Luca Fashion Girls Sandals;Luca Fashion Girls Sandals;Luca Fashion Girls Sandals;Luca Fashion Girls Sandals;MPF220006016;

@@ -713,3 +713,86 @@ MP000000000021693 - luxury product in IA
 ***********
 LW-230 : unit case
 logic modification
+
+
+
+09-03-2017
+****************
+TPR-4797 - No code fix required.
+TPR-4798 - Fixed
+TPR-4799  
+TPR-4800 - Not a defect
+TPR-4801 - Fixed
+TPR-4802 - Fixed
+TPR-4803 - Fixed
+TPR-4805 - Not a defect
+
+
+16-03-2017
+****************
+Production issues 
+
+1) PDP: On page load the seller id and seller name are showing as blank. This populates on when a user selects a particular size. Ideally, since the default product is anyways being shown, the seller details should be populated. 
+Else we need to make them conditional.
+seller_id
+:
+""
+seller_name
+:
+""
+
+2) Getting the following error while scrolling on the PDP:
+GET https://www.tatacliq.com/p-fetchPageContents?productCode=MP000000000776951 500 (Internal Server Error)
+send @ jquery-2.1.1.min.js:4
+ajax @ jquery-2.1.1.min.js:4
+getProductContents @ tmpmain.min.js?v=100057:809
+lazyLoadProductContents @ tmpmain.min.js?v=100057:810
+(anonymous) @ tmpmain.min.js?v=100057:810
+dispatch @ jquery-2.1.1.min.js:3
+r.handle @ jquery-2.1.1.min.js:3
+
+3) Social share not showing common event_type for g+ and twitter
+utag_data.event_type
+"social_share"
+utag_data.link_text
+"share_twitter"
+utag_data.link_text
+"share_googleplus"
+utag_data.event_type
+"share_button_click"
+
+4) Duplication of variables
+utag_data.pdp_pin_value
+"999999"
+utag_data.pdp_pincode_non_serviceable
+"999999"
+
+5. utag is not firing in the cart and delivery pages if we add Dell laptop product with special characters ie. '/' or ' '. 
+6. The user_login_type is not populating correctly for Facebook, GooglePlus, Email & Guest users.
+7. Tags are not firing properly for "Similar Products" click.
+
+17-03-2017
+***************
+
+TPR-4752 
+TPR-4753
+order history all done
+
+TPR-4807 - banner ads - done
+TPR-4798 - top deals - done
+TPR-4797 - brand studio - done
+TPR-4803 - hot now
+/*TPR-4803|Hot now home page,pdp recommendations generic method|*/
+
+22-03-2017
+***********
+
+TPR-4803			Hot Now - fixed
+TPR-4715, TPR-4727	Add to Compare - 
+TPR-4716, TPR-4728	Compare Now Page - 
+
+
+MplCategoryPopulator.java
+
+
+

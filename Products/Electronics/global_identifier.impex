@@ -1,0 +1,14 @@
+#{defaultImpexProductHeader}
+$productCatalog=mplProductCatalog
+$classificationCatalog=pcmClassification
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+
+# Insert Global Identifier
+INSERT_UPDATE GlobalIdentifier;productSource(code,$catalogVersion)[unique=true];globalIdentifierType(code);globalIdentifierTypeValue[unique=true][mode=append];$catalogVersion
+# productSource,globalIdentifierType,globalIdentifierTypeValue
+;MPF220006011;ean;86768717811111;
+;MPF220006012;ean;86768717811112;
+;MPF220006013;ean;86768717811113;
+;MPF220006014;ean;86768717811111;
+;MPF220006015;ean;86768717811112;
+;MPF220006016;ean;86768717811113;

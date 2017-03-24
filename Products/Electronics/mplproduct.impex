@@ -1,0 +1,27 @@
+#{defaultImpexProductHeader}
+$productCatalog=mplProductCatalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$supercategories=supercategories(code, $catalogVersion)
+$baseProduct=baseProduct(code,$catalogVersion)
+$approved=approvalstatus(code)[default='approved']
+$unit=unit(code)[default='pieces']
+$clAttrModifiers=system='pcmClassification',version='1',translator=de.hybris.platform.catalog.jalo.classification.impex.ClassificationAttributeTranslator,lang=en
+$catalogversion=catalogversion(catalog(id[default=mplProductCatalog]),version[default='Staged'])[unique=true,default=mplProductCatalog:Staged]
+$variantType=variantType(code)[default='PcmProductVariant']
+$lang=en
+
+INSERT_UPDATE Product			;code[unique=true,alias=PIMID]	;name[lang=$lang]		;title					;articleMiniDescription	;articleDescription			;createdOn[dateformat=yyyyMMddHHmmss]	;colour	;reviews			;mrp;$supercategories								;deliveryModes(code)			;capacity;$catalogversion;$approved;$unit;
+								;MPE220007011					;Redmi Note 4 RED		;Redmi Note 4 RED		;Girls Phone			;Girls Redmi RED			;20151104051422							;RED	;Excellent product	;150;MPH12,MSH1212103,MSH1212101,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007012					;Redmi Note 4 RED		;Redmi Note 4 RED		;Girls Phone			;Girls Redmi RED			;20151105051422							;RED	;Excellent product	;200;MPH12,MSH1212103,MSH1212101,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007013					;Redmi Note 4 RED		;Redmi Note 4 RED		;Girls Phone			;Girls Redmi RED			;20151106051422							;RED	;Excellent product	;250;MPH12,MSH1212103,MSH1212101,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007014					;Redmi Note 4 BLUE		;Redmi Note 4 BLUE		;Girls Phone			;Girls Redmi BLUE			;20151104051422							;BLUE	;Excellent product	;300;MPH12,MSH1212103,MSH1212101,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007015					;Redmi Note 4 BLUE		;Redmi Note 4 BLUE		;Girls Phone			;Girls Redmi BLUE			;20151105051422							;BLUE	;Excellent product	;350;MPH12,MSH1212103,MSH1212101,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007016					;Redmi Note 4 BLUE		;Redmi Note 4 BLUE		;Girls Phone			;Girls Redmi BLUE			;20151106051422							;BLUE	;Excellent product	;400;MPH12,MSH1212103,MSH1212101,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007021					;One Plus 3T RED		;One Plus 3T RED		;Boys Phone				;Boys One Plus RED			;20151104051422							;RED	;Excellent product	;150;MPH12,MSH1212103,MSH1212101,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007022					;One Plus 3T RED		;One Plus 3T RED		;Boys Phone				;Boys One Plus RED			;20151105051422							;RED	;Excellent product	;200;MPH12,MSH1212103,MSH1212101,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007023					;One Plus 3T RED		;One Plus 3T RED		;Boys Phone				;Boys One Plus RED			;20151106051422							;RED	;Excellent product	;250;MPH12,MSH1212103,MSH1212101,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007024					;One Plus 3T BLUE		;One Plus 3T BLUE		;Boys Phone				;Boys One Plus BLUE			;20151104051422							;BLUE	;Excellent product	;300;MPH12,MSH1212103,MSH1212101,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007025					;One Plus 3T BLUE		;One Plus 3T BLUE		;Boys Phone				;Boys One Plus BLUE			;20151105051422							;BLUE	;Excellent product	;350;MPH12,MSH1212103,MSH1212101,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007026					;One Plus 3T BLUE		;One Plus 3T BLUE		;Boys Phone				;Boys One Plus BLUE			;20151106051422							;BLUE	;Excellent product	;400;MPH12,MSH1212103,MSH1212101,MBH13F00001	;home-delivery,express-delivery	;
+
+
