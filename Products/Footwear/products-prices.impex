@@ -49,20 +49,45 @@ INSERT_UPDATE SearchRestriction;code[unique=true];name[lang=de];name[lang=en];qu
 $inCurrency=INR
                       
 INSERT_UPDATE MplZoneDeliveryModeValue ; deliveryMode(code)[unique=true] ; zone(code)[default='in'] ; currency(isocode) ;value 	; minimum;sellerArticleSKU[unique=true];productCode[unique=true];deliveryFulfillModes(Code)
-                                   			   ; home-delivery      ;      							; $inCurrency       ;49  	; 0,00	  ;1236552200060020123655;MPF220006011;sship
+                                   			   ; home-delivery      ;      							; $inCurrency       ;19  	; 0,00	  ;1236552200060020123655;MPF220006011;sship
+                                   	           ; express-delivery   ;      							; $inCurrency       ;49  	; 0,00	  ;1236552200060020123655;MPF220006011;sship
+                                   			   ; home-delivery      ;      							; $inCurrency       ;19  	; 0,00	  ;1236562200060020123656;MPF220006011;sship
                                    	           ; express-delivery   ;      							; $inCurrency       ;49  	; 0,00	  ;1236562200060020123656;MPF220006011;sship
+                                   			   ; home-delivery      ;      							; $inCurrency       ;19  	; 0,00	  ;1236562200060020123657;MPF220006011;sship
+                                   	           ; express-delivery   ;      							; $inCurrency       ;49  	; 0,00	  ;1236562200060020123657;MPF220006011;sship
 																															
-                                   			   ; home-delivery      ;      							; $inCurrency       ;49  	; 0,00	  ;1236552200060030123655;MPF220006012;sship
+                                   			   ; home-delivery      ;      							; $inCurrency       ;19  	; 0,00	  ;1236552200060030123655;MPF220006012;sship
+                                   	           ; express-delivery   ;      							; $inCurrency       ;49  	; 0,00	  ;1236552200060030123655;MPF220006012;sship
+                                   			   ; home-delivery      ;      							; $inCurrency       ;29  	; 0,00	  ;1236562200060030123656;MPF220006012;sship
                                    	           ; express-delivery   ;      							; $inCurrency       ;49  	; 0,00	  ;1236562200060030123656;MPF220006012;sship
+                                   			   ; home-delivery      ;      							; $inCurrency       ;19  	; 0,00	  ;1236562200060030123657;MPF220006011;sship
+                                   	           ; express-delivery   ;      							; $inCurrency       ;49  	; 0,00	  ;1236562200060030123657;MPF220006011;sship
 																															
-                                   			   ; home-delivery      ;      							; $inCurrency       ;49  	; 0,00	  ;1236552200060040123655;MPF220006013;sship
+                                   			   ; home-delivery      ;      							; $inCurrency       ;19  	; 0,00	  ;1236552200060040123655;MPF220006013;sship
+                                   	           ; express-delivery   ;      							; $inCurrency       ;49  	; 0,00	  ;1236552200060040123655;MPF220006013;sship											   
+                                   			   ; home-delivery      ;      							; $inCurrency       ;29  	; 0,00	  ;1236562200060040123656;MPF220006013;sship
                                    	           ; express-delivery   ;      							; $inCurrency       ;49  	; 0,00	  ;1236562200060040123656;MPF220006013;sship											   
+                                   			   ; home-delivery      ;      							; $inCurrency       ;19  	; 0,00	  ;1236562200060040123657;MPF220006011;sship
+                                   	           ; express-delivery   ;      							; $inCurrency       ;49  	; 0,00	  ;1236562200060040123657;MPF220006011;sship
 																															
-                                   			   ; home-delivery      ;      							; $inCurrency       ;49  	; 0,00	  ;1236552200060050123655;MPF220006014;sship
+                                   			   ; home-delivery      ;      							; $inCurrency       ;19  	; 0,00	  ;1236552200060050123655;MPF220006014;sship
+                                   	           ; express-delivery   ;      							; $inCurrency       ;49  	; 0,00	  ;1236552200060050123655;MPF220006014;sship
+                                   			   ; home-delivery      ;      							; $inCurrency       ;29  	; 0,00	  ;1236562200060050123656;MPF220006014;sship
                                    	           ; express-delivery   ;      							; $inCurrency       ;49  	; 0,00	  ;1236562200060050123656;MPF220006014;sship
+                                   			   ; home-delivery      ;      							; $inCurrency       ;19  	; 0,00	  ;1236562200060050123657;MPF220006011;sship
+                                   	           ; express-delivery   ;      							; $inCurrency       ;49  	; 0,00	  ;1236562200060050123657;MPF220006011;sship
 																															
-                                   			   ; home-delivery      ;      							; $inCurrency       ;49  	; 0,00	  ;1236552200060060123655;MPF220006015;sship
+                                   			   ; home-delivery      ;      							; $inCurrency       ;19  	; 0,00	  ;1236552200060060123655;MPF220006015;sship
+                                   	           ; express-delivery   ;      							; $inCurrency       ;49  	; 0,00	  ;1236552200060060123655;MPF220006015;sship
+                                   			   ; home-delivery      ;      							; $inCurrency       ;29  	; 0,00	  ;1236562200060060123656;MPF220006015;sship
                                    	           ; express-delivery   ;      							; $inCurrency       ;49  	; 0,00	  ;1236562200060060123656;MPF220006015;sship
+                                   			   ; home-delivery      ;      							; $inCurrency       ;19  	; 0,00	  ;1236562200060060123657;MPF220006011;sship
+                                   	           ; express-delivery   ;      							; $inCurrency       ;49  	; 0,00	  ;1236562200060060123657;MPF220006011;sship
 																															
-                                   			   ; home-delivery      ;      							; $inCurrency       ;49  	; 0,00	  ;1236552200060070123655;MPF220006016;sship
-                                   	           ; express-delivery   ;      							; $inCurrency       ;49  	; 0,00	  ;1236562200060070123656;MPF220006016;sship											   
+                                   			   ; home-delivery      ;      							; $inCurrency       ;19  	; 0,00	  ;1236552200060070123655;MPF220006016;sship
+                                   	           ; express-delivery   ;      							; $inCurrency       ;49  	; 0,00	  ;1236552200060070123655;MPF220006016;sship											   
+                                   			   ; home-delivery      ;      							; $inCurrency       ;29  	; 0,00	  ;1236562200060070123656;MPF220006016;sship
+                                   	           ; express-delivery   ;      							; $inCurrency       ;49  	; 0,00	  ;1236562200060070123656;MPF220006016;sship											   											   
+                                   			   ; home-delivery      ;      							; $inCurrency       ;19  	; 0,00	  ;1236562200060070123657;MPF220006011;sship
+                                   	           ; express-delivery   ;      							; $inCurrency       ;49  	; 0,00	  ;1236562200060070123657;MPF220006011;sship
+											   
