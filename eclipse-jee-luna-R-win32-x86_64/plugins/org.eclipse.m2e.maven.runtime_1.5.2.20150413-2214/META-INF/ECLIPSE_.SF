@@ -1,0 +1,129 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: aW3Un8eIc33aVuxmwv2tiD54bynmm
+ Tci64j6Q8cictU=
+SHA-256-Digest-Manifest: OcHidIukrt5sAtieD3k9cAes99/7odlmGyWHqU2WMtg=
+Created-By: 1.7.0_75 (Oracle Corporation)
+
+Name: jars/maven-settings-builder-3.2.1.jar
+SHA-256-Digest: sGAndya7PIA5PWPajovIDhJZDrS+3bc3Q8+wTmOizwY=
+
+Name: jars/org.eclipse.sisu.inject-0.0.0.M5.jar
+SHA-256-Digest: NIRdDQg0A1y33QOAN4R3l8A6PiZ+ntCnjCTB1qq8Xxc=
+
+Name: jars/commons-lang-2.6.jar
+SHA-256-Digest: 1bmTSKK8RrUNxx1OWsfPIhdlJqZ+2yfnNKlCsza6ly8=
+
+Name: jars/maven-settings-3.2.1.jar
+SHA-256-Digest: DwguOILJLaFIL2N8N8KbQOtEyUmPBObdrDfjN1U/knY=
+
+Name: jars/maven-artifact-3.2.1.jar
+SHA-256-Digest: mx0GhL1Y4OAFjAGwN1uNKHssJiWjtLKAgDpzkvnlq/g=
+
+Name: jars/plexus-sec-dispatcher-1.3.jar
+SHA-256-Digest: 4B5fFW5eYTZJyglLQnr1trrFEdDWnbXToM8/eTR5EgI=
+
+Name: jars/takari-local-repository-0.9.0.jar
+SHA-256-Digest: Qxj0C27bGmHtK7ekARZG6Y9MCTSWqBzqnpZW4l28Knk=
+
+Name: about_files/LICENSE-2.0.txt
+SHA-256-Digest: pgHwXlfwoswdBsTcqm60MdG9UCR1vmm7cVCWX+ZHJaw=
+
+Name: jars/okhttp-1.5.4.jar
+SHA-256-Digest: 4JGZGm2TxPG8idnU6Vhg5WX6733AKMPmwsTk/bg4O7A=
+
+Name: jars/wagon-file-2.6.jar
+SHA-256-Digest: FFQWX6pbC7eJ2VQRnU6i2ITadpE/1DaZTCnLqbMEfNE=
+
+Name: jars/maven-plugin-api-3.2.1.jar
+SHA-256-Digest: 4YbXAjCkGZKLPxNfg9Kr5vHESei0xDHKt7wk0uFNhTs=
+
+Name: jars/maven-aether-provider-3.2.1.jar
+SHA-256-Digest: MNSi+27x3DLSU8ipqfEkA+8yl+cOVw4Gl8OGHghCOWs=
+
+Name: jars/commons-cli-1.2.jar
+SHA-256-Digest: VEThItH2mz8ZxL3kIfCn5VPJC0QbXpU4p3RIEszZczk=
+
+Name: jars/maven-model-3.2.1.jar
+SHA-256-Digest: hGMEDhkJCauafnEF/rL1F+b8Ps4tcl5hs0n5yus8FD4=
+
+Name: jars/maven-repository-metadata-3.2.1.jar
+SHA-256-Digest: Q1wl0b57F7h90SwToUXkDjl/kqE5wFVPg0mbJxdBJJ8=
+
+Name: jars/takari-filemanager-0.7.0.jar
+SHA-256-Digest: P9YxPCI3Oo7MCrum8vHZFmGAqmGnRIZnl2OT47bZ5d0=
+
+Name: jars/aether-spi-0.9.0.M2.jar
+SHA-256-Digest: yUpFF+hWmYLSPepEio38lAO6Tded9COlGihjdT8Os1Q=
+
+Name: about.html
+SHA-256-Digest: VJb5+sODw8ipsRHZj/BjGW1+NmrxyUMMy6wsjlFWUGU=
+
+Name: jars/maven-core-3.2.1.jar
+SHA-256-Digest: QhuoR73n0YWFOtj2pdxgircjn+OBWJBofoofPQcbCIY=
+
+Name: jars/wagon-provider-api-2.6.jar
+SHA-256-Digest: fC7A3jKPGq5FKwQSHeGj8fEhBlRCvUFWTbrjw0yrrq8=
+
+Name: jars/aether-impl-0.9.0.M2.jar
+SHA-256-Digest: F6Zkg9L1WKfglTXWSWoK3xax+C25khbbnUegC/1mxLs=
+
+Name: jars/plexus-cipher-1.7.jar
+SHA-256-Digest: ABVbj0+FCBrJA9LOY9GZ4N6TdIlwKJ35ruG9xWC4RQY=
+
+Name: jars/jsr250-api-1.0.jar
+SHA-256-Digest: AMibCp8ocs2TLBeK2PhFK1HxTe04NRhy6U3RF9nEA0Y=
+
+Name: jars/plexus-build-api-0.0.7.jar
+SHA-256-Digest: d2XoTzYIPoPhHBON9itLN7zjB7F5D8B/LXxH4izFpwE=
+
+Name: OSGI-INF/l10n/bundle.properties
+SHA-256-Digest: SFmE/yS2Cld6yCeL1lG7XsjsgUny4VrEltBS9313lAA=
+
+Name: jars/plexus-classworlds-2.5.1.jar
+SHA-256-Digest: g1Xb738EWiegp7BhXDsjUnvYlmlZyOLB3IGMLIyDW4I=
+
+Name: jars/org.eclipse.sisu.plexus-0.0.0.M5.jar
+SHA-256-Digest: zflT69xqF+QC81XBAD84YhZcCg8gOcjC0gxiveB8x1k=
+
+Name: jars/plexus-utils-3.0.17.jar
+SHA-256-Digest: XLC1KgR5k1TR/EJ2E0+IJ61qRuH/QD/5qWs2XmSsMf8=
+
+Name: jars/guava-14.0.1.jar
+SHA-256-Digest: FnCB2JO68IXHjfYtOLZfxDeERs3Q3eD0sMybpIhfH8w=
+
+Name: jars/sisu-guice-3.1.3-no_aop.jar
+SHA-256-Digest: LWws9GMEXIB6VoqYutD4Hjkwb1C0iLF6oc9/a1bzhPc=
+
+Name: jars/aether-connector-wagon-0.9.0.M2.jar
+SHA-256-Digest: cwek+w3O85lv/kOGDCDMDAzfxN+3LDvSvBMn6yxDGwI=
+
+Name: jars/aether-api-0.9.0.M2.jar
+SHA-256-Digest: ja1NQYfv55lX5NcwyOfZiaIIxFp7Ic/fU+GA/VpXL/o=
+
+Name: jars/maven-model-builder-3.2.1.jar
+SHA-256-Digest: hYTqJvZNmYobbcf6Tx+ST2jw0cfajyI6ZFfMRCaVtAg=
+
+Name: jars/javax.inject-1.jar
+SHA-256-Digest: /3UVY0EqPgoATj6rg4k1pZ5qAyLUocoNDlJ9OFggXCA=
+
+Name: jars/cdi-api-1.0.jar
+SHA-256-Digest: jhV5WN9JJj0dTNeJurv0s+qwPatY2UC0I6tbUmvjSo4=
+
+Name: jars/plexus-interpolation-1.19.jar
+SHA-256-Digest: pdMDzY27JSCazGP21Ebk+6RQlTlrOx+oGpvRh5Mwf8Q=
+
+Name: jars/maven-embedder-3.2.1.jar
+SHA-256-Digest: /7acLiqaK5bdItMFK9KagZoWrFSW/3bgMOuxoYXKRfg=
+
+Name: jars/aether-util-0.9.0.M2.jar
+SHA-256-Digest: MAdr/oiu8wRKTaIQ+a4y2oii9Yau/Mefd2Wxhrbhy3U=
+
+Name: jars/plexus-component-annotations-1.5.5.jar
+SHA-256-Digest: YZoE+klEPRxpr8ZVrk8dsOvA2cA9R91U9B19EmF6LDQ=
+
+Name: jars/aether-connector-okhttp-0.12.0.jar
+SHA-256-Digest: XBP3FtSr2kR4zOVbboCoDhYhHsnltqcs9efxSTmVIqs=
+
+Name: jars/maven-compat-3.2.1.jar
+SHA-256-Digest: 79IhCU13ona/zLdgPFvo1Szct13AwZtcNh0qggFj80E=
+
