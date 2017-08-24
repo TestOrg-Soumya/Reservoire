@@ -11,17 +11,95 @@ $variantType=variantType(code)[default='PcmProductVariant']
 $lang=en
 
 INSERT_UPDATE Product			;code[unique=true,alias=PIMID]	;name[lang=$lang]		;title					;articleMiniDescription	;articleDescription			;createdOn[dateformat=yyyyMMddHHmmss]	;colour	;reviews			;mrp;$supercategories								;deliveryModes(code)			;capacity;$catalogversion;$approved;$unit;
-								;MPE220007011					;Redmi Note 4 RED		;Redmi Note 4 RED		;Girls Phone			;Girls Redmi RED			;20151104051422							;RED	;Excellent product	;150;MPH12,MSH1212103,MSH1212101,MBH13F00001	;home-delivery,express-delivery	;
-								;MPE220007012					;Redmi Note 4 RED		;Redmi Note 4 RED		;Girls Phone			;Girls Redmi RED			;20151105051422							;RED	;Excellent product	;200;MPH12,MSH1212103,MSH1212101,MBH13F00001	;home-delivery,express-delivery	;
-								;MPE220007013					;Redmi Note 4 RED		;Redmi Note 4 RED		;Girls Phone			;Girls Redmi RED			;20151106051422							;RED	;Excellent product	;250;MPH12,MSH1212103,MSH1212101,MBH13F00001	;home-delivery,express-delivery	;
-								;MPE220007014					;Redmi Note 4 BLUE		;Redmi Note 4 BLUE		;Girls Phone			;Girls Redmi BLUE			;20151104051422							;BLUE	;Excellent product	;300;MPH12,MSH1212103,MSH1212101,MBH13F00001	;home-delivery,express-delivery	;
-								;MPE220007015					;Redmi Note 4 BLUE		;Redmi Note 4 BLUE		;Girls Phone			;Girls Redmi BLUE			;20151105051422							;BLUE	;Excellent product	;350;MPH12,MSH1212103,MSH1212101,MBH13F00001	;home-delivery,express-delivery	;
-								;MPE220007016					;Redmi Note 4 BLUE		;Redmi Note 4 BLUE		;Girls Phone			;Girls Redmi BLUE			;20151106051422							;BLUE	;Excellent product	;400;MPH12,MSH1212103,MSH1212101,MBH13F00001	;home-delivery,express-delivery	;
-								;MPE220007021					;One Plus 3T RED		;One Plus 3T RED		;Boys Phone				;Boys One Plus RED			;20151104051422							;RED	;Excellent product	;150;MPH12,MSH1212103,MSH1212101,MBH13F00001	;home-delivery,express-delivery	;
-								;MPE220007022					;One Plus 3T RED		;One Plus 3T RED		;Boys Phone				;Boys One Plus RED			;20151105051422							;RED	;Excellent product	;200;MPH12,MSH1212103,MSH1212101,MBH13F00001	;home-delivery,express-delivery	;
-								;MPE220007023					;One Plus 3T RED		;One Plus 3T RED		;Boys Phone				;Boys One Plus RED			;20151106051422							;RED	;Excellent product	;250;MPH12,MSH1212103,MSH1212101,MBH13F00001	;home-delivery,express-delivery	;
-								;MPE220007024					;One Plus 3T BLUE		;One Plus 3T BLUE		;Boys Phone				;Boys One Plus BLUE			;20151104051422							;BLUE	;Excellent product	;300;MPH12,MSH1212103,MSH1212101,MBH13F00001	;home-delivery,express-delivery	;
-								;MPE220007025					;One Plus 3T BLUE		;One Plus 3T BLUE		;Boys Phone				;Boys One Plus BLUE			;20151105051422							;BLUE	;Excellent product	;350;MPH12,MSH1212103,MSH1212101,MBH13F00001	;home-delivery,express-delivery	;
-								;MPE220007026					;One Plus 3T BLUE		;One Plus 3T BLUE		;Boys Phone				;Boys One Plus BLUE			;20151106051422							;BLUE	;Excellent product	;400;MPH12,MSH1212103,MSH1212101,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007011					;Redmi Note 4 RED		;Redmi Note 4 RED		;Girls Phone			;Girls Redmi RED			;20151104051422							;RED	;Excellent product	;150;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007012					;Redmi Note 4 GREEN		;Redmi Note 4 GREEN		;Girls Phone			;Girls Redmi GREEN			;20151105051422							;RED	;Excellent product	;200;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007013					;Redmi Note 4 BLACK		;Redmi Note 4 BLACK		;Girls Phone			;Girls Redmi BLACK			;20151106051422							;RED	;Excellent product	;250;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007014					;Redmi Note 4 BLUE		;Redmi Note 4 BLUE		;Girls Phone			;Girls Redmi BLUE			;20151104051422							;BLUE	;Excellent product	;300;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007015					;Redmi Note 4 WHITE		;Redmi Note 4 WHITE		;Girls Phone			;Girls Redmi WHITE			;20151105051422							;BLUE	;Excellent product	;350;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007016					;Redmi Note 4 GRAY		;Redmi Note 4 GRAY		;Girls Phone			;Girls Redmi GRAY			;20151106051422							;BLUE	;Excellent product	;400;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007021					;One Plus 3T RED		;One Plus 3T RED		;Boys Phone				;Boys One Plus RED			;20151104051422							;RED	;Excellent product	;150;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007022					;One Plus 3T GREEN		;One Plus 3T GREEN		;Boys Phone				;Boys One Plus GREEN		;20151105051422							;RED	;Excellent product	;200;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007023					;One Plus 3T BLACK		;One Plus 3T BLACK		;Boys Phone				;Boys One Plus BLACK		;20151106051422							;RED	;Excellent product	;250;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007024					;One Plus 3T BLUE		;One Plus 3T BLUE		;Boys Phone				;Boys One Plus BLUE			;20151104051422							;BLUE	;Excellent product	;300;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007025					;One Plus 3T WHITE		;One Plus 3T WHITE		;Boys Phone				;Boys One Plus WHITE		;20151105051422							;BLUE	;Excellent product	;350;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007026					;One Plus 3T GRAY		;One Plus 3T GRAY		;Boys Phone				;Boys One Plus GRAY			;20151106051422							;BLUE	;Excellent product	;400;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+
+								;MPE220007031					;Moto E3 Power RED		;Moto E3 Power RED		;Girls Phone			;Girls Moto E3 RED			;20151104051422							;RED	;Excellent product	;150;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007032					;Moto E3 Power GREEN	;Moto E3 Power GREEN	;Girls Phone			;Girls Moto E3 GREEN		;20151105051422							;RED	;Excellent product	;200;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007033					;Moto E3 Power BLACK	;Moto E3 Power BLACK	;Girls Phone			;Girls Moto E3 BLACK		;20151106051422							;RED	;Excellent product	;250;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007034					;Moto E3 Power BLUE		;Moto E3 Power BLUE		;Girls Phone			;Girls Moto E3 BLUE			;20151104051422							;BLUE	;Excellent product	;300;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007035					;Moto E3 Power WHITE	;Moto E3 Power WHITE	;Girls Phone			;Girls Moto E3 WHITE		;20151105051422							;BLUE	;Excellent product	;350;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007036					;Moto E3 Power GRAY		;Moto E3 Power GRAY		;Girls Phone			;Girls Moto E3 GRAY			;20151106051422							;BLUE	;Excellent product	;400;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007041					;iPhone RED				;iPhone RED				;Boys Phone				;Boys iPhone RED			;20151104051422							;RED	;Excellent product	;150;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007042					;iPhone GREEN			;iPhone GREEN			;Boys Phone				;Boys iPhone GREEN			;20151105051422							;RED	;Excellent product	;200;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007043					;iPhone BLACK			;iPhone BLACK			;Boys Phone				;Boys iPhone BLACK			;20151106051422							;RED	;Excellent product	;250;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007044					;iPhone BLUE			;iPhone BLUE			;Boys Phone				;Boys iPhone BLUE			;20151104051422							;BLUE	;Excellent product	;300;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007045					;iPhone WHITE			;iPhone WHITE			;Boys Phone				;Boys iPhone WHITE			;20151105051422							;BLUE	;Excellent product	;350;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007046					;iPhone GRAY			;iPhone GRAY			;Boys Phone				;Boys iPhone GRAY			;20151106051422							;BLUE	;Excellent product	;400;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+
+								;MPE220007051					;Lava RED				;Lava RED				;Girls Phone			;Girls Lava RED				;20151104051422							;RED	;Excellent product	;150;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007052					;Lava GREEN				;Lava GREEN				;Girls Phone			;Girls Lava GREEN			;20151105051422							;RED	;Excellent product	;200;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007053					;Lava BLACK				;Lava BLACK				;Girls Phone			;Girls Lava BLACK			;20151106051422							;RED	;Excellent product	;250;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007054					;Lava BLUE				;Lava BLUE				;Girls Phone			;Girls Lava BLUE			;20151104051422							;BLUE	;Excellent product	;300;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007055					;Lava WHITE				;Lava WHITE				;Girls Phone			;Girls Lava WHITE			;20151105051422							;BLUE	;Excellent product	;350;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007056					;Lava GRAY				;Lava GRAY				;Girls Phone			;Girls Lava GRAY			;20151106051422							;BLUE	;Excellent product	;400;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007061					;Asus Zenfone RED		;Asus Zenfone RED		;Boys Phone				;Boys Zenfone RED			;20151104051422							;RED	;Excellent product	;150;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007062					;Asus Zenfone GREEN		;Asus Zenfone GREEN		;Boys Phone				;Boys Zenfone GREEN			;20151105051422							;RED	;Excellent product	;200;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007063					;Asus Zenfone BLACK		;Asus Zenfone BLACK		;Boys Phone				;Boys Zenfone BLACK			;20151106051422							;RED	;Excellent product	;250;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007064					;Asus Zenfone BLUE		;Asus Zenfone BLUE		;Boys Phone				;Boys Zenfone BLUE			;20151104051422							;BLUE	;Excellent product	;300;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007065					;Asus Zenfone WHITE		;Asus Zenfone WHITE		;Boys Phone				;Boys Zenfone WHITE			;20151105051422							;BLUE	;Excellent product	;350;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007066					;Asus Zenfone GRAY		;Asus Zenfone GRAY		;Boys Phone				;Boys Zenfone GRAY			;20151106051422							;BLUE	;Excellent product	;400;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+
+								;MPE220007071					;Gionee RED				;Gionee RED				;Girls Phone			;Girls Gionee RED			;20151104051422							;RED	;Excellent product	;150;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007072					;Gionee GREEN			;Gionee GREEN			;Girls Phone			;Girls Gionee GREEN			;20151105051422							;RED	;Excellent product	;200;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007073					;Gionee BLACK			;Gionee BLACK			;Girls Phone			;Girls Gionee BLACK			;20151106051422							;RED	;Excellent product	;250;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007074					;Gionee BLUE			;Gionee BLUE			;Girls Phone			;Girls Gionee BLUE			;20151104051422							;BLUE	;Excellent product	;300;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007075					;Gionee WHITE			;Gionee WHITE			;Girls Phone			;Girls Gionee WHITE			;20151105051422							;BLUE	;Excellent product	;350;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007076					;Gionee GRAY			;Gionee GRAY			;Girls Phone			;Girls Gionee GRAY			;20151106051422							;BLUE	;Excellent product	;400;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007081					;HTC RED				;HTC RED				;Boys Phone				;Boys HTC RED				;20151104051422							;RED	;Excellent product	;150;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007082					;HTC GREEN				;HTC GREEN				;Boys Phone				;Boys HTC GREEN				;20151105051422							;RED	;Excellent product	;200;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007083					;HTC BLACK				;HTC BLACK				;Boys Phone				;Boys HTC BLACK				;20151106051422							;RED	;Excellent product	;250;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007084					;HTC BLUE				;HTC BLUE				;Boys Phone				;Boys HTC BLUE				;20151104051422							;BLUE	;Excellent product	;300;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007085					;HTC WHITE				;HTC WHITE				;Boys Phone				;Boys HTC WHITE				;20151105051422							;BLUE	;Excellent product	;350;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007086					;HTC GRAY				;HTC GRAY				;Boys Phone				;Boys HTC GRAY				;20151106051422							;BLUE	;Excellent product	;400;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+
+								;MPE220007091					;BlackBerry Power RED	;BlackBerry Power RED	;Girls Phone			;Girls BlackBerry RED		;20151104051422							;RED	;Excellent product	;150;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007092					;BlackBerry Power GREEN	;BlackBerry Power GREEN	;Girls Phone			;Girls BlackBerry GREEN		;20151105051422							;RED	;Excellent product	;200;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007093					;BlackBerry Power BLACK	;BlackBerry Power BLACK	;Girls Phone			;Girls BlackBerry BLACK		;20151106051422							;RED	;Excellent product	;250;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007094					;BlackBerry Power BLUE	;BlackBerry Power BLUE	;Girls Phone			;Girls BlackBerry BLUE		;20151104051422							;BLUE	;Excellent product	;300;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007095					;BlackBerry Power WHITE	;BlackBerry Power WHITE	;Girls Phone			;Girls BlackBerry WHITE		;20151105051422							;BLUE	;Excellent product	;350;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007096					;BlackBerry Power GRAY	;BlackBerry Power GRAY	;Girls Phone			;Girls BlackBerry GRAY		;20151106051422							;BLUE	;Excellent product	;400;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007101					;Coolpad RED			;Coolpad RED			;Boys Phone				;Boys Coolpad RED			;20151104051422							;RED	;Excellent product	;150;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007102					;Coolpad GREEN			;Coolpad GREEN			;Boys Phone				;Boys Coolpad GREEN			;20151105051422							;RED	;Excellent product	;200;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007103					;Coolpad BLACK			;Coolpad BLACK			;Boys Phone				;Boys Coolpad BLACK			;20151106051422							;RED	;Excellent product	;250;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007104					;Coolpad BLUE			;Coolpad BLUE			;Boys Phone				;Boys Coolpad BLUE			;20151104051422							;BLUE	;Excellent product	;300;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007105					;Coolpad WHITE			;Coolpad WHITE			;Boys Phone				;Boys Coolpad WHITE			;20151105051422							;BLUE	;Excellent product	;350;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007106					;Coolpad GRAY			;Coolpad GRAY			;Boys Phone				;Boys Coolpad GRAY			;20151106051422							;BLUE	;Excellent product	;400;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+
+								;MPE220007111					;Honor RED				;Honor RED				;Girls Phone			;Girls Honor RED			;20151104051422							;RED	;Excellent product	;150;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007112					;Honor GREEN			;Honor GREEN			;Girls Phone			;Girls Honor GREEN			;20151105051422							;RED	;Excellent product	;200;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007113					;Honor BLACK			;Honor BLACK			;Girls Phone			;Girls Honor BLACK			;20151106051422							;RED	;Excellent product	;250;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007114					;Honor BLUE				;Honor BLUE				;Girls Phone			;Girls Honor BLUE			;20151104051422							;BLUE	;Excellent product	;300;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007115					;Honor WHITE			;Honor WHITE			;Girls Phone			;Girls Honor WHITE			;20151105051422							;BLUE	;Excellent product	;350;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007116					;Honor GRAY				;Honor GRAY				;Girls Phone			;Girls Honor GRAY			;20151106051422							;BLUE	;Excellent product	;400;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007121					;Intex RED				;Intex RED				;Boys Phone				;Boys Intex RED				;20151104051422							;RED	;Excellent product	;150;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007122					;Intex GREEN			;Intex GREEN			;Boys Phone				;Boys Intex GREEN			;20151105051422							;RED	;Excellent product	;200;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007123					;Intex BLACK			;Intex BLACK			;Boys Phone				;Boys Intex BLACK			;20151106051422							;RED	;Excellent product	;250;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007124					;Intex BLUE				;Intex BLUE				;Boys Phone				;Boys Intex BLUE			;20151104051422							;BLUE	;Excellent product	;300;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007125					;Intex WHITE			;Intex WHITE			;Boys Phone				;Boys Intex WHITE			;20151105051422							;BLUE	;Excellent product	;350;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007126					;Intex GRAY				;Intex GRAY				;Boys Phone				;Boys Intex GRAY			;20151106051422							;BLUE	;Excellent product	;400;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+
+								;MPE220007131					;Karbonn RED			;Karbonn RED			;Girls Phone			;Girls Karbonn RED			;20151104051422							;RED	;Excellent product	;150;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007132					;Karbonn GREEN			;Karbonn GREEN			;Girls Phone			;Girls Karbonn GREEN		;20151105051422							;RED	;Excellent product	;200;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007133					;Karbonn BLACK			;Karbonn BLACK			;Girls Phone			;Girls Karbonn BLACK		;20151106051422							;RED	;Excellent product	;250;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007134					;Karbonn BLUE			;Karbonn BLUE			;Girls Phone			;Girls Karbonn BLUE			;20151104051422							;BLUE	;Excellent product	;300;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007135					;Karbonn WHITE			;Karbonn WHITE			;Girls Phone			;Girls Karbonn WHITE		;20151105051422							;BLUE	;Excellent product	;350;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007136					;Karbonn GRAY			;Karbonn GRAY			;Girls Phone			;Girls Karbonn GRAY			;20151106051422							;BLUE	;Excellent product	;400;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007141					;LyF RED				;LyF RED				;Boys Phone				;Boys LyF RED				;20151104051422							;RED	;Excellent product	;150;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007142					;LyF GREEN				;LyF GREEN				;Boys Phone				;Boys LyF GREEN				;20151105051422							;RED	;Excellent product	;200;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007143					;LyF BLACK				;LyF BLACK				;Boys Phone				;Boys LyF BLACK				;20151106051422							;RED	;Excellent product	;250;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007144					;LyF BLUE				;LyF BLUE				;Boys Phone				;Boys LyF BLUE				;20151104051422							;BLUE	;Excellent product	;300;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007145					;LyF WHITE				;LyF WHITE				;Boys Phone				;Boys LyF WHITE				;20151105051422							;BLUE	;Excellent product	;350;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
+								;MPE220007146					;LyF GRAY				;LyF GRAY				;Boys Phone				;Boys LyF GRAY				;20151106051422							;BLUE	;Excellent product	;400;MPH12,MSH1212103,MBH13F00001	;home-delivery,express-delivery	;
 
 

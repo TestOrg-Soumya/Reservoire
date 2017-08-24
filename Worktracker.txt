@@ -792,7 +792,97 @@ TPR-4715, TPR-4727	Add to Compare -
 TPR-4716, TPR-4728	Compare Now Page - 
 
 
-MplCategoryPopulator.java
+04-05-2017 to 22-05-2017
+************************
+TPR-5666 : Create cart redirect url mechanism for Samsung
+
+CartPageController.java
+MplCartFacade.java
+MplCartFacadeImpl.java
+MplCommerceCartService.java
+MplCommerceCartServiceImpl.java
+
+16-06-2017
+**********
+Work started on Analytics DTM - TPR-6029
+
+19-06-2017
+**********
 
 
+21-06-2017
+***********
+13 - done
+30 - done
+31 - done
+32 - done
+37 - done
+47 - done
+48 - done
 
+22-06-2017
+**********
+49 - not done
+50 - done
+51 - done
+
+23-06-2017
+**********
+52 - done
+34 - done
+35 - 
+
+27-06-2017
+**********
+UF-265 - page-1 removed
+
+28-06-2017
+**********
+TPR-6289 - done
+TPR-6287 - done
+
+29-06-2017
+**********
+TPR-6300 - clarification required on findingMethod
+
+30-06-2017
+**********
+TPR-6334 - 
+03-07-2017
+***********
+TPR-6334 - 
+TPR-6338 - 
+
+04-07-2017
+**********
+TPR-6362 - 
+
+06-07-2017
+**********
+TPR-5667 - 
+
+07-07-2017
+**********
+TPR-5667 - dummy data for response, and build the rest logic
+
+10-07-2017
+**********
+TPR-5667
+
+11-07-2017
+**********
+Appraiser - 227845
+Reviewer- 198509
+HR- 530124
+SWON - 2737581
+
+TPR-5733 - 
+
+17-08-2017
+**********
+TISPRDT-2135 - Not a Defect
+TISPRDT-2124 - Not a Defect
+
+21-08-2017
+**********
+JWLSPCUAT-589

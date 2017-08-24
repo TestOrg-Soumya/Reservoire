@@ -9,3 +9,11 @@ INSERT_UPDATE Brand;name[unique=true];description;productSource(code,$catalogVer
 ;Nike;Nike shoe;MPF220006014;
 ;Nike;Nike shoe;MPF220006015;
 ;Nike;Nike shoe;MPF220006016;
+
+
+;Samsung;Samsung shoe;MPF220006021;
+;Samsung;Samsung shoe;MPF220006022;
+;Samsung;Samsung shoe;MPF220006023;
+;Samsung;Samsung shoe;MPF220006024;
+;Samsung;Samsung shoe;MPF220006025;
+;Samsung;Samsung shoe;MPF220006026;
