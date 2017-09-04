@@ -1,0 +1,51 @@
+Manifest-Version: 1.0
+Embed-Directory: jars
+Embedded-Artifacts: jars/slf4j-simple-1.7.5.jar;g="org.slf4j";a="slf4j
+ -simple";v="1.7.5"
+Bundle-ClassPath: .,jars/slf4j-simple-1.7.5.jar
+Eclipse-BundleShape: dir
+Built-By: fbricon
+Tool: Bnd-2.1.0.20130426-122213
+Bundle-Name: %Bundle-Name
+Created-By: Apache Maven Bundle Plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6,JavaSE-1.7
+Bundle-Vendor: %Bundle-Vendor
+Bundle-Version: 1.5.2.20150413-2214
+Build-Jdk: 1.7.0_75
+Embed-Transitive: true
+Bnd-LastModified: 1428963263372
+Bundle-ManifestVersion: 2
+Bundle-Description: This bundle provides SLF4j implementation and conf
+ iguration required to run m2e embedded Maven runtime  in external JVM
+ . This bundle is NOT a general purpose slf4j-simple OSGi bundle, it d
+ oes NOT export  any packages and it CANNOT be used as an OSGI SLF4J i
+ mplementation.  This is suboptimal and a better solution would be to 
+ either include slf4j-simple as a resource in  org.eclipse.m2e.maven.r
+ untime or use SLF4J implementation of the running m2e instance. I cou
+ ld not  find an easy way to implement either of the better solutions,
+  so this one will have to do for now.   This bundle is referenced as 
+ Require-Bundle by org.eclipse.m2e.maven.runtime to force installation
+   of this bundle whenever m2e embedded maven runtime is installed. Be
+ cause no packages are exported,  this does not pollute OSGi classpath
+ . Provide-Capability/Require-Capability would be cleaner, but  I don'
+ t know if these are supported bu P2.
+Embed-Dependency: slf4j-simple
+Bundle-DocURL: www.eclipse.org
+Bundle-SymbolicName: org.eclipse.m2e.maven.runtime.slf4j.simple;single
+ ton:=false
+
+Name: about_files/slf4j-simple-LICENSE.txt
+SHA-256-Digest: P3q9nlAlNcbxGkr5Hc/SDRlvR7DAA2QMYTQwgIP2Knw=
+
+Name: OSGI-INF/l10n/bundle.properties
+SHA-256-Digest: gFjmmX4Zsc3ZcmyLu/Rr1GTrjlEkfSfsWbopkwRxCt8=
+
+Name: about.html
+SHA-256-Digest: PG9KuJjudyBplJJyUxl7c1m3a7D3fuZHA9MEiwX1mtk=
+
+Name: simplelogger.properties
+SHA-256-Digest: bMbuK4YPLw2O0d9/j4QIXsJvHzwA6SwzVfxtY2KKOMs=
+
+Name: jars/slf4j-simple-1.7.5.jar
+SHA-256-Digest: bQbu3KR2gRmyxqxa35fnta1XoD1leNaec0+gg8lX3AY=
+
