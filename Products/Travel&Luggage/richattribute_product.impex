@@ -11,13 +11,29 @@
 				INSERT_UPDATE RichAttribute;typeOfItem1(code);typeOfItem2(code);shippingmodes(code);paymentModes(code);deliveryfulfillmodes(code);cancellationwindow;returnwindow;replacementwindow;exchangeallowedwindow;warrantyType(code);warrantyPeriod;ispromotionallowed(code);leadtimeforhomedelivery;sellerfulfilledshippingcharge;productsource(code,$catalogVersion)[unique=true];$catalogversion
 
 
-;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MP000000000595970;
-;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MP000000000598875;
-;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MP000000000591221;
-;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MP000000000595001;
-;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MP000000000598002;
-;large;premium;air;both;tship;10;10;10;10;seller;10;allow;10;100;MP000000000591003;
-;large;premium;air;both;tship;10;10;10;10;seller;10;allow;10;100;MP000000000595004;
-;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MP000000000598005;
-;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MP000000000591006;
-;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MP000000000595961;
+;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MP000000000591001;
+;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MP000000000591002;
+;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MP000000000591003;
+;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MP000000000591004;
+;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MP000000000591005;
+;large;premium;air;both;tship;10;10;10;10;seller;10;allow;10;100;MP000000000591006;
+;large;premium;air;both;tship;10;10;10;10;seller;10;allow;10;100;MP000000000591007;
+;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MP000000000591008;
+;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MP000000000591009;
+
+;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MP000000000591010;
+;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MP000000000591011;
+;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MP000000000591012;
+;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MP000000000591013;
+;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MP000000000591014;
+;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MP000000000591015;
+;large;premium;air;both;tship;10;10;10;10;seller;10;allow;10;100;MP000000000591016;
+
+;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MP000000000591021;
+;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MP000000000591022;
+;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MP000000000591023;
+;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MP000000000591024;
+;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MP000000000591031;
+;large;premium;air;both;tship;10;10;10;10;seller;10;allow;10;100;MP000000000591032;
+;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MP000000000591033;
+;large;premium;air;both;sship;10;10;10;10;seller;10;allow;10;100;MP000000000591034;

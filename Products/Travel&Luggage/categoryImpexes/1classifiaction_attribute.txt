@@ -15,7 +15,7 @@ $unit=unit(code,$classSystemVersion)
 
 
 
-INSERT_UPDATE  classificationAttribute;code[unique=true];name[lang=en];systemVersion(catalog(id),version);;;;;
+INSERT_UPDATE  ClassificationAttribute;code[unique=true];name[lang=en];systemVersion(catalog(id),version);;;;;
 
 
 ;stylecodetrlg;Style Code;pcmClassification:1;;;;;

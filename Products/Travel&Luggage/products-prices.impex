@@ -6,29 +6,64 @@ $taxGroup=Europe1PriceFactory_PTG(code)[default=jp-vat-full]
 $approved=approvalstatus(code)[default='approved']
 
 UPDATE Product;code[unique=true];$approved;$catalogVersion;$taxGroup
-;MP000000000595970;
-;MP000000000598875;
-;MP000000000591221;
-;MP000000000595001;
-;MP000000000598002;
+
+;MP000000000591001;
+;MP000000000591002;
 ;MP000000000591003;
-;MP000000000595004;
-;MP000000000598005;
+;MP000000000591004;
+;MP000000000591005;
 ;MP000000000591006;
-;MP000000000595961;
+;MP000000000591007;
+;MP000000000591008;
+;MP000000000591009;
+
+;MP000000000591010;
+;MP000000000591011;
+;MP000000000591012;
+;MP000000000591013;
+;MP000000000591014;
+;MP000000000591015;
+;MP000000000591016;
+
+;MP000000000591021;
+;MP000000000591022;
+;MP000000000591023;
+;MP000000000591024;
+;MP000000000591031;
+;MP000000000591032;
+;MP000000000591033;
+;MP000000000591034;
 
 
-INSERT_UPDATE PriceRow;product(code,$catalogVersion)[unique=true];unit(code[unique=true,default=pieces]);currency(isocode)[unique=true];price;minqtd;unitFactor;net;sellerArticleSKU[unique=true];mrp
-;MP000000000595970;pieces;INR;4,93;1;1;false;123655Skybag2200060020;561
-;MP000000000598875;pieces;INR;4,95;1;1;false;123656VIP2200060020;562
-;MP000000000591221;pieces;INR;4,63;1;1;false;123655American2200060030;563
-;MP000000000595001;pieces;INR;4,43;1;1;false;123451Fastrack2200060021;600
-;MP000000000598002;pieces;INR;4,95;1;1;false;123452Skybags2200060022;599
-;MP000000000591003;pieces;INR;4,23;1;1;false;123453Wildcraft2200060023;562
-;MP000000000595004;pieces;INR;4,13;1;1;false;123454Safari2200060024;599
-;MP000000000598005;pieces;INR;4,95;1;1;false;123455Fastrack2200060025;599
-;MP000000000591006;pieces;INR;4,94;1;1;false;123456American2200060026;568
-;MP000000000595961;pieces;INR;4,91;1;1;false;123655Skybag3200060020;632
+INSERT_UPDATE PriceRow;product(code,$catalogVersion)[unique=true];unit(code[unique=true,default=pieces]);currency(isocode)[unique=true];price;minqtd;unitFactor;net;sellerArticleSKU[unique=true];mrp;siteId[default='mpl']
+
+;MP000000000591001;pieces;INR;4,23;1;1;false;18001118000591001;562;
+;MP000000000591002;pieces;INR;4,23;1;1;false;18001118000591002;562;
+;MP000000000591003;pieces;INR;4,23;1;1;false;18001118000591003;562;
+;MP000000000591004;pieces;INR;4,23;1;1;false;18001118000591004;562;
+;MP000000000591005;pieces;INR;4,23;1;1;false;18001118000591005;562;
+;MP000000000591006;pieces;INR;4,94;1;1;false;18001118000591006;568;
+;MP000000000591007;pieces;INR;4,23;1;1;false;18001118000591007;562;
+;MP000000000591008;pieces;INR;4,23;1;1;false;18001118000591008;562;
+;MP000000000591009;pieces;INR;4,23;1;1;false;18001118000591009;562;
+
+;MP000000000591010;pieces;INR;4,23;1;1;false;18001118000591010;562;
+;MP000000000591011;pieces;INR;4,23;1;1;false;18001118000591011;562;
+;MP000000000591012;pieces;INR;4,23;1;1;false;18001118000591012;562;
+;MP000000000591013;pieces;INR;4,23;1;1;false;18001118000591013;562;
+;MP000000000591014;pieces;INR;4,23;1;1;false;18001118000591014;562;
+;MP000000000591015;pieces;INR;4,23;1;1;false;18001118000591015;562;
+;MP000000000591016;pieces;INR;4,94;1;1;false;18001118000591016;568;
+
+;MP000000000591021;pieces;INR;4,93;1;1;false;18001118000591021;561;
+;MP000000000591022;pieces;INR;4,95;1;1;false;18001118000591022;562;
+;MP000000000591023;pieces;INR;4,63;1;1;false;18001118000591023;563;
+;MP000000000591024;pieces;INR;4,43;1;1;false;18001118000591024;600;
+;MP000000000591031;pieces;INR;4,95;1;1;false;18001118000591031;599;
+;MP000000000591032;pieces;INR;4,13;1;1;false;18001118000591032;599;
+;MP000000000591033;pieces;INR;4,95;1;1;false;18001118000591033;599;
+;MP000000000591034;pieces;INR;4,91;1;1;false;18001118000591034;632;
+
 
 
 
@@ -43,24 +78,31 @@ INSERT_UPDATE SearchRestriction;code[unique=true];name[lang=de];name[lang=en];qu
 $inCurrency=INR
                       
 INSERT_UPDATE MplZoneDeliveryModeValue ; deliveryMode(code)[unique=true] ; zone(code)[default='in'] ; currency(isocode) ; value  ; minimum;sellerArticleSKU[unique=true];productCode[unique=true];deliveryFulfillModes(Code)
-                                   			   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;123655Skybag2200060020;MP000000000595970;sship
-                               
-                                   	           ; express-delivery   ;      							; $inCurrency       ; 21,99  ; 0,00	  ;123656VIP2200060020;MP000000000598875;sship
-									   
-                                   			   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;123655American2200060030;MP000000000591221;tship
+											   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;18001118000591001;MP000000000591001;tship
+											   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;18001118000591002;MP000000000591002;tship
+											   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;18001118000591003;MP000000000591003;tship
+											   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;18001118000591004;MP000000000591004;tship
+                                   			   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;18001118000591005;MP000000000591005;tship
+                                   			   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;18001118000591006;MP000000000591006;tship
+											   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;18001118000591007;MP000000000591007;tship
+											   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;18001118000591008;MP000000000591008;tship
+											   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;18001118000591009;MP000000000591009;tship
+
+											   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;18001118000591010;MP000000000591010;tship											   
+											   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;18001118000591011;MP000000000591011;tship
+											   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;18001118000591012;MP000000000591012;tship
+											   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;18001118000591013;MP000000000591013;tship
+											   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;18001118000591014;MP000000000591014;tship
+                                   			   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;18001118000591015;MP000000000591015;tship
+                                   			   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;18001118000591016;MP000000000591016;tship
 											   
-											     ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;123451Fastrack2200060021;MP000000000595001;sship
-                                     		   
-                                   	           ; express-delivery   ;      							; $inCurrency       ; 21,99  ; 0,00	  ;123452Skybags2200060022;MP000000000598002;sship
 											   
-											   
-                                   			   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;123453Wildcraft2200060023;MP000000000591003;tship
-											   
-											     ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;123454Safari2200060024;MP000000000595004;sship
-                                     		   
-                                   	           ; express-delivery   ;      							; $inCurrency       ; 21,99  ; 0,00	  ;123455Fastrack2200060025;MP000000000598005;sship
-											   
-											   
-                                   			   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;123456American2200060026;MP000000000591006;tship
-											   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;123655Skybag3200060020;MP000000000595961;tship
+                                   			   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;18001118000591021;MP000000000591021;sship
+                                   	           ; express-delivery   ;      							; $inCurrency       ; 21,99  ; 0,00	  ;18001118000591022;MP000000000591022;sship
+                                   			   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;18001118000591023;MP000000000591023;tship
+											   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;18001118000591024;MP000000000591024;sship
+                                   	           ; express-delivery   ;      							; $inCurrency       ; 21,99  ; 0,00	  ;18001118000591031;MP000000000591031;sship
+											   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;18001118000591032;MP000000000591032;sship
+                                   	           ; express-delivery   ;      							; $inCurrency       ; 21,99  ; 0,00	  ;18001118000591033;MP000000000591033;sship
+											   ; home-delivery      ;      							; $inCurrency       ; 21,99  ; 0,00	  ;18001118000591034;MP000000000591034;tship
 											   

@@ -11,6 +11,6 @@ $variantType=variantType(code)[default='PcmProductVariant']
 $lang=en
 INSERT_UPDATE Product;code[unique=true];name[lang=$lang];title;articleMiniDescription;articleDescription;createdOn[dateformat=yyyyMMddHHmmss];reviews;mrp;$supercategories;deliveryModes(code);variantType(code);sequenceId[translator=de.hybris.platform.acceleratorservices.dataimport.batch.converter.SequenceIdTranslator];$catalogversion;$approved;$unit 
 # code,name,Title,articleMiniDescription,articleDescription,createdOn,reviews,mrp,supercategories,DeliveryModes,VariantType
-;MPF22000601;Luca Fashion Girls Sandals;Luca Fashion Girls Sandals;Girls Casual;Luca Fashion Girls Casual Sandals;20151104051422;Excellent product;3000;MPH1310108,MSH1312103,MSH1312101,MBH13F00001;home-delivery,express-delivery;PcmProductVariant;
+;MPF22000601;Luca Fashion Girls Sandals;Luca Fashion Girls Sandals;Girls Casual;Luca Fashion Girls Casual Sandals;20151104051422;Excellent product;3000;MPH1310108,MSH1312101,MBH13F00001;home-delivery,express-delivery;PcmProductVariant;
 
-;MPF22000602;Luca Fashion Boys Sandals;Luca Fashion Boys Sandals;Boys Casual;Luca Fashion Boys Casual Sandals;20151104051422;Excellent product;3000;MPH1310108,MSH1312103,MSH1312101,MBH12E00016;home-delivery,express-delivery;PcmProductVariant;
+;MPF22000602;Luca Fashion Boys Sandals;Luca Fashion Boys Sandals;Boys Casual;Luca Fashion Boys Casual Sandals;20151104051422;Excellent product;3000;MPH1310108,MSH1312103,MBH12E00016;home-delivery,express-delivery;PcmProductVariant;

@@ -886,3 +886,69 @@ TISPRDT-2124 - Not a Defect
 21-08-2017
 **********
 JWLSPCUAT-589
+
+15-09-2017
+**********
+PR-11
+
+For category landing page the categories are getting clubbed
+1. Department hierarchy is happening only for first category. The remaining are not getting fetched
+2. Only generic facets are getting displayed. Business wants to display the common facets among the categories.
+3. The Query for exclusion filters are pending. Exclusion filters are provided on Brand, Seller, Price, Delivery Option, Colour, None of them are mandatory attributes.
+4. Breadcrumb is not appearing
+5. Selected category names are coming as selected filters on top of the product grid and they are coming with Search page URLs. 
+6. After selecting filters data are getting duplicated.
+
+18-09-2017
+**********
+PR-11
+
+20-09-2017
+**********
+PR-11
+
+04-10-2017
+**********
+PR-11
+
+1. In department hierarchy all the 3 L3s are coming.
+2. Generic facets are gettng displayed.
+3. Selected filters are not blocked. 
+4. The page name is coming as as header, above all the products.
+5. On click of filters its getting redirected to search page. Hence SEO is hampered after clicking on any filters. 
+
+13-10-2017
+**********
+PR-11
+1. More than just generic filters are appearing. Need to check whether other classification filters show up or not. May b its because of my local setup.
+2. Need to check if display of selected filters are possible or not.
+
+
+16-10-2017
+**********
+PR-11
+1. More than just generic filters are appearing. Need to check whether other classification filters show up or not. May b its because of my local setup.
+2. Display of selected filters are done.
+3. selected filters are still showing.. This is required for the tick mark for colour and size.
+4. On removal of filters, getFacetData is getting appended in URL. This is happenning when the on filter selection url retains the original one. Need to check if the same is happening when url is getting redirected to search.
+
+Activity - 
+1. check the url on reove filter & select filters.
+2. Hide the initial filters.
+
+
+23-10-2017
+**********
+
+TPR-6405: chat icon deactivate
+samsung.chat.icon.uri=https://assets.tatacliq.com/medias/sys_master/images/11437918060574.png
+
+30-10-2017
+**********
+TPR-7153 ---
+Classification attribute mapping impex was not run
+1. No attributes are coming against the product
+2. On click of add to bag its asking for size select
+3. On clicking on Buy now its asking for size select
+Code change required for Add to bag.... addtocartaction.jsp ... after doing it, add to bag and buynow from quickview is happening.
+Code change required for Buynow ... acc.productDetails.js ... 

@@ -1,18 +1,34 @@
-#{defaultImpexProductHeader}
-            	$productCatalog=mplProductCatalog
-				$classificationCatalog=pcmClassification
-				$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
-				
-			  # Insert Global Identifier
-              INSERT_UPDATE GlobalIdentifier;productSource(code,$catalogVersion)[unique=true];globalIdentifierType(code);globalIdentifierTypeValue[unique=true][mode=append];$catalogVersion
+$productCatalog=mplProductCatalog
+$classificationCatalog=pcmClassification
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+	
+# Insert Global Identifier
+INSERT_UPDATE GlobalIdentifier;productSource(code,$catalogVersion)[unique=true];globalIdentifierType(code);globalIdentifierTypeValue[unique=true][mode=append];$catalogVersion
 # productSource,globalIdentifierType,globalIdentifierTypeValue
-;MP000000000595970;ean;96768717811111;
-;MP000000000598875;ean;96768717811112;
-;MP000000000591221;ean;96768717811113;
-;MP000000000595001;ean;96768717811114;
-;MP000000000598002;ean;96768717811115;
+
+;MP000000000591001;ean;96768717811116;
+;MP000000000591002;ean;96768717811116;
 ;MP000000000591003;ean;96768717811116;
-;MP000000000595004;ean;96768717811117;
-;MP000000000598005;ean;96768717811118;
+;MP000000000591004;ean;96768717811116;
+;MP000000000591005;ean;96768717811116;
 ;MP000000000591006;ean;96768717811119;
-;MP000000000595961;ean;96768717811110;
+;MP000000000591007;ean;96768717811116;
+;MP000000000591008;ean;96768717811116;
+;MP000000000591009;ean;96768717811116;
+
+;MP000000000591010;ean;96768717811116;
+;MP000000000591011;ean;96768717811116;
+;MP000000000591012;ean;96768717811116;
+;MP000000000591013;ean;96768717811116;
+;MP000000000591014;ean;96768717811116;
+;MP000000000591015;ean;96768717811116;
+;MP000000000591016;ean;96768717811116;
+
+;MP000000000591021;ean;96768717811113;
+;MP000000000591022;ean;96768717811111;
+;MP000000000591023;ean;96768717811112;
+;MP000000000591024;ean;96768717811114;
+;MP000000000591031;ean;96768717811115;
+;MP000000000591032;ean;96768717811117;
+;MP000000000591033;ean;96768717811118;
+;MP000000000591034;ean;96768717811110;

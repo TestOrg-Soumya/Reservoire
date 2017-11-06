@@ -3,14 +3,31 @@ $productCatalog=mplProductCatalog
 	$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
     INSERT_UPDATE Brand;name[unique=true];description;productSource(code,$catalogVersion)[unique=true];$catalogVersion
 
-#name;description;productSource
-;American Tourister;American Tourister Softsided Suitcase;MP000000000591221
-;VIP;VIP Neon Strolly Softsided Carry-On;MP000000000598875
-;Skybags;Skybags Polycarbonate Hardsided Suitcase;MP000000000595970
-;Skybags;Skybags Polycarbonate Hardsided Suitcase;MP000000000595961
-;Skybags;Skybags Polycarbonate Hardsided Suitcase;MP000000000598002
-;American Tourister;American Tourister Softsided Suitcase;MP000000000591006
-;VIP;VIP Neon Strolly Softsided Carry-On;MP000000000598005
-;Fastrack Backpack;Fastrack Backpack;MP000000000595001
-;Wildcraft Travel Jasper Backpack;Wildcraft Travel Jasper Backpack;MP000000000591003
-;Safari Laptop Backpack;Safari Laptop Backpack;MP000000000595004
+#name				;description				;productSource
+;Teakwood			;Teakwood					;MP000000000591001
+;Hidesign			;Hidesign					;MP000000000591002
+;Wildcraft Jasper	;Wildcraft Jasper			;MP000000000591003
+;Viari Rockefeller	;Viari Rockefeller			;MP000000000591004
+;Da Milano			;Da Milano					;MP000000000591005
+;American Tourister	;American Tourister			;MP000000000591006
+;Hidesign			;Hidesign					;MP000000000591007
+;Wildcraft Jasper	;Wildcraft Jasper			;MP000000000591008
+;Viari Rockefeller	;Viari Rockefeller			;MP000000000591009
+
+;Da Milano			;Da Milano					;MP000000000591010
+;Da Milano			;Da Milano					;MP000000000591011
+;Da Milano			;Da Milano					;MP000000000591012
+;Da Milano			;Da Milano					;MP000000000591013
+;Da Milano			;Da Milano					;MP000000000591014
+;Da Milano			;Da Milano					;MP000000000591015
+;Da Milano			;Da Milano					;MP000000000591016
+
+;American Tourister	;American Tourister			;MP000000000591021
+;VIP				;VIP Neon					;MP000000000591022
+;Skybags			;Skybags					;MP000000000591023
+;Skybags			;Skybags					;MP000000000591024
+;Skybags			;Skybags					;MP000000000591031
+;VIP				;VIP						;MP000000000591032
+;Fastrack			;Fastrack					;MP000000000591033
+;Safari				;Safari						;MP000000000591034
+

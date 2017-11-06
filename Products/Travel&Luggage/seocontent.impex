@@ -4,14 +4,31 @@ $classificationCatalog=pcmClassification
 $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
 INSERT_UPDATE SeoContent;seoMetaTitle[unique=true];seoMetaKeyword[unique=true];seoMetaDescription[unique=true];tags;productSource(code,$catalogVersion)[unique=true];$catalogVersion
 
-# seoMetaTitle;seoMetaKeyword;seoMetaDescription;tags;productSource
-;Skybag RAIDER 02 BLUE;Skybag RAIDER 02 BLUE;Skybag RAIDER 02 BLUE;Skybag RAIDER 02 BLUE;MP000000000595970;
-;VIP leather briefcase;VIP leather briefcase;VIP leather briefcase;VIP leather briefcase;MP000000000598875;
-;American Tourister Jasper Backpack;American Tourister Jasper Backpack;American Tourister Jasper Backpack;American Tourister Jasper Backpack;MP000000000591221;
-;Skybags Polycarbonate Hardsided Suitcase;Skybags Polycarbonate Hardsided Suitcase;Skybags Polycarbonate Hardsided Suitcase;Skybags Polycarbonate Hardsided Suitcase;MP000000000595961
-;Skybags Polycarbonate Hardsided Suitcase;Skybags Polycarbonate Hardsided Suitcase;Skybags Polycarbonate Hardsided Suitcase;Skybags Polycarbonate Hardsided Suitcase;MP000000000598002
-;American Tourister;American Tourister Softsided Suitcase;MP000000000591006
-;VIP leather briefcase;VIP leather briefcase;VIP leather briefcase;VIP leather briefcase;MP000000000598005
-;Fastrack Backpack;Fastrack Backpack;Fastrack Backpack;Fastrack Backpack;MP000000000595001
-;Wildcraft Travel Jasper Backpack;Wildcraft Travel Jasper Backpack;Wildcraft Travel Jasper Backpack;Wildcraft Travel Jasper Backpack;MP000000000591003
-;Safari Laptop Backpack;Safari Laptop Backpack;Safari Laptop Backpack;Safari Laptop Backpack;MP000000000595004
+# seoMetaTitle					;seoMetaKeyword				;seoMetaDescription		;tags						;productSource
+
+;Skybag RAIDER 02 BLUE			;Skybag RAIDER 02 BLUE		;Skybag RAIDER 02 BLUE	;Skybag RAIDER 02 BLUE		;MP000000000591001;
+;VIP leather briefcase			;VIP leather briefcase		;VIP leather briefcase	;VIP leather briefcase		;MP000000000591002;
+;Skybag RAIDER 02 BLUE			;Skybag RAIDER 02 BLUE		;Skybag RAIDER 02 BLUE	;Skybag RAIDER 02 BLUE		;MP000000000591003;
+;VIP leather briefcase			;VIP leather briefcase		;VIP leather briefcase	;VIP leather briefcase		;MP000000000591004;
+;Skybag RAIDER 02 BLUE			;Skybag RAIDER 02 BLUE		;Skybag RAIDER 02 BLUE	;Skybag RAIDER 02 BLUE		;MP000000000591005;
+;VIP leather briefcase			;VIP leather briefcase		;VIP leather briefcase	;VIP leather briefcase		;MP000000000591006;
+;Skybag RAIDER 02 BLUE			;Skybag RAIDER 02 BLUE		;Skybag RAIDER 02 BLUE	;Skybag RAIDER 02 BLUE		;MP000000000591007;
+;VIP leather briefcase			;VIP leather briefcase		;VIP leather briefcase	;VIP leather briefcase		;MP000000000591008;
+;Skybag RAIDER 02 BLUE			;Skybag RAIDER 02 BLUE		;Skybag RAIDER 02 BLUE	;Skybag RAIDER 02 BLUE		;MP000000000591009;
+
+;VIP leather briefcase			;VIP leather briefcase		;VIP leather briefcase	;VIP leather briefcase		;MP000000000591010;
+;Skybag RAIDER 02 BLUE			;Skybag RAIDER 02 BLUE		;Skybag RAIDER 02 BLUE	;Skybag RAIDER 02 BLUE		;MP000000000591011;
+;VIP leather briefcase			;VIP leather briefcase		;VIP leather briefcase	;VIP leather briefcase		;MP000000000591012;
+;Skybag RAIDER 02 BLUE			;Skybag RAIDER 02 BLUE		;Skybag RAIDER 02 BLUE	;Skybag RAIDER 02 BLUE		;MP000000000591013;
+;VIP leather briefcase			;VIP leather briefcase		;VIP leather briefcase	;VIP leather briefcase		;MP000000000591014;
+;Skybag RAIDER 02 BLUE			;Skybag RAIDER 02 BLUE		;Skybag RAIDER 02 BLUE	;Skybag RAIDER 02 BLUE		;MP000000000591015;
+;VIP leather briefcase			;VIP leather briefcase		;VIP leather briefcase	;VIP leather briefcase		;MP000000000591016;
+
+;AT Jasper Backpack				;AT Jasper Backpack			;AT Jasper Backpack		;AT Jasper Backpack			;MP000000000591021;
+;Skybag RAIDER 02 BLUE			;Skybag RAIDER 02 BLUE		;Skybag RAIDER 02 BLUE	;Skybag RAIDER 02 BLUE		;MP000000000591022;
+;VIP leather briefcase			;VIP leather briefcase		;VIP leather briefcase	;VIP leather briefcase		;MP000000000591023;
+;Skybags Suitcase				;Skybags Suitcase			;Skybags Suitcase		;Skybags Suitcase			;MP000000000591024;
+;Skybags Suitcase				;Skybags Suitcase			;Skybags Suitcase		;Skybags Suitcase			;MP000000000591031;
+;VIP leather briefcase			;VIP leather briefcase		;VIP leather briefcase	;VIP leather briefcase		;MP000000000591032;
+;Fastrack Backpack				;Fastrack Backpack			;Fastrack Backpack		;Fastrack Backpack			;MP000000000591033;
+;Safari Laptop Backpack			;Safari Laptop Backpack		;Safari Laptop Backpack	;Safari Laptop Backpack		;MP000000000591034;
