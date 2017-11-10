@@ -952,3 +952,32 @@ Classification attribute mapping impex was not run
 3. On clicking on Buy now its asking for size select
 Code change required for Add to bag.... addtocartaction.jsp ... after doing it, add to bag and buynow from quickview is happening.
 Code change required for Buynow ... acc.productDetails.js ... 
+
+
+9-11-2017
+*********
+TISPRNXIII-35 - Improper data setup
+TISPRNXIII-36 - Working according to production
+orderDetailsItem.tag - line 53
+cartItems.tag - line 118
+TISPRNXIII-9 - Working fine, improper testing method
+
+
+https://uat.tataunistore.com/westside-cotton-aqua-polo-t-shirt/p-mp000000000027710
+https://uat.tataunistore.com/shirts/p-mp000000000029649
+
+171109-000-113158 - 1000317001
+
+order ID : 393807788
+child order : 170801-000-618008
+Tnsaction id : 123655000656820
+product code : MPF220006011
+
+consignment >> create new
+consignment entry >> consignment is the new created code
+
+10-11-2017
+*********
+Random Servicability
+D:\hot-folder\master\marketplace-omsFallback
+/feed/pcm-com/hot-folder/master/marketplace-omsFallback/archive
