@@ -1,0 +1,322 @@
+$productCatalog=luxProductCatalog
+$classificationCatalog=pcmClassification
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Online'])[unique=true,default=$productCatalog:Online]
+$languages=ja,en,de,zh
+$uidGroup=admingroup,marketplaceGroup,ETAILREAD
+# Product catalog
+INSERT_UPDATE Catalog;id[unique=true]
+;$productCatalog
+$supercategories=supercategories( code, catalogVersion(catalog(id[default='luxProductCatalog']),version[default='Online']));;;;;;;;;
+$catalogVersion=catalogVersion(catalog(id[default='luxProductCatalog']),version[default='Online'])[unique=true,default='luxProductCatalog:Online'];;;;;;;;;
+
+
+
+INSERT_UPDATE Category;code[unique=true];name[lang=en];$supercategories;$catalogVersion;allowedPrincipals(uid)
+;LSH1;Primary;;luxProductCatalog:Online;$uidGroup
+;LSH01;Luxury;LSH1;luxProductCatalog:Online;$uidGroup
+;LSH02;Indie Lux;LSH1;luxProductCatalog:Online;$uidGroup
+;LSH03;Gifting;LSH1;luxProductCatalog:Online;$uidGroup 
+
+
+;LSH2010;Men;LSH02;luxProductCatalog:Online;$uidGroup
+;LSH2110;Women;LSH02;luxProductCatalog:Online;$uidGroup
+;LSH2010100;Men Bags;LSH2010;luxProductCatalog:Online;$uidGroup
+;LSH2010101;Men Clothes;LSH2010;luxProductCatalog:Online;$uidGroup
+;LSH2010102;Men Accessories;LSH2010;luxProductCatalog:Online;$uidGroup
+;LSH2010103;Men Shoes;LSH2010;luxProductCatalog:Online;$uidGroup
+;LSH2010104;Men Watches;LSH2010;luxProductCatalog:Online;$uidGroup
+;LSH2010105;Men Ethnic Wear;LSH2010;luxProductCatalog:Online;$uidGroup
+;LSH2110100;Handbags;LSH2110;luxProductCatalog:Online;$uidGroup
+;LSH2110101;Women Clothes;LSH2110;luxProductCatalog:Online;$uidGroup
+;LSH2110102;Women Shoes;LSH2110;luxProductCatalog:Online;$uidGroup
+;LSH2110103;Women Accessories;LSH2110;luxProductCatalog:Online;$uidGroup
+;LSH2110104;Women Watches;LSH2110;luxProductCatalog:Online;$uidGroup
+;LSH2110105;Ethnic Wear;LSH2110;luxProductCatalog:Online;$uidGroup
+#;LSH2210100;Luxe;LSH2210;luxProductCatalog:Online;$uidGroup
+#;LSH2210100;Luxe;LSH2210;luxProductCatalog:Online;$uidGroup
+
+
+
+;LSH1010;Men;LSH01;luxProductCatalog:Online;$uidGroup
+;LSH1110;Women;LSH01;luxProductCatalog:Online;$uidGroup
+;LSH1010100;Men Bags;LSH1010;luxProductCatalog:Online;$uidGroup
+;LSH1010101;Men Clothes;LSH1010;luxProductCatalog:Online;$uidGroup
+;LSH1010102;Men Accessories;LSH1010;luxProductCatalog:Online;$uidGroup
+;LSH1010103;Men Shoes;LSH1010;luxProductCatalog:Online;$uidGroup
+;LSH1010104;Men Watches;LSH1010;luxProductCatalog:Online;$uidGroup
+;LSH1010105;Men Ethnic Wear;LSH1010;luxProductCatalog:Online;$uidGroup
+;LSH1110100;Handbags;LSH1110;luxProductCatalog:Online;$uidGroup
+;LSH1110101;Women Clothes;LSH1110;luxProductCatalog:Online;$uidGroup
+;LSH1110102;Women Shoes;LSH1110;luxProductCatalog:Online;$uidGroup
+;LSH1110103;Women Accessories;LSH1110;luxProductCatalog:Online;$uidGroup
+;LSH1110104;Women Watches;LSH1110;luxProductCatalog:Online;$uidGroup
+;LSH1110105;Ethnic Wear;LSH1110;luxProductCatalog:Online;$uidGroup
+#;LSH1210100;Luxe;LSH1210;luxProductCatalog:Online;$uidGroup
+#;LSH1210100;Luxe;LSH1210;luxProductCatalog:Online;$uidGroup
+
+
+
+
+
+;LSH1010100100;Men Backpacks & Travel;LSH1010100;luxProductCatalog:Online;$uidGroup
+;LSH1010100101;Men Laptop Bags & Briefcases;LSH1010100;luxProductCatalog:Online;$uidGroup
+;LSH1010100102;Men Wallets & Card Holders;LSH1010100;luxProductCatalog:Online;$uidGroup
+;LSH1010100103;Men Messenger Bags;LSH1010100;luxProductCatalog:Online;$uidGroup
+;LSH1010100104;Men Cross Body Bags;LSH1010100;luxProductCatalog:Online;$uidGroup
+;LSH1010100105;Men Cases & Pouches;LSH1010100;luxProductCatalog:Online;$uidGroup
+;LSH1010100106;Men Satchels;LSH1010100;luxProductCatalog:Online;$uidGroup
+;LSH1010101100;Men Sweatshirts and hoodies;LSH1010101;luxProductCatalog:Online;$uidGroup
+;LSH1010101101;Men Jeans;LSH1010101;luxProductCatalog:Online;$uidGroup
+;LSH1010101102;Men Casual jackets and blazers;LSH1010101;luxProductCatalog:Online;$uidGroup
+;LSH1010101103;Men Formal Shirts;LSH1010101;luxProductCatalog:Online;$uidGroup
+;LSH1010101104;Men Casual Shirts;LSH1010101;luxProductCatalog:Online;$uidGroup
+;LSH1010101105;Men Sweaters & Knitwear;LSH1010101;luxProductCatalog:Online;$uidGroup
+;LSH1010101106;Men Casual trousers;LSH1010101;luxProductCatalog:Online;$uidGroup
+;LSH1010101107;Men Formal trousers;LSH1010101;luxProductCatalog:Online;$uidGroup
+;LSH1010101108;Men Polos and t-shirts;LSH1010101;luxProductCatalog:Online;$uidGroup
+;LSH1010101109;Men Underwear;LSH1010101;luxProductCatalog:Online;$uidGroup
+;LSH1010101109;Men Underwear;LSH1010101;luxProductCatalog:Online;$uidGroup
+;LSH1010101109;Men Underwear;LSH1010101;luxProductCatalog:Online;$uidGroup
+;LSH1010101110;Men Formal Suits;LSH1010101;luxProductCatalog:Online;$uidGroup
+;LSH1010101111;Men Formal Coats & Jackets;LSH1010101;luxProductCatalog:Online;$uidGroup
+;LSH1010101112;Men Shorts;LSH1010101;luxProductCatalog:Online;$uidGroup
+;LSH1010101113;Men Trackpants;LSH1010101;luxProductCatalog:Online;$uidGroup
+;LSH1010101114;Men Sports T-shirts;LSH1010101;luxProductCatalog:Online;$uidGroup
+;LSH1010101115;Men Sports Shorts;LSH1010101;luxProductCatalog:Online;$uidGroup
+;LSH1010101116;Men Sports Sets;LSH1010101;luxProductCatalog:Online;$uidGroup
+;LSH1010101117;Men Sports Jackets;LSH1010101;luxProductCatalog:Online;$uidGroup
+;LSH1010101118;Men Swimwear;LSH1010101;luxProductCatalog:Online;$uidGroup
+;LSH1010101119;Men Sports Trackpants;LSH1010101;luxProductCatalog:Online;$uidGroup
+;LSH1010101120;Men Vests;LSH1010101;luxProductCatalog:Online;$uidGroup
+;LSH1010101121;Men Sleepwear;LSH1010101;luxProductCatalog:Online;$uidGroup
+;LSH1010101122;Men Swimwear;LSH1010101;luxProductCatalog:Online;$uidGroup
+;LSH1010102100;Men Belts;LSH1010102;luxProductCatalog:Online;$uidGroup
+;LSH1010102100;Men Belts;LSH1010102;luxProductCatalog:Online;$uidGroup
+;LSH1010102100;Men Belts;LSH1010102;luxProductCatalog:Online;$uidGroup
+;LSH1010102100;Men Belts;LSH1010102;luxProductCatalog:Online;$uidGroup
+;LSH1010102101;Men Hats & Caps;LSH1010102;luxProductCatalog:Online;$uidGroup
+;LSH1010102102;Ties & Pocket Squares;LSH1010102;luxProductCatalog:Online;$uidGroup
+;LSH1010102102;Ties & Pocket Squares;LSH1010102;luxProductCatalog:Online;$uidGroup
+;LSH1010102103;Cufflinks;LSH1010102;luxProductCatalog:Online;$uidGroup
+;LSH1010102104;Men Socks;LSH1010102;luxProductCatalog:Online;$uidGroup
+;LSH1010102104;Men Socks;LSH1010102;luxProductCatalog:Online;$uidGroup
+;LSH1010103100;Men Sandal;LSH1010103;luxProductCatalog:Online;$uidGroup
+;LSH1010103101;Men Oxford Shoes;LSH1010103;luxProductCatalog:Online;$uidGroup
+;LSH1010103102;Men Monk Strap Shoes;LSH1010103;luxProductCatalog:Online;$uidGroup
+;LSH1010103103;Men Boot;LSH1010103;luxProductCatalog:Online;$uidGroup
+;LSH1010103104;Men Sneaker;LSH1010103;luxProductCatalog:Online;$uidGroup
+;LSH1010103105;Men Flip Flop;LSH1010103;luxProductCatalog:Online;$uidGroup
+;LSH1010103106;Men Loafers & Moccasins;LSH1010103;luxProductCatalog:Online;$uidGroup
+;LSH1010103107;Men Derby Shoes;LSH1010103;luxProductCatalog:Online;$uidGroup
+;LSH1010104100;Men Analog Watches;LSH1010104;luxProductCatalog:Online;$uidGroup
+;LSH1010104101;Men Digital Watches;LSH1010104;luxProductCatalog:Online;$uidGroup
+;LSH1010104102;Men Analog-Digital Watches;LSH1010104;luxProductCatalog:Online;$uidGroup
+;LSH1010104103;Men Binary Watches;LSH1010104;luxProductCatalog:Online;$uidGroup
+;LSH1010104104;Others;LSH1010104;luxProductCatalog:Online;$uidGroup
+;LSH1010104105;Boxes & Cases;LSH1010104;luxProductCatalog:Online;$uidGroup
+;LSH1010104106;Batteries;LSH1010104;luxProductCatalog:Online;$uidGroup
+;LSH1010104107;Repair Kits;LSH1010104;luxProductCatalog:Online;$uidGroup
+;LSH1010104108;Others;LSH1010104;luxProductCatalog:Online;$uidGroup
+;LSH1010104109;Men Watches Straps & Bands;LSH1010104;luxProductCatalog:Online;$uidGroup
+;LSH1010105100;Men Ethnic Jackets;LSH1010105;luxProductCatalog:Online;$uidGroup
+;LSH1010105101;Men Kurta & kurtis;LSH1010105;luxProductCatalog:Online;$uidGroup
+;LSH1010105102;Men Kurta Sets;LSH1010105;luxProductCatalog:Online;$uidGroup
+;LSH1010105103;Men Bottomwear;LSH1010105;luxProductCatalog:Online;$uidGroup
+;LSH1110100100;Women Backpacks & Travel;LSH1110100;luxProductCatalog:Online;$uidGroup
+;LSH1110100101;Women Clutches & Evening;LSH1110100;luxProductCatalog:Online;$uidGroup
+;LSH1110100102;Women Crossbody Bags;LSH1110100;luxProductCatalog:Online;$uidGroup
+;LSH1110100103;Women Hobos & Shoulder Bags;LSH1110100;luxProductCatalog:Online;$uidGroup
+;LSH1110100104;Women Tote Bags;LSH1110100;luxProductCatalog:Online;$uidGroup
+;LSH1110100105;Women Wallets & Cardholders;LSH1110100;luxProductCatalog:Online;$uidGroup
+;LSH1110100106;Women Satchels;LSH1110100;luxProductCatalog:Online;$uidGroup
+;LSH1110100107;Women Cases & Pouches;LSH1110100;luxProductCatalog:Online;$uidGroup
+;LSH1110100108;Women Vanity Bags;LSH1110100;luxProductCatalog:Online;$uidGroup
+;LSH1110100109;Women Bucket Bags;LSH1110100;luxProductCatalog:Online;$uidGroup
+;LSH1110100110;Women Messenger Bags;LSH1110100;luxProductCatalog:Online;$uidGroup
+;LSH1110101100;Women Jeans;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110101101;Women Tops & T-shirts;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110101102;Dresses;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110101103;Skirts & Shorts;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110101104;Women Leggings & Jeggings;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110101105;Women Casual Shirt;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110101106;Women Casual Trousers;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110101107;Women Sweatshirts And Hoodies;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110101108;Women Sweaters;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110101109;Waomen Casual Jackets And Blazers;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110101110;Women Trackpants;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110101111;Women Shrugs And Cardigans;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110101112;Women Capris;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110101113;Women Jumpsuits;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110101114;Women Sports T-Shirt;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110101115;Women Sports Shorts;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110101116;Women Sports Sets;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110101117;Women Sports Jackets;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110101118;Women Swimwear;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110101119;Women Sports Innerwear;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110101120;Women Sports Trackpants;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110101121;Bras & Bra Sets;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110101122;Camisoles & Camisole Sets;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110101123;Lingerie Sets;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110101124;Corsets & Bustier;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110101125;Stockings &Tights;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110101126;Shapewear;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110101127;Women Sleepwear & Robes;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110101128;Women Gowns;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110101129;Women Panties;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110101130;Women Intimate Wear;LSH1110101;luxProductCatalog:Online;$uidGroup
+;LSH1110102100;Women Flats;LSH1110102;luxProductCatalog:Online;$uidGroup
+;LSH1110102101;Women Sneakers;LSH1110102;luxProductCatalog:Online;$uidGroup
+;LSH1110102102;Women Flip Flop;LSH1110102;luxProductCatalog:Online;$uidGroup
+;LSH1110102103;Women Heel;LSH1110102;luxProductCatalog:Online;$uidGroup
+;LSH1110102104;Women Wedges;LSH1110102;luxProductCatalog:Online;$uidGroup
+;LSH1110102105;Women Espadrilles;LSH1110102;luxProductCatalog:Online;$uidGroup
+;LSH1110103100;Women Belts;LSH1110103;luxProductCatalog:Online;$uidGroup
+;LSH1110103101;Women Belts;LSH1110103;luxProductCatalog:Online;$uidGroup
+;LSH1110103102;Women Hats & Caps;LSH1110103;luxProductCatalog:Online;$uidGroup
+;LSH1110103103;Women Mufflers;LSH1110103;luxProductCatalog:Online;$uidGroup
+;LSH1110103104;Women Gloves;LSH1110103;luxProductCatalog:Online;$uidGroup
+;LSH1110103105;Women Scarves & Stoles;LSH1110103;luxProductCatalog:Online;$uidGroup
+;LSH1110103112;Rakhis;LSH1110103;luxProductCatalog:Online;$uidGroup
+;LSH1110104100;Women Analog Watches;LSH1110104;luxProductCatalog:Online;$uidGroup
+;LSH1110104101;Women Digital Watches;LSH1110104;luxProductCatalog:Online;$uidGroup
+;LSH1110104102;Women Analog-Digital Watches;LSH1110104;luxProductCatalog:Online;$uidGroup
+;LSH1110104103;Women Binary Watches;LSH1110104;luxProductCatalog:Online;$uidGroup
+;LSH1110104104;Others;LSH1110104;luxProductCatalog:Online;$uidGroup
+;LSH1110105100;Sarees;LSH1110105;luxProductCatalog:Online;$uidGroup
+#;LSH1210100100;Beauty & Grooming;LSH1210100;luxProductCatalog:Online;$uidGroup
+#;LSH1210100101;Home;LSH1210100;luxProductCatalog:Online;$uidGroup
+
+
+;LSH2010100100;Men Backpacks & Travel;LSH2010100;luxProductCatalog:Online;$uidGroup
+;LSH2010100101;Men Laptop Bags & Briefcases;LSH2010100;luxProductCatalog:Online;$uidGroup
+;LSH2010100102;Men Wallets & Card Holders;LSH2010100;luxProductCatalog:Online;$uidGroup
+;LSH2010100103;Men Messenger Bags;LSH2010100;luxProductCatalog:Online;$uidGroup
+;LSH2010100104;Men Cross Body Bags;LSH2010100;luxProductCatalog:Online;$uidGroup
+;LSH2010100105;Men Cases & Pouches;LSH2010100;luxProductCatalog:Online;$uidGroup
+;LSH2010100106;Men Satchels;LSH2010100;luxProductCatalog:Online;$uidGroup
+;LSH2010101100;Men Sweatshirts and hoodies;LSH2010101;luxProductCatalog:Online;$uidGroup
+;LSH2010101101;Men Jeans;LSH2010101;luxProductCatalog:Online;$uidGroup
+;LSH2010101102;Men Casual jackets and blazers;LSH2010101;luxProductCatalog:Online;$uidGroup
+;LSH2010101103;Men Formal Shirts;LSH2010101;luxProductCatalog:Online;$uidGroup
+;LSH2010101104;Men Casual Shirts;LSH2010101;luxProductCatalog:Online;$uidGroup
+;LSH2010101105;Men Sweaters & Knitwear;LSH2010101;luxProductCatalog:Online;$uidGroup
+;LSH2010101106;Men Casual trousers;LSH2010101;luxProductCatalog:Online;$uidGroup
+;LSH2010101107;Men Formal trousers;LSH2010101;luxProductCatalog:Online;$uidGroup
+;LSH2010101108;Men Polos and t-shirts;LSH2010101;luxProductCatalog:Online;$uidGroup
+;LSH2010101109;Men Underwear;LSH2010101;luxProductCatalog:Online;$uidGroup
+;LSH2010101109;Men Underwear;LSH2010101;luxProductCatalog:Online;$uidGroup
+;LSH2010101109;Men Underwear;LSH2010101;luxProductCatalog:Online;$uidGroup
+;LSH2010101110;Men Formal Suits;LSH2010101;luxProductCatalog:Online;$uidGroup
+;LSH2010101111;Men Formal Coats & Jackets;LSH2010101;luxProductCatalog:Online;$uidGroup
+;LSH2010101112;Men Shorts;LSH2010101;luxProductCatalog:Online;$uidGroup
+;LSH2010101113;Men Trackpants;LSH2010101;luxProductCatalog:Online;$uidGroup
+;LSH2010101114;Men Sports T-shirts;LSH2010101;luxProductCatalog:Online;$uidGroup
+;LSH2010101115;Men Sports Shorts;LSH2010101;luxProductCatalog:Online;$uidGroup
+;LSH2010101116;Men Sports Sets;LSH2010101;luxProductCatalog:Online;$uidGroup
+;LSH2010101117;Men Sports Jackets;LSH2010101;luxProductCatalog:Online;$uidGroup
+;LSH2010101118;Men Swimwear;LSH2010101;luxProductCatalog:Online;$uidGroup
+;LSH2010101119;Men Sports Trackpants;LSH2010101;luxProductCatalog:Online;$uidGroup
+;LSH2010101120;Men Vests;LSH2010101;luxProductCatalog:Online;$uidGroup
+;LSH2010101121;Men Sleepwear;LSH2010101;luxProductCatalog:Online;$uidGroup
+;LSH2010101122;Men Swimwear;LSH2010101;luxProductCatalog:Online;$uidGroup
+;LSH2010102100;Men Belts;LSH2010102;luxProductCatalog:Online;$uidGroup
+;LSH2010102100;Men Belts;LSH2010102;luxProductCatalog:Online;$uidGroup
+;LSH2010102100;Men Belts;LSH2010102;luxProductCatalog:Online;$uidGroup
+;LSH2010102100;Men Belts;LSH2010102;luxProductCatalog:Online;$uidGroup
+;LSH2010102101;Men Hats & Caps;LSH2010102;luxProductCatalog:Online;$uidGroup
+;LSH2010102102;Ties & Pocket Squares;LSH2010102;luxProductCatalog:Online;$uidGroup
+;LSH2010102102;Ties & Pocket Squares;LSH2010102;luxProductCatalog:Online;$uidGroup
+;LSH2010102103;Cufflinks;LSH2010102;luxProductCatalog:Online;$uidGroup
+;LSH2010102104;Men Socks;LSH2010102;luxProductCatalog:Online;$uidGroup
+;LSH2010102104;Men Socks;LSH2010102;luxProductCatalog:Online;$uidGroup
+;LSH2010103100;Men Sandal;LSH2010103;luxProductCatalog:Online;$uidGroup
+;LSH2010103101;Men Oxford Shoes;LSH2010103;luxProductCatalog:Online;$uidGroup
+;LSH2010103102;Men Monk Strap Shoes;LSH2010103;luxProductCatalog:Online;$uidGroup
+;LSH2010103103;Men Boot;LSH2010103;luxProductCatalog:Online;$uidGroup
+;LSH2010103104;Men Sneaker;LSH2010103;luxProductCatalog:Online;$uidGroup
+;LSH2010103105;Men Flip Flop;LSH2010103;luxProductCatalog:Online;$uidGroup
+;LSH2010103106;Men Loafers & Moccasins;LSH2010103;luxProductCatalog:Online;$uidGroup
+;LSH2010103107;Men Derby Shoes;LSH2010103;luxProductCatalog:Online;$uidGroup
+;LSH2010104100;Men Analog Watches;LSH2010104;luxProductCatalog:Online;$uidGroup
+;LSH2010104101;Men Digital Watches;LSH2010104;luxProductCatalog:Online;$uidGroup
+;LSH2010104102;Men Analog-Digital Watches;LSH2010104;luxProductCatalog:Online;$uidGroup
+;LSH2010104103;Men Binary Watches;LSH2010104;luxProductCatalog:Online;$uidGroup
+;LSH2010104104;Others;LSH2010104;luxProductCatalog:Online;$uidGroup
+;LSH2010104105;Boxes & Cases;LSH2010104;luxProductCatalog:Online;$uidGroup
+;LSH2010104106;Batteries;LSH2010104;luxProductCatalog:Online;$uidGroup
+;LSH2010104107;Repair Kits;LSH2010104;luxProductCatalog:Online;$uidGroup
+;LSH2010104108;Others;LSH2010104;luxProductCatalog:Online;$uidGroup
+;LSH2010104109;Men Watches Straps & Bands;LSH2010104;luxProductCatalog:Online;$uidGroup
+;LSH2010105100;Men Ethnic Jackets;LSH2010105;luxProductCatalog:Online;$uidGroup
+;LSH2010105101;Men Kurta & kurtis;LSH2010105;luxProductCatalog:Online;$uidGroup
+;LSH2010105102;Men Kurta Sets;LSH2010105;luxProductCatalog:Online;$uidGroup
+;LSH2010105103;Men Bottomwear;LSH2010105;luxProductCatalog:Online;$uidGroup
+;LSH2110100100;Women Backpacks & Travel;LSH2110100;luxProductCatalog:Online;$uidGroup
+;LSH2110100101;Women Clutches & Evening;LSH2110100;luxProductCatalog:Online;$uidGroup
+;LSH2110100102;Women Crossbody Bags;LSH2110100;luxProductCatalog:Online;$uidGroup
+;LSH2110100103;Women Hobos & Shoulder Bags;LSH2110100;luxProductCatalog:Online;$uidGroup
+;LSH2110100104;Women Tote Bags;LSH2110100;luxProductCatalog:Online;$uidGroup
+;LSH2110100105;Women Wallets & Cardholders;LSH2110100;luxProductCatalog:Online;$uidGroup
+;LSH2110100106;Women Satchels;LSH2110100;luxProductCatalog:Online;$uidGroup
+;LSH2110100107;Women Cases & Pouches;LSH2110100;luxProductCatalog:Online;$uidGroup
+;LSH2110100108;Women Vanity Bags;LSH2110100;luxProductCatalog:Online;$uidGroup
+;LSH2110100109;Women Bucket Bags;LSH2110100;luxProductCatalog:Online;$uidGroup
+;LSH2110100110;Women Messenger Bags;LSH2110100;luxProductCatalog:Online;$uidGroup
+;LSH2110101100;Women Jeans;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110101101;Women Tops & T-shirts;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110101102;Dresses;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110101103;Skirts & Shorts;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110101104;Women Leggings & Jeggings;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110101105;Women Casual Shirt;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110101106;Women Casual Trousers;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110101107;Women Sweatshirts And Hoodies;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110101108;Women Sweaters;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110101109;Waomen Casual Jackets And Blazers;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110101110;Women Trackpants;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110101111;Women Shrugs And Cardigans;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110101112;Women Capris;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110101113;Women Jumpsuits;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110101114;Women Sports T-Shirt;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110101115;Women Sports Shorts;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110101116;Women Sports Sets;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110101117;Women Sports Jackets;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110101118;Women Swimwear;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110101119;Women Sports Innerwear;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110101120;Women Sports Trackpants;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110101121;Bras & Bra Sets;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110101122;Camisoles & Camisole Sets;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110101123;Lingerie Sets;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110101124;Corsets & Bustier;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110101125;Stockings &Tights;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110101126;Shapewear;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110101127;Women Sleepwear & Robes;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110101128;Women Gowns;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110101129;Women Panties;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110101130;Women Intimate Wear;LSH2110101;luxProductCatalog:Online;$uidGroup
+;LSH2110102100;Women Flats;LSH2110102;luxProductCatalog:Online;$uidGroup
+;LSH2110102101;Women Sneakers;LSH2110102;luxProductCatalog:Online;$uidGroup
+;LSH2110102102;Women Flip Flop;LSH2110102;luxProductCatalog:Online;$uidGroup
+;LSH2110102103;Women Heel;LSH2110102;luxProductCatalog:Online;$uidGroup
+;LSH2110102104;Women Wedges;LSH2110102;luxProductCatalog:Online;$uidGroup
+;LSH2110102105;Women Espadrilles;LSH2110102;luxProductCatalog:Online;$uidGroup
+;LSH2110103100;Women Belts;LSH2110103;luxProductCatalog:Online;$uidGroup
+;LSH2110103101;Women Belts;LSH2110103;luxProductCatalog:Online;$uidGroup
+;LSH2110103102;Women Hats & Caps;LSH2110103;luxProductCatalog:Online;$uidGroup
+;LSH2110103103;Women Mufflers;LSH2110103;luxProductCatalog:Online;$uidGroup
+;LSH2110103104;Women Gloves;LSH2110103;luxProductCatalog:Online;$uidGroup
+;LSH2110103105;Women Scarves & Stoles;LSH2110103;luxProductCatalog:Online;$uidGroup
+;LSH2110103112;Rakhis;LSH2110103;luxProductCatalog:Online;$uidGroup
+;LSH2110104100;Women Analog Watches;LSH2110104;luxProductCatalog:Online;$uidGroup
+;LSH2110104101;Women Digital Watches;LSH2110104;luxProductCatalog:Online;$uidGroup
+;LSH2110104102;Women Analog-Digital Watches;LSH2110104;luxProductCatalog:Online;$uidGroup
+;LSH2110104103;Women Binary Watches;LSH2110104;luxProductCatalog:Online;$uidGroup
+;LSH2110104104;Others;LSH2110104;luxProductCatalog:Online;$uidGroup
+;LSH2110105100;Sarees;LSH2110105;luxProductCatalog:Online;$uidGroup
+#;LSH2210100100;Beauty & Grooming;LSH2210100;luxProductCatalog:Online;$uidGroup
+#;LSH2210100101;Home;LSH2210100;luxProductCatalog:Online;$uidGroup
+
+
+
+
+
+

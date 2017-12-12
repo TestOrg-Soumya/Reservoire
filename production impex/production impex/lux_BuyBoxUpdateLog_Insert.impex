@@ -1,0 +1,14 @@
+INSERT_UPDATE BuyboxUpdateLog;proc_name[unique=true]
+;lux_buybox_weightage
+;lux_buybox_price_update
+;lux_buybox_dateupdate
+
+#Import Luxury PRICEFALLBACK Products
+$productCatalog=luxProductCatalog
+$catalogVersion=catalogVersion(catalog(id[default=$productCatalog]),version[default='Online'])[unique=true,default=$productCatalog:Online]
+
+$approved=approvalstatus(code)[default='unapproved']
+$lang=en
+
+INSERT_UPDATE Product;code[unique=true];name[lang=$lang];title;articleMiniDescription;articleDescription;$catalogVersion;$approved;
+;PRICEFALLBACK;PRICEFALLBACK;PRICEFALLBACK;PRICEFALLBACK;PRICEFALLBACK;

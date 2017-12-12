@@ -1,0 +1,4 @@
+$storeUid=lux
+
+INSERT_UPDATE BaseStore2WarehouseRel;source(uid)[unique=true];target(code)[unique=true]
+;$storeUid;mpl_warehouse

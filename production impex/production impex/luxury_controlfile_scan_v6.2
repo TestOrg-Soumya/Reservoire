@@ -1,0 +1,369 @@
+#!/bin/bash
+
+# Author : TCS
+# Script follows here:
+# Version 6.2
+
+
+# Create and check directory
+if [ ! -d "/feed/pcm-com/hot-folder/master/luxury-import/sequenceFolder" ];
+then
+echo "Creating sequence Folder"
+mkdir -p /feed/pcm-com/hot-folder/master/luxury-import/sequenceFolder
+
+fi
+
+if [ ! -d "/feed/pcm-com/hot-folder/master/luxury-import/controlFile/archive" ] ;
+then
+echo "Creating archive folder" 
+mkdir -p /feed/pcm-com/hot-folder/master/luxury-import/controlFile/archive
+
+fi
+
+if [ ! -d  "/feed/pcm-com/hot-folder/master/luxury-import/logFolder" ];
+then
+echo "Creating log Folder"
+mkdir -p /feed/pcm-com/hot-folder/master/luxury-import/logFolder
+
+fi
+
+# Mentioning the Path  
+
+logFileLocation="temp"
+sourceDirectory="/feed/pcm-com/hot-folder/master/luxury-import/sequenceFolder"
+targetDirectory="/feed/pcm-com/hot-folder/master/luxury-import/"
+fileExtension=".csv"
+controlFilePath="/feed/pcm-com/hot-folder/master/luxury-import/controlFile"
+controlFileNamePattern="Exp*.cntl"
+controlFilePathArchive="/feed/pcm-com/hot-folder/master/luxury-import/controlFile/archive"
+#reversecontrolFile="/feed/pcm-com/hot-folder/master/luxury-import/reversecontrolFile"
+
+lockFileName="Lock.lck"
+lockFileLocation="/feed/pcm-com/hot-folder/master/luxury-import/controlFile/${lockFileName}"
+
+# Declaration of Feed name
+
+	fileName1="classification_attributes"
+	fileName2="classification_class"
+	fileName3="class_attribute_assignment"
+	fileName4="category"
+	fileName5="mplproduct"
+	fileName6="variant_product"
+	fileName7="seller"
+	fileName8="richattribute_seller"
+	fileName9="richattribute_product"
+	fileName10="brand"
+	fileName11="seocontent"
+	fileName12="global_identifier"
+	fileName13="product_reference"
+	fileName14="product_feature"
+	fileName15="mplmedia"
+	fileName16="mplmedia_container"
+	fileName17="mplmedia_product"
+	fileName18="category_media"
+	fileName19="sales_category"
+	fileName20="classification_attribute_values"
+
+
+#Function to Create Log File	
+logFile()
+{	DATETIME="`date '+%Y%m%d%H%M%S'`" 
+	logFileExtension=".log"
+	logFileName="ExportLog-"${DATETIME}${logFileExtension}
+	logFileLocation="/feed/pcm-com/hot-folder/master/luxury-import/logFolder/${logFileName}"
+		
+	echo "$(date +'%b-%d-%y-%I:%M:%S%3N') : Shell Starting" > "/feed/pcm-com/hot-folder/master/luxury-import/logFolder/${logFileName}"
+}
+
+#Function to Read Control File
+readcontrolFile()
+{
+while [ $# -ne 0 ]
+  do
+filename="$1"
+counter=0
+while read -r line
+do
+    
+list[$counter]="${line%.csv*}"
+	    
+counter=$(expr "$counter" + 1)
+done < "$filename"
+
+echo "Control File Name : $filename" 
+	fileName1="${list[2]}$fileExtension"
+	fileName2="${list[3]}$fileExtension"
+	fileName3="${list[4]}$fileExtension"
+	fileName4="${list[5]}$fileExtension"
+	fileName5="${list[6]}$fileExtension"
+	fileName6="${list[7]}$fileExtension"
+	fileName7="${list[8]}$fileExtension"
+	fileName8="${list[9]}$fileExtension"
+	fileName9="${list[10]}$fileExtension"
+	fileName10="${list[11]}$fileExtension"
+	fileName11="${list[12]}$fileExtension"
+	fileName12="${list[13]}$fileExtension"
+	fileName13="${list[14]}$fileExtension"
+	fileName14="${list[15]}$fileExtension"
+	fileName15="${list[16]}$fileExtension"
+	fileName16="${list[17]}$fileExtension"
+	fileName17="${list[18]}$fileExtension"
+	fileName18="${list[19]}$fileExtension"
+	fileName19="${list[20]}$fileExtension"
+	fileName20="${list[21]}$fileExtension"
+
+echo "Control File Name : $filename" >> "$logFileLocation"
+
+moveFile
+echo "done move"
+
+#genarateReversecontrolFile
+
+echo "archived  move"
+ shift
+
+done
+}
+
+#Function to move the file from Sequence Folder to Hot Folder
+moveFile()
+{
+	
+#fileName1
+	if [ -f "$fileName1" ] 
+			then
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N') : Copying the File" >> "$logFileLocation"
+				mv  $fileName1 $targetDirectory 2>> "$logFileLocation"
+			else
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N') : Skipping $fileName1 as File Not Found " >> "$logFileLocation"
+	fi
+	 sleep 1s
+	 
+
+#fileName2
+ if [ -f "$fileName2" ]
+			then
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N'): Copying the File" >> "$logFileLocation"
+				mv  $fileName2 $targetDirectory 2>> "$logFileLocation"
+			else
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N') : Skipping $fileName2 as File Not Found " >> "$logFileLocation"
+	fi
+	 sleep 1s	
+
+#fileName3
+	if [ -f "$fileName3" ]
+			then
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N'): Copying the File" >> "$logFileLocation"
+				mv  $fileName3 $targetDirectory 2>> "$logFileLocation"
+			else
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N') : Skipping $fileName3 as File Not Found " >> "$logFileLocation"
+	fi
+	 sleep 1s
+#fileName4
+	if [ -f "$fileName4" ]
+			then
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N'): Copying the File" >> "$logFileLocation"
+				mv  $fileName4 $targetDirectory 2>> "$logFileLocation"
+			else
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N') : Skipping $fileName4 as File Not Found " >> "$logFileLocation"
+	fi
+	 sleep 1s
+#fileName5
+	if [ -f "$fileName5" ]
+			then
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N'): Copying the File" >> "$logFileLocation"
+				mv  $fileName5 $targetDirectory 2>> "$logFileLocation"
+			else
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N') : Skipping $fileName5 as File Not Found " >> "$logFileLocation"
+	fi
+	 sleep 1s
+#fileName6
+	if [ -f "$fileName6" ]
+			then
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N'): Copying the File" >> "$logFileLocation"
+				mv  $fileName6 $targetDirectory 2>> "$logFileLocation"
+			else
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N') : Skipping $fileName6 as File Not Found " >> "$logFileLocation"
+	fi
+	 sleep 1s
+#fileName7
+	if [ -f "$fileName7" ]
+			then
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N'): Copying the File" >> "$logFileLocation"
+				mv  $fileName7 $targetDirectory 2>> "$logFileLocation"
+			else
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N') : Skipping $fileName7 as File Not Found " >> "$logFileLocation"
+	fi
+	 sleep 1s
+#fileName8
+	if [ -f "$fileName8" ]
+			then
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N'): Copying the File" >> "$logFileLocation"
+				mv  $fileName8 $targetDirectory 2>> "$logFileLocation"
+			else
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N') : Skipping $fileName8 as File Not Found " >> "$logFileLocation"
+	fi
+	 sleep 1s
+	 
+#fileName9
+	if [ -f "$fileName9" ]
+			then
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N'): Copying the File" >> "$logFileLocation"
+				mv  $fileName9 $targetDirectory 2>> "$logFileLocation"
+			else
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N') : Skipping $fileName9 as File Not Found " >> "$logFileLocation"
+	fi
+	 sleep 1s
+#fileName10
+	if [ -f "$fileName10" ]
+			then
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N'): Copying the File" >> "$logFileLocation"
+				mv  $fileName10 $targetDirectory 2>> "$logFileLocation"
+			else
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N') : Skipping $fileName10 as File Not Found " >> "$logFileLocation"
+	fi
+	 sleep 1s
+#fileName11
+	if [ -f "$fileName11" ]
+			then
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N'): Copying the File" >> "$logFileLocation"
+				mv  $fileName11 $targetDirectory 2>> "$logFileLocation"
+			else
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N') : Skipping $fileName11 as File Not Found " >> "$logFileLocation"
+	fi
+	 sleep 1s
+#fileName12
+	if [ -f "$fileName12" ]
+			then
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N'): Copying the File" >> "$logFileLocation"
+				mv  $fileName12 $targetDirectory 2>> "$logFileLocation"
+			else
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N') : Skipping $fileName12 as File Not Found " >> "$logFileLocation"
+	fi
+	 sleep 1s
+#fileName13
+	if [ -f "$fileName13" ]
+			then
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N'): Copying the File" >> "$logFileLocation"
+				mv  $fileName13 $targetDirectory 2>> "$logFileLocation"
+			else
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N') : Skipping $fileName13 as File Not Found " >> "$logFileLocation"
+	fi
+	 sleep 1s
+#fileName14
+	if [ -f "$fileName14" ]
+			then
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N'): Copying the File" >> "$logFileLocation"
+				mv  $fileName14 $targetDirectory 2>> "$logFileLocation"
+			else
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N') : Skipping $fileName14 as File Not Found " >> "$logFileLocation"
+	fi
+	 sleep 1s
+#fileName15
+	if [ -f "$fileName15" ]
+			then
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N'): Copying the File" >> "$logFileLocation"
+				mv  $fileName15 $targetDirectory 2>> "$logFileLocation"
+			else
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N') : Skipping $fileName15 as File Not Found " >> "$logFileLocation"
+	fi
+	 sleep 1s
+#fileName16
+	if [ -f "$fileName16" ]
+			then
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N'): Copying the File" >> "$logFileLocation"
+				mv  $fileName16 $targetDirectory 2>> "$logFileLocation"
+			else
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N') : Skipping $fileName16 as File Not Found " >> "$logFileLocation"
+	fi
+	 sleep 1s
+#fileName17
+	if [ -f "$fileName17" ]
+			then
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N'): Copying the File" >> "$logFileLocation"
+				mv  $fileName17 $targetDirectory 2>> "$logFileLocation"
+			else
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N') : Skipping $fileName17 as File Not Found " >> "$logFileLocation"
+	fi
+	 sleep 1s
+#fileName18
+	if [ -f "$fileName18" ]
+			then
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N'): Copying the File" >> "$logFileLocation"
+				mv  $fileName18 $targetDirectory 2>> "$logFileLocation"
+			else
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N') : Skipping $fileName18 as File Not Found " >> "$logFileLocation"
+	fi
+	 sleep 1s
+#fileName19
+	if [ -f "$fileName19" ]
+			then
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N'): Copying the File" >> "$logFileLocation"
+				mv  $fileName19 $targetDirectory 2>> "$logFileLocation"
+			else
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N') : Skipping $fileName19 as File Not Found " >> "$logFileLocation"
+	fi
+	 sleep 1s
+	 
+
+#fileName20
+if [ -f "$fileName20" ]
+			then
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N'): Copying the File" >> "$logFileLocation"
+				mv  $fileName20 $targetDirectory 2>> "$logFileLocation"
+			else
+				echo "$(date +'%b-%d-%y-%I:%M:%S%3N') : Skipping $fileName20 as File Not Found " >> "$logFileLocation"
+	fi
+	 sleep 1s
+	archivecontrolFile $filename
+
+}
+
+#Archiving the Control File
+archivecontrolFile()
+{
+echo "$(date +'%b-%d-%y-%I:%M:%S%3N') : Archiving Control File" >> "$logFileLocation"
+
+mv  -v -f $1 $controlFilePathArchive 2>> "$logFileLocation"
+echo "$(date +'%b-%d-%y-%I:%M:%S%3N') : Process Ended : Exiting" >> "$logFileLocation"
+
+}
+
+#Generate Lock File
+lockFile()
+{	
+echo "Creating Lock File"
+echo "$(date +'%b-%d-%y-%I:%M:%S%3N') : Generated LockFile" > "/feed/pcm-com/hot-folder/master/luxury-import/controlFile/${lockFileName}"
+}
+removeLockFile()
+{	
+	echo "Removing Lock File"
+	rm "/feed/pcm-com/hot-folder/master/luxury-import/controlFile/${lockFileName}"
+	echo "$(date +'%b-%d-%y-%I:%M:%S%3N') : Deleting LockFile" >>  "$logFileLocation"
+}
+
+#Checking if Lock File is there
+if [ -e $lockFileLocation ]
+then
+echo "Exiting due to lock File"
+exit 0
+elif [[ -n $(find $controlFilePath -maxdepth 1 -name $controlFileNamePattern ) ]]
+then
+#if not present then create the log file
+logFile
+#Creating Lock File
+lockFile
+echo "$(date +'%b-%d-%y-%I:%M:%S%3N') : Control File Found:Processing Starts" >>  "$logFileLocation"
+echo "$(date +'%b-%d-%y-%I:%M:%S%3N') : "$(find $controlFilePath -maxdepth 1  -name $controlFileNamePattern) >>  "$logFileLocation"
+#Processing
+echo "Processing"
+readcontrolFile $(find $controlFilePath -maxdepth 1 -name $controlFileNamePattern)
+#Archiving Control File
+archivecontrolFile
+#Removing the Lock File
+removeLockFile
+else
+#No Control File Found
+echo "No Control File....Exitting"
+fi
+

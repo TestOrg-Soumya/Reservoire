@@ -1,0 +1,3 @@
+media.dammedia.host=local.luxury.tatacliq.com:9002
+marketplace.static.resource.host=local.luxury.tatacliq.com:9002
+luxury.static.resource.host=local.luxury.tatacliq.com:9002

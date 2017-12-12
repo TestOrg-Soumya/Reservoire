@@ -1,0 +1,32 @@
+ # ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$storePrefix=lux
+$contentCatalog=$storePrefixContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$media=media(code, $contentCV);
+$jarResourceCms=jar:com.tisl.lux.setup.InitialDataSystemSetup&/luxuryinitialdata/import/sampledata/cockpits/cmscockpit
+
+# Load the storefront context root config param
+$storefrontContextRoot=$config-storefrontContextRoot
+$lang=en
+
+
+
+INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];mime;realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];folder(qualifier)[default='images'];;
+;;multiStepCheckoutSummaryPagePreview;text/png;MultiStepCheckoutSummaryPage.png;$jarResourceCms/preview-images/lux/MultiStepCheckoutSummaryPage.png;;;
+
+INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;frontendTemplateName;restrictedPageTypes(code);active[default=true]
+;;MultiStepCheckoutSummaryPageTemplate;Multi Step Checkout Summary Page Template;;ContentPage;false;
+
+
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false'];label;
+;;multiStepCheckoutSummaryPage;MultiStepCheckoutSummaryPage;MultiStepCheckoutSummaryPageTemplate;;;;multiStepCheckoutSummary;
+
+
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];previewImage(code, $contentCV);;;;;
+;;multiStepCheckoutSummaryPage;multiStepCheckoutSummaryPagePreview;;;;;
+
+# SimpleBannerComponent
+INSERT_UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;;;;
+;;HelpWithCheckoutSimpleBannerComponent;Help With Checkout Simple Banner Component;HelpWithCheckoutSimpleBannerComponent;;
