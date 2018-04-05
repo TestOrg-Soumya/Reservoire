@@ -981,3 +981,76 @@ consignment entry >> consignment is the new created code
 Random Servicability
 D:\hot-folder\master\marketplace-omsFallback
 /feed/pcm-com/hot-folder/master/marketplace-omsFallback/archive
+
+27-12-2017
+**********
+vi /hybris/hybris/bin/custom/marketplace/marketplacestorefront/web/webroot/WEB-INF/views/responsive/pages/pwamp/home.jsp
+cp /hybris/hybris/bin/custom/marketplace/marketplacestorefront/web/webroot/WEB-INF/views/responsive/pages/pwamp/home.jsp /etappdata/hybris/bin/custom/marketplace/marketplacestorefront/web/webroot/WEB-INF/views/responsive/pages/pwamp/home.jsp
+vi /hybris/hybris/bin/custom/marketplace/marketplacestorefront/web/webroot/WEB-INF/tags/responsive/common/header/ampheader.tag
+cp /hybris/hybris/bin/custom/marketplace/marketplacestorefront/web/webroot/WEB-INF/tags/responsive/common/header/ampheader.tag /etappdata/hybris/bin/custom/marketplace/marketplacestorefront/web/webroot/WEB-INF/tags/responsive/common/header/ampheader.tag
+cd /hybris/hybris/bin/platform/
+. ./setantenv.sh
+sh hybrisserver.sh stop
+sh hybrisserver.sh start
+tail -f /hybris/hybris/log/hybris.log
+
+cp /etappdata/hybris/bin/custom/marketplace/marketplacestorefront/web/webroot/WEB-INF/views/responsive/pages/pwamp/home.jsp /hybris/hybris/bin/custom/marketplace/marketplacestorefront/web/webroot/WEB-INF/views/responsive/pages/pwamp/home.jsp
+
+cp /etappdata/hybris/bin/custom/marketplace/marketplacestorefront/web/webroot/WEB-INF/tags/responsive/common/header/ampheader.tag /hybris/hybris/bin/custom/marketplace/marketplacestorefront/web/webroot/WEB-INF/tags/responsive/common/header/ampheader.tag
+
+https://community.tealiumiq.com/t5/iQ-Tag-Management/Tealium-Tools-Universal-Tag-Debugger/ta-p/15179
+
+https://community.tealiumiq.com/t5/Mobile-Libraries/Tealium-for-AMP/ta-p/13720
+
+
+https://stackoverflow.com/questions/7811985/warning-a-call-to-document-write-from-an-asynchronously-loaded-external-scrip
+https://stackoverflow.com/questions/36365589/how-do-i-prevent-loading-of-an-external-resource-while-preventing-the-failed-to
+
+
+29-12-2017
+**********
+https://github.com/Adobe-Marketing-Cloud/mobile-services/commit/ce252d1b69ecfe4004a2534b6095325c8cf1c323
+In the above link we see the library js used for iframe is <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>. On implementing the same I am geting an error as "amp-analytics is already registered. The script tag for amp-analytics is likely included twice in the page". 
+
+Adding #development=1 in URL, caused several issues in my browser console :
+AMP validation had errors:
+The attribute 'â¡' may not appear in tag 'html ⚡ for top-level html'. (see https://www.ampproject.org/docs/reference/spec#required-markup)
+The attribute 'src' in tag 'amp-iframe extension .js script' is set to the invalid value 'https://cdn.ampproject.org/v0/amp-analytics-0.1.js'.
+The attribute 'content' in tag 'meta http-equiv=Content-Type' is set to the invalid value 'text/html'. (see https://www.ampproject.org/docs/reference/spec#html-tags)
+The mandatory tag 'html ⚡ for top-level html' is missing or incorrect. (see https://www.ampproject.org/docs/reference/spec#required-markup)
+
+amp-bind: Default value for [text] does not match first expression result (null). This can result in unexpected behavior after the next state change.
+amp-bind: Default value for [src] does not match first expression result ([object Object]). This can result in unexpected behavior after the next state change.
+
+
+select pk from {ContentPage} where {categoryAssociated} IN ({{select pk from {Category as c JOIN Catalogversion as cv ON {c.catalogversion}={cv.pk}} WHERE {code} = 'MBH12E00016' AND {cv.version} = 'Online'}})
+
+
+24-01-2018
+**********
+vi /hybris/hybris/bin/custom/marketplace/marketplacestorefront/web/webroot/_ui/responsive/common/js/mpl-primary/tisl.home.js
+cp /hybris/hybris/bin/custom/marketplace/marketplacestorefront/web/webroot/_ui/responsive/common/js/mpl-primary/tisl.home.js /etappdata/hybris/bin/custom/marketplace/marketplacestorefront/web/webroot/_ui/responsive/common/js/mpl-primary/tisl.home.js
+cd /hybris/hybris/bin/platform/
+. ./setantenv.sh
+sh hybrisserver.sh stop
+sh hybrisserver.sh start
+tail -f /hybris/hybris/log/hybris.log
+
+cp /etappdata/hybris/bin/custom/marketplace/marketplacestorefront/web/webroot/_ui/responsive/common/js/mpl-primary/tisl.home.js /hybris/hybris/bin/custom/marketplace/marketplacestorefront/web/webroot/_ui/responsive/common/js/mpl-primary/tisl.home.js
+
+
+==================
+
+<c:set var="IA_company" value="${pageContext.request.serverName}/pwamp/home"/>
+<c:set var="query_params" value="${requestScope['javax.servlet.forward.query_string']}"/>
+
+<amp-iframe height="1" width="1"
+		 src="${base}/iframeUtag_homepage.html?site_region=${site_region}&user_type=${user_type}&user_login_type=${user_login_type}&user_id=${user_id}&page_type=${page_type}&page_name=${page_name}&product_category=${product_category}&page_subcategory_name=${page_subcategory_name}&page_subcategory_name_L3=${page_subcategory_name_L3}&session_id=${session_id}&visitor_ip=${visitor_ip}&site_currency=${site_currency}&site_section=${site_section}&IA_company=${IA_company}&fb_content_type=${fb_content_type}&product_sku_quick_view=${product_sku_quick_view}&page_subcategory_L1=${page_subcategory_L1}&page_subcategory_L2=${page_subcategory_L2}&page_subcategory_L3=${page_subcategory_L3}&product_mrp=${product_mrp}&post_category=${post_category}&post_title=${post_title}&post_author=${post_author}&query_params=${query_params}" 
+		 sandbox="allow-scripts allow-same-origin"></amp-iframe>
+		 
+07-02-2018
+**********
+UF-486
+TPR-7741
+
+https://api.myjson.com/bins/x71a5
