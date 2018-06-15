@@ -1054,3 +1054,7 @@ UF-486
 TPR-7741
 
 https://api.myjson.com/bins/x71a5
+
+14-05-2018
+**********
+KT::Analytics	-	Introduction and usage of analytics
