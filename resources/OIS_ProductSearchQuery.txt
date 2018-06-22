@@ -1,0 +1,309 @@
+###  For Empty search
+
+SELECT DISTINCT {p.pk}, {p.name}, {p.code} 
+from {product as p JOIN Catalogversion as cv ON {p.catalogversion}={cv.pk} JOIN Buybox as bb ON {p.code}={bb.product}} 
+where {bb.SellerID} = '123655' AND {bb.available} > 0 AND {p.pk} in 
+({{
+	select {p.pk}
+	from {PcmProductVariant as p} 
+	where {p.baseproduct} in 
+	({{
+		SELECT {p.baseproduct}
+		from {PcmProductVariant as p JOIN Catalogversion as cv ON {p.catalogversion}={cv.pk}} 
+		where {cv.version} = 'Online'
+	}})
+}})
+OR {bb.SellerID} = '123655' AND {bb.available} > 0 AND {p.pk} in 
+({{
+	SELECT {p.pk}
+	from {product as p JOIN Catalogversion as cv ON {p.catalogversion}={cv.pk}} 
+	where {cv.version} = 'Online'
+}})
+OR {bb.SellerID} = '123655' AND {bb.available} > 0 AND {p.pk} in 
+({{
+	select {si.productsource}
+	from {SellerInformation as si JOIN Catalogversion as cv ON {si.catalogversion}={cv.pk}}
+	where {cv.version} = 'Online' AND {SellerID} = '123655'
+}}) 
+ORDER BY {p.code}, {p.name}  ASC
+
+
+============================================== 
+## For text search
+
+SELECT DISTINCT {p.pk}, {p.name}, {p.code} 
+from {product as p JOIN Catalogversion as cv ON {p.catalogversion}={cv.pk} JOIN Buybox as bb ON {p.code}={bb.product}} 
+where {bb.SellerID} = '123655' AND {bb.available} > 0 AND {p.pk} in 
+({{
+	select {p.pk}
+	from {PcmProductVariant as p} 
+	where {p.baseproduct} in 
+	({{
+		SELECT {p.baseproduct}
+		from {PcmProductVariant as p JOIN Catalogversion as cv ON {p.catalogversion}={cv.pk}} 
+		where {cv.version} = 'Online' AND ({p.name} LIKE '%MPF220006014%' OR {p.code} = 'MPF220006014')
+	}})
+}})
+OR {bb.SellerID} = '123655' AND {bb.available} > 0 AND {p.pk} in 
+({{
+	SELECT {p.pk}
+	from {product as p JOIN Catalogversion as cv ON {p.catalogversion}={cv.pk}} 
+	where {cv.version} = 'Online' AND ({p.name} LIKE '%MPF220006014%' OR {p.code} = 'MPF220006014')
+}})
+OR {bb.available} > 0 AND {p.pk} in 
+({{
+	select {si.productsource}
+	from {SellerInformation as si JOIN Catalogversion as cv ON {si.catalogversion}={cv.pk}}
+	where {cv.version} = 'Online' AND {SellerSKU} = 'MPF220006014' AND {SellerID} = '123655'
+}}) 
+
+ORDER BY {p.code}, {p.name}  ASC
+
+====================================================
+## Attempted but not working properly
+
+SELECT DISTINCT {p.pk},{p.name},{p.code} 
+FROM {product as p 
+		JOIN Catalogversion as cv ON {p.catalogversion}={cv.pk} 
+		JOIN Buybox as bb ON {p.code}={bb.product}
+		JOIN PcmProductVariant as pcm ON {pcm.code}={bb.product}
+		JOIN SellerInformation as si ON {si.catalogversion}={cv.pk}
+} 
+WHERE {bb.SellerID} = '123655' AND {bb.available} > 0 AND {cv.version} = 'Online' AND ({bb.product}={p.code} OR {bb.product}={pcm.code}) AND ({si.SellerSKU} = 'MPF220006014' AND {si.SellerID} = '123655') AND (
+	({p.name} LIKE '%MPF220006014%' OR {p.code} = 'MPF220006014') 
+	OR 
+	(
+		{pcm.baseproduct} in 
+		({{
+			SELECT {p.baseproduct}
+			from {PcmProductVariant as p JOIN Catalogversion as cv ON {p.catalogversion}={cv.pk}} 
+			where {cv.version} = 'Online' AND ({p.name} LIKE '%MPF220006014%' OR {p.code} = 'MPF220006014')
+		}})
+	)
+)
+ORDER BY {p.code}, {p.name}  ASC
+
+============================================================
+#### Attempt 2. fetching expected result
+
+SELECT DISTINCT {p.pk}, {p.name}, {p.code} 
+from {product as p JOIN Catalogversion as cv ON {p.catalogversion}={cv.pk} JOIN Buybox as bb ON {p.code}={bb.product}} 
+where {cv.version} = 'Online' AND {bb.SellerID} = '123655' AND {bb.available} > 0 AND {p.pk} in 
+({{
+	select {p.pk}
+	from {PcmProductVariant as p} 
+	where {p.baseproduct} in 
+	({{
+		SELECT {p.baseproduct}
+		from {PcmProductVariant as p} 
+		where {p.name} LIKE '%MPF220006014%' OR {p.code} = 'MPF220006014'
+	}})
+}})
+OR {cv.version} = 'Online' AND {bb.SellerID} = '123655' AND {bb.available} > 0 AND ({p.name} LIKE '%MPF220006014%' OR {p.code} = 'MPF220006014') 
+OR {cv.version} = 'Online' AND {bb.available} > 0 AND {p.pk} in 
+({{
+	select {si.productsource}
+	from {SellerInformation as si JOIN Catalogversion as cv ON {si.catalogversion}={cv.pk}}
+	where {si.SellerSKU} = 'MPF220006014' AND {si.SellerID} = '123655'
+}}) 
+
+ORDER BY {p.code}, {p.name}  ASC
+
+=======================================================
+
+#### Attempt 3. fetching expected result
+
+SELECT DISTINCT {p.pk}, {p.name}, {p.code} 
+from {product as p JOIN Catalogversion as cv ON {p.catalogversion}={cv.pk} JOIN Buybox as bb ON {p.code}={bb.product}} 
+where {cv.version} = 'Online' AND {bb.SellerID} = '123655' AND {bb.available} > 0 AND
+(
+	{p.pk} in 
+	({{
+		select {p.pk}
+		from {PcmProductVariant as p} 
+		where {p.baseproduct} in 
+		({{
+			SELECT {p.baseproduct}
+			from {PcmProductVariant as p} 
+			where {p.name} LIKE '%MPF220006014%' OR {p.code} = 'MPF220006014'
+		}})
+	}})
+	OR ({p.name} LIKE '%MPF220006014%' OR {p.code} = 'MPF220006014')
+)
+OR {cv.version} = 'Online' AND {bb.available} > 0 AND {p.pk} in 
+({{
+	select {si.productsource}
+	from {SellerInformation as si JOIN Catalogversion as cv ON {si.catalogversion}={cv.pk}}
+	where {si.SellerSKU} = 'MPF220006014' AND {si.SellerID} = '123655'
+}}) 
+
+ORDER BY {p.code}, {p.name}  ASC
+
+=====================================================
+
+#### Attempt 4. merging cv.version and availability| Fetching expected result
+
+SELECT DISTINCT {p.pk}, {p.name}, {p.code} 
+from {product as p JOIN Catalogversion as cv ON {p.catalogversion}={cv.pk} JOIN Buybox as bb ON {p.code}={bb.product}} 
+where {cv.version} = 'Online' AND {bb.available} > 0 AND 
+(
+	{bb.SellerID} = '123655' AND
+	(
+		{p.pk} in 
+		({{
+			select {p.pk}
+			from {PcmProductVariant as p} 
+			where {p.baseproduct} in 
+			({{
+				SELECT {p.baseproduct}
+				from {PcmProductVariant as p} 
+				where {p.name} LIKE '%MPF220006014%' OR {p.code} = 'MPF220006014'
+			}})
+		}})
+		OR ({p.name} LIKE '%MPF220006014%' OR {p.code} = 'MPF220006014')
+	)
+	OR {p.pk} in 
+	({{
+		select {si.productsource}
+		from {SellerInformation as si JOIN Catalogversion as cv ON {si.catalogversion}={cv.pk}}
+		where {si.SellerSKU} = 'MPF220006014' AND {si.SellerID} = '123655'
+	}}) 
+)
+ORDER BY {p.code}, {p.name}  ASC
+
+==================================================
+
+#### Attempt 5. merging sellerID | Fetching expected result
+
+SELECT DISTINCT {p.pk}, {p.name}, {p.code} 
+from {product as p JOIN Catalogversion as cv ON {p.catalogversion}={cv.pk} JOIN Buybox as bb ON {p.code}={bb.product}} 
+where {cv.version} = 'Online' AND {bb.available} > 0 AND {bb.SellerID} = '123655' AND
+(
+	{p.pk} in 
+	({{
+		select {p.pk}
+		from {PcmProductVariant as p} 
+		where {p.baseproduct} in 
+		({{
+			SELECT {p.baseproduct}
+			from {PcmProductVariant as p} 
+			where {p.name} LIKE '%MPF220006014%' OR {p.code} = 'MPF220006014'
+		}})
+	}})
+	OR ({p.name} LIKE '%MPF220006014%' OR {p.code} = 'MPF220006014')
+	OR {p.pk} in 
+	({{
+		select {si.productsource}
+		from {SellerInformation as si}
+		where {si.SellerSKU} = 'MPF220006014'
+	}}) 
+)
+ORDER BY {p.code}, {p.name}  ASC
+
+===================================================
+
+#### Attempt 6. Removing of sellerInformation table | Fetching expected result
+
+SELECT DISTINCT {p.pk}, {p.name}, {p.code} 
+from {product as p JOIN Catalogversion as cv ON {p.catalogversion}={cv.pk} JOIN Buybox as bb ON {p.code}={bb.product}} 
+where {cv.version} = 'Online' AND {bb.available} > 0 AND {bb.SellerID} = '123655' AND
+(
+	{p.pk} in 
+	({{
+		select {p.pk}
+		from {PcmProductVariant as p} 
+		where {p.baseproduct} in 
+		({{
+			SELECT {p.baseproduct}
+			from {PcmProductVariant as p} 
+			where {p.name} LIKE '%MPF220006014%' OR {p.code} = 'MPF220006014'
+		}})
+	}})
+	OR ({p.name} LIKE '%MPF220006014%' OR {p.code} = 'MPF220006014')
+	OR {bb.sellerArticleSku}='123655MPF220006014' 
+)
+ORDER BY {p.code}, {p.name}  ASC
+
+
+SELECT DISTINCT {p.pk}, {p.name}, {p.code} 
+from {product as p JOIN Catalogversion as cv ON {p.catalogversion}={cv.pk} JOIN Buybox as bb ON {p.code}={bb.product}} 
+where {cv.version} = 'Online' AND {bb.available} > 0 AND {bb.SellerID} = '123655' AND
+(
+	{p.pk} in 
+	({{
+		select {p.pk}
+		from {PcmProductVariant as p} 
+		where {p.baseproduct} in 
+		({{
+			SELECT {p.baseproduct}
+			from {PcmProductVariant as p} 
+			where ({p.name} LIKE '%2200060050123655%' OR {p.code} = '2200060050123655')
+		}})
+	}})
+	OR ({p.name} LIKE '%2200060050123655%' OR {p.code} = '2200060050123655')
+	OR {bb.sellerArticleSku}='1236552200060050123655' 
+)
+ORDER BY {p.code}, {p.name}  ASC
+
+========================================================
+#### Attempt 7. Removing order by and unnecessary fields | Fetching expected result
+
+### For text search
+SELECT DISTINCT {p.pk} 
+from {product as p JOIN Catalogversion as cv ON {p.catalogversion}={cv.pk} JOIN Buybox as bb ON {p.code}={bb.product}} 
+where {cv.version} = 'Online' AND {bb.available} > 0 AND {bb.SellerID} = '123655' AND
+(
+	{p.pk} in 
+	({{
+		select {p.pk}
+		from {PcmProductVariant as p} 
+		where {p.baseproduct} in 
+		({{
+			SELECT {p.baseproduct}
+			from {PcmProductVariant as p} 
+			where ({p.name} LIKE '%2200060050123655%' OR {p.code} = '2200060050123655')
+		}})
+	}})
+	OR ({p.name} LIKE '%2200060050123655%' OR {p.code} = '2200060050123655')
+	OR {bb.sellerArticleSku}='1236552200060050123655' 
+)
+
+### For empty search
+SELECT DISTINCT {p.pk} 
+from {product as p JOIN Catalogversion as cv ON {p.catalogversion}={cv.pk} JOIN Buybox as bb ON {p.code}={bb.product}} 
+where {cv.version} = 'Online' AND {bb.available} > 0 AND {bb.SellerID} = '123655'
+
+
+==========================================================================
+
+## For ADMIN user 
+
+Empty search
+================
+query: [SELECT DISTINCT {p.pk} from {product as p JOIN Catalogversion as cv ON {p.catalogversion}={cv.pk} JOIN Buybox as bb ON {p.code}={bb.product}} where {cv.version} = 'Online' AND {bb.available} > 0 ], query parameters: [{}] 
+
+## For Store managers
+
+SELECT DISTINCT {p.pk} 
+from {product as p JOIN Catalogversion as cv ON {p.catalogversion}={cv.pk} JOIN Buybox as bb ON {p.code}={bb.product}} 
+where {cv.version} = 'Online' AND {bb.available} > 0 AND {bb.SellerID} = '100001' AND 
+(
+	{p.pk} in 
+	({{ 
+		select {p.pk} 
+		from {PcmProductVariant as p} 
+		where {p.baseproduct} in	
+		({{	
+			SELECT {p.baseproduct} 
+			from {PcmProductVariant as p} 
+			where ({p.name} LIKE '%MP000000000375149%' OR {p.code} = 'MP000000000375149') 
+		}}) 
+	}}) 
+	OR ({p.name} LIKE '%MP000000000375149%' OR {p.code} = 'MP000000000375149')
+	OR {bb.sellerArticleSku}='100001MP000000000375149' 
+)
+
+
+], query parameters: [{sellerID=123654, productCode=485130, ussid=123654485130, productName=%485130%}] 
+
+SELECT {bb.PK} FROM {BuyBox AS bb} Where (  {bb.product}='MP000000000375149' ) AND {bb:available} > 0 AND (sysdate between  {bb:sellerStartDate} and {bb:sellerEndDate}) AND {bb:price} > 0  ORDER BY ( {bb:sellerId} ='100001') DESC,{bb:weightage} DESC,{bb:available} DESC 
